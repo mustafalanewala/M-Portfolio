@@ -3,7 +3,6 @@
 import createGlobe from "cobe";
 import { motion } from "framer-motion";
 import { Card } from "../../components/ui/card";
-import { BorderBeam } from "../../components/ui/border";
 import { useRef, useEffect } from "react";
 
 export const Globe = ({ className }: { className?: string }) => {
@@ -61,15 +60,13 @@ export function GlobeCard() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.4 }}
-      className="col-span-4 row-span-2 md:col-span-2"
+      className="col-span-4 h-80 md:h-full row-span-2 md:col-span-2"
     >
-      <Card className="h-full p-6 backdrop-blur-sm overflow-hidden border-2 border-neutral-700 relative group">
-        <div className="absolute inset-0 z-10" />
+      <Card className="h-full p-6 backdrop-blur-sm overflow-hidden border-2 border-neutral-600 relative group">
         <h2 className="text-xl font-semibold mb-2 relative z-20">Global Reach</h2>
         <p className="text-muted-foreground relative z-20">Working with clients worldwide</p>
         <Globe className="absolute -bottom-48 left-10 h-24 w-24 text-primary z-20" />
         <div className="absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity" />
-        <BorderBeam size={250} duration={12} delay={9} />
       </Card>
     </motion.div>
   );

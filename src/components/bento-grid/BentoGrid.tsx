@@ -14,7 +14,7 @@ import { BackgroundBeamsWithCollision } from "../ui/background";
 export function BentoGrid() {
   return (
     <BackgroundBeamsWithCollision className="dark">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 p-4 min-h-screen max-w-[95vw] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-2 p-2 min-h-screen max-w-[95vw] mx-auto">
         <ProfileCard />
 
         <GlobeCard />
@@ -25,6 +25,7 @@ export function BentoGrid() {
           description="Completed"
           icon={Terminal}
           delay={0.2}
+          className="col-span-1 md:col-span-1"
         />
 
         <StatCard
@@ -33,17 +34,18 @@ export function BentoGrid() {
           description="Created"
           icon={Palette}
           delay={0.3}
+          className="col-span-3 md:col-span-1"
         />
 
         <SocialLinksCard />
 
         <ProjectCard />
 
-        <SkillsCard className="col-span-2 row-span-2" />
+        <SkillsCard className="col-span-4 row-span-2 md:col-span-2" />
 
         <DesignCard />
 
-        <ContactCard className="col-span-2" />
+        <ContactCard className="col-span-4 md:col-span-2" />
       </div>
     </BackgroundBeamsWithCollision>
   );

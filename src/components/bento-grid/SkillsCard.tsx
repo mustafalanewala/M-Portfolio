@@ -43,7 +43,7 @@ export function SkillsCard({ className = "" }: { className?: string }) {
       transition={{ delay: 0.7 }}
       className={className}
     >
-      <Card className="h-full p-6 bg-secondary/50 backdrop-blur-sm">
+      <Card className="h-full p-6 bg-secondary/50 border-2 border-neutral-600 backdrop-blur-sm">
         <div className="flex items-center gap-3 mb-4">
           <Star className="h-8 w-8 text-primary" />
           <h2 className="text-xl font-semibold">Skills</h2>

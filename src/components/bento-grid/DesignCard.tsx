@@ -12,9 +12,9 @@ export function DesignCard() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 }}
-      className="relative col-span-2"
+      className="relative col-span-4 md:col-span-2"
     >
-      <Card className="h-full p-6 backdrop-blur-sm flex flex-col justify-between">
+      <Card className="h-full p-6 backdrop-blur-sm border-2 border-neutral-600 flex flex-col justify-between">
         <div>
           <div className="flex items-center gap-4 mb-2">
             <LayoutDashboard className="h-7 w-7 text-primary" />

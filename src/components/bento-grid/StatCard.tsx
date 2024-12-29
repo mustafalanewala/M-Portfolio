@@ -10,17 +10,25 @@ interface StatCardProps {
   description: string;
   icon: LucideIcon;
   delay: number;
+  className?: string;  // Add the optional className prop here
 }
 
-export function StatCard({ title, value, description, icon: Icon, delay }: StatCardProps) {
+export function StatCard({
+  title,
+  value,
+  description,
+  icon: Icon,
+  delay,
+  className,
+}: StatCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay }}
-      className="col-span-2 row-span-1 md:col-span-1"
+      className={className}  // Use className here
     >
-      <Card className="h-full p-6 bg-secondary/50 backdrop-blur-sm hover:glow transition-all duration-300">
+      <Card className="h-full p-6 backdrop-blur-sm border-2 border-neutral-600">
         <Icon className="h-8 w-8 mb-4 text-primary" />
         <h3 className="text-2xl font-bold mb-1">{value}</h3>
         <p className="text-sm text-muted-foreground">{title}</p>

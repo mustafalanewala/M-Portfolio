@@ -39,7 +39,7 @@ export function SocialLinksCard() {
       animate={{ opacity: 1, y: 0 }}
       className="col-span-4 row-span-1 md:col-span-2"
     >
-      <Card className="h-full p-6 bg-secondary/50 backdrop-blur-sm hover:bg-secondary/70 transition-colors">
+      <Card className="h-full p-6 backdrop-blur-sm border-2 border-neutral-600">
         <h2 className="text-xl font-bold mb-4">
           Connect with Me
         </h2>

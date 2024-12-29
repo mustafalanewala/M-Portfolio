@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { RippleButton } from "../../components/ui/button";
 import Image from "next/image";
 import { Card } from "../../components/ui/card";
-import { BorderBeam } from "../../components/ui/border";
 import Link from "next/link";
 
 export function ProfileCard() {
@@ -15,7 +14,7 @@ export function ProfileCard() {
       transition={{ delay: 0.2 }}
       className="col-span-4 row-span-2 md:col-span-2"
     >
-      <Card className="h-full p-6 backdrop-blur-sm border-2 border-neutral-700 flex flex-col justify-between">
+      <Card className="h-full p-6 backdrop-blur-sm border-2 border-neutral-600 flex flex-col justify-between">
         <div className="flex flex-col sm:flex-row items-center gap-6 mb-6">
           {/* Avatar Section */}
           <div className="relative w-24 h-24 sm:w-32 sm:h-32">
@@ -62,8 +61,6 @@ export function ProfileCard() {
         <Link href="/contact">
           <RippleButton rippleColor="#ADD8E6" className="mt-auto">Contact Me</RippleButton>
         </Link>
-
-        <BorderBeam size={250} duration={12} delay={9} />
       </Card>
     </motion.div>
   );

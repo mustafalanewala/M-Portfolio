@@ -87,7 +87,7 @@ export function ContactCard({ className = "" }: ContactCardProps) {
       transition={{ delay: 0.9 }}
       className={className}
     >
-      <Card className="h-full p-6 bg-secondary/50 backdrop-blur-sm hover:bg-secondary/70 transition-colors">
+      <Card className="h-full p-6 bg-secondary/50 backdrop-blur-sm border-2 border-neutral-600 hover:bg-secondary/70 transition-colors">
         <div className="flex justify-between items-center">
           <div>
             <Mail className="h-8 w-8 mb-4 text-primary" />
