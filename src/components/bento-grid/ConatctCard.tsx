@@ -17,7 +17,7 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
     <div
       className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
     >
-      <div className="bg-black text-white p-6 rounded-lg max-w-sm w-full">
+      <div className="bg-black text-white p-6 rounded-lg max-w-lg w-full">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-semibold">Contact Form</h2>
           <button
@@ -85,22 +85,25 @@ export function ContactCard({ className = "" }: ContactCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.9 }}
-      className={className}
+      className={`${className} col-span-4 md:col-span-2`}
     >
-      <Card className="h-full p-6 bg-secondary/50 backdrop-blur-sm border-2 border-neutral-600 hover:bg-secondary/70 transition-colors">
-        <div className="flex justify-between items-center">
-          <div>
-            <Mail className="h-8 w-8 mb-4 text-primary" />
-            <h2 className="text-2xl font-semibold mb-2">Let's Connect</h2>
-            <p className="text-muted-foreground">Have a project in mind?</p>
+      <Card className="h-full p-6 backdrop-blur-sm border-2 border-neutral-600 flex flex-col justify-between">
+        <div className="flex flex-col gap-4">
+          <div className="flex items-center gap-4">
+            <Mail className="h-7 w-7 text-primary" />
+            <h2 className="text-2xl font-semibold">Contact Me</h2>
           </div>
+          <p className="text-sm text-muted-foreground">
+            Lorem ipsum dolor, sit amet consectetur
+          </p>
           <RippleButton
-            className="bg-primary hover:bg-primary/90 transition-colors"
+            rippleColor="#ADD8E6" className="w-full sm:w-auto"
             onClick={handleModalToggle}
           >
             Get in Touch
           </RippleButton>
         </div>
+
       </Card>
 
       {/* Modal Popup */}

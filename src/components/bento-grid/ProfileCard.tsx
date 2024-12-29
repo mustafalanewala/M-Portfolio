@@ -4,7 +4,28 @@ import { motion } from "framer-motion";
 import { RippleButton } from "../../components/ui/button";
 import Image from "next/image";
 import { Card } from "../../components/ui/card";
-import Link from "next/link";
+
+const generateVCard = () => {
+  const vCard = `
+BEGIN:VCARD
+VERSION:2.0
+FN:Mustafa Lanewala
+TEL:+91 9157302004
+EMAIL:https.mustafalanewala@gmail.com
+END:VCARD
+  `;
+  return new Blob([vCard], { type: "text/vcard" });
+};
+
+const downloadVCard = () => {
+  const vCardBlob = generateVCard();
+  const link = document.createElement("a");
+  const url = URL.createObjectURL(vCardBlob);
+  link.href = url;
+  link.download = "Mustafa_Lanewala.vcf";
+  link.click();
+  URL.revokeObjectURL(url);
+};
 
 export function ProfileCard() {
   return (
@@ -19,7 +40,7 @@ export function ProfileCard() {
           {/* Avatar Section */}
           <div className="relative w-24 h-24 sm:w-32 sm:h-32">
             <Image
-              src="/avatar.jpg"  // Path to avatar image
+              src="/avatar.jpg"
               alt="Profile"
               fill
               className="rounded-full object-cover border-2 border-primary"
@@ -58,9 +79,13 @@ export function ProfileCard() {
           </motion.p>
         </div>
 
-        <Link href="/contact">
-          <RippleButton rippleColor="#ADD8E6" className="mt-auto">Contact Me</RippleButton>
-        </Link>
+        <RippleButton
+          rippleColor="#ADD8E6"
+          className="mt-auto bg-transparent"
+          onClick={downloadVCard}
+        >
+          Save Contact
+        </RippleButton>
       </Card>
     </motion.div>
   );

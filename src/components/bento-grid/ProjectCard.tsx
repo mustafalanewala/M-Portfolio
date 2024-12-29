@@ -24,7 +24,7 @@ export function ProjectCard() {
             Lorem ipsum dolor, sit amet consectetur elit voluptatum ad culpa quae velit blanditiis!
           </p>
           <Link href="/projects">
-            <RippleButton rippleColor="#ADD8E6" className="w-full sm:w-auto">
+            <RippleButton rippleColor="#ADD8E6" className="bg-transparent w-full sm:w-auto">
               View Projects
             </RippleButton>
           </Link>

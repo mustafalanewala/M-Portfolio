@@ -36,7 +36,7 @@ export const Globe = ({ className }: { className?: string }) => {
       ],
       onRender: (state) => {
         state.phi = phi;
-        phi += 0.01; // Continues to rotate, giving a nice effect
+        phi += 0.01;
       },
     });
 
