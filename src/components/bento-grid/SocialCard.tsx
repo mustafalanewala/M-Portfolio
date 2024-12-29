@@ -11,21 +11,25 @@ export function SocialLinksCard() {
       icon: Instagram,
       platform: "Instagram",
       href: "https://instagram.com/mustafa.lanewala",
+      color: "bg-gradient-to-r from-pink-500 to-yellow-500",
     },
     {
       icon: Linkedin,
       platform: "LinkedIn",
       href: "https://linkedin.com/in/mustafa-lanewala-m2004",
+      color: "bg-gradient-to-r from-blue-500 to-indigo-600",
     },
     {
       icon: GitHub,
       platform: "GitHub",
       href: "https://github.com/mustafalanewala",
+      color: "bg-gradient-to-r from-gray-800 to-gray-500",
     },
     {
       icon: Mail,
       platform: "Email",
       href: "mailto:https.mustafalanewala@gmail.com",
+      color: "bg-gradient-to-r from-green-400 to-teal-500",
     },
   ];
 
@@ -33,10 +37,12 @@ export function SocialLinksCard() {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="col-span-2 row-span-1"
+      className="col-span-4 row-span-1 md:col-span-2"
     >
       <Card className="h-full p-6 bg-secondary/50 backdrop-blur-sm hover:bg-secondary/70 transition-colors">
-        <h2 className="text-xl font-bold mb-4">Connect with Me</h2>
+        <h2 className="text-xl font-bold mb-4">
+          Connect with Me
+        </h2>
         <div className="flex justify-between gap-6">
           {socialLinks.map((link, index) => (
             <Link
@@ -44,9 +50,9 @@ export function SocialLinksCard() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="relative flex items-center justify-center w-16 h-16 bg-black rounded-full shadow-xl group transition-all"
+              className={`relative flex items-center justify-center w-16 h-16 rounded-full shadow-xl group transition-all ${link.color} transform hover:scale-110 hover:shadow-lg`}
             >
-              <link.icon className="h-8 w-8 text-white group-hover:text-primary/80 group-hover:scale-110 transition-all" />
+              <link.icon className="h-8 w-8 text-white group-hover:text-white transition-all" />
             </Link>
           ))}
         </div>

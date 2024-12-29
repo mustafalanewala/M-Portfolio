@@ -3,6 +3,7 @@
 import createGlobe from "cobe";
 import { motion } from "framer-motion";
 import { Card } from "../../components/ui/card";
+import { BorderBeam } from "../../components/ui/border";
 import { useRef, useEffect } from "react";
 
 export const Globe = ({ className }: { className?: string }) => {
@@ -15,8 +16,8 @@ export const Globe = ({ className }: { className?: string }) => {
 
     const globe = createGlobe(canvasRef.current, {
       devicePixelRatio: 2,
-      width: 350 * 2,
-      height: 350 * 2,
+      width: 400 * 2,
+      height: 400 * 2,
       phi: 0,
       theta: 0,
       dark: 1,
@@ -27,13 +28,16 @@ export const Globe = ({ className }: { className?: string }) => {
       markerColor: [0.1, 0.8, 1],
       glowColor: [1, 1, 1],
       markers: [
-        // longitude latitude
-        { location: [37.7595, -122.4367], size: 0.03 },
-        { location: [40.7128, -74.006], size: 0.1 },
+        // Locations in India and a few global ones for variety
+        { location: [23.0225, 72.5714], size: 0.05 }, // Ahmedabad
+        { location: [22.3039, 73.1812], size: 0.05 }, // Vadodara
+        { location: [26.9124, 75.7873], size: 0.05 }, // Jaipur
+        { location: [19.0760, 72.8777], size: 0.05 }, // Mumbai
+        { location: [22.5726, 88.3639], size: 0.05 }, // Kolkata
       ],
       onRender: (state) => {
         state.phi = phi;
-        phi += 0.01;
+        phi += 0.01; // Continues to rotate, giving a nice effect
       },
     });
 
@@ -57,14 +61,15 @@ export function GlobeCard() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.4 }}
-      className="col-span-2 row-span-2"
+      className="col-span-4 row-span-2 md:col-span-2"
     >
-      <Card className="h-full p-6 backdrop-blur-sm overflow-hidden relative group">
+      <Card className="h-full p-6 backdrop-blur-sm overflow-hidden border-2 border-neutral-700 relative group">
         <div className="absolute inset-0 z-10" />
         <h2 className="text-xl font-semibold mb-2 relative z-20">Global Reach</h2>
         <p className="text-muted-foreground relative z-20">Working with clients worldwide</p>
-        <Globe className="absolute -bottom-20 left-44 h-24 w-24 text-primary z-20" />
+        <Globe className="absolute -bottom-48 left-10 h-24 w-24 text-primary z-20" />
         <div className="absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity" />
+        <BorderBeam size={250} duration={12} delay={9} />
       </Card>
     </motion.div>
   );

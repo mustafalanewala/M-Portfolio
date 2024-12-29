@@ -18,7 +18,7 @@ export function StatCard({ title, value, description, icon: Icon, delay }: StatC
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay }}
-      className="col-span-1 row-span-1"
+      className="col-span-2 row-span-1 md:col-span-1"
     >
       <Card className="h-full p-6 bg-secondary/50 backdrop-blur-sm hover:glow transition-all duration-300">
         <Icon className="h-8 w-8 mb-4 text-primary" />

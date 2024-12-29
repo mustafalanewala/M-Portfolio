@@ -9,13 +9,12 @@ import { SkillsCard } from "./SkillsCard";
 import { ContactCard } from "./ConatctCard";
 import { GlobeCard } from "./GlobeCard";
 import { DesignCard } from "./DesignCard";
-import { BackgroundBeamsWithCollision } from "../../components/ui/BackgroundBeamsWithCollision";
+import { BackgroundBeamsWithCollision } from "../ui/background";
 
 export function BentoGrid() {
   return (
     <BackgroundBeamsWithCollision className="dark">
-      <div className="grid grid-cols-6 gap-3 p-4 min-h-screen max-w-[95vw] mx-auto">
-
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-4 p-4 min-h-screen max-w-[95vw] mx-auto">
         <ProfileCard />
 
         <GlobeCard />
@@ -38,25 +37,11 @@ export function BentoGrid() {
 
         <SocialLinksCard />
 
-        <ProjectCard
-          className="col-span-4"
-          title="Latest Projects"
-          description="Explore my recent development work"
-          icon={Code}
-          link="/projects"
-          delay={0.6}
-        />
+        <ProjectCard />
 
         <SkillsCard className="col-span-2 row-span-2" />
 
-        <DesignCard
-          className="col-span-2 row-span-1"
-          title="Latest Designs"
-          description="Explore my recent design work"
-          icon={Code}
-          link="/design"
-          delay={0.6}
-        />
+        <DesignCard />
 
         <ContactCard className="col-span-2" />
       </div>

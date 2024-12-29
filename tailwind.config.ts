@@ -16,6 +16,7 @@ const config: Config = {
       },
       animation: {
         rippling: "rippling var(--duration) ease-out",
+        "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
       },
       keyframes: {
         rippling: {
@@ -25,6 +26,11 @@ const config: Config = {
           "100%": {
             transform: "scale(2)",
             opacity: "0",
+          },
+        },
+       "border-beam": {
+          "100%": {
+            "offset-distance": "100%",
           },
         },
       },

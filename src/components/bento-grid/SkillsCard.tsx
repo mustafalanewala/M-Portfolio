@@ -3,14 +3,39 @@
 import { motion } from "framer-motion";
 import { Card } from "../../components/ui/card";
 import { Star } from "lucide-react";
+import { IconCloud } from "../../components/ui/icons"
 
-interface SkillsCardProps {
-  className?: string;
-}
+const slugs = [
+  "typescript",
+  "javascript",
+  "react",
+  "android",
+  "html5",
+  "css3",
+  "nodedotjs",
+  "express",
+  "nextdotjs",
+  "prisma",
+  "amazonaws",
+  "postgresql",
+  "firebase",
+  "nginx",
+  "vercel",
+  "testinglibrary",
+  "jest",
+  "cypress",
+  "docker",
+  "git",
+  "jira",
+  "github",
+  "gitlab",
+  "visualstudiocode",
+  "androidstudio",
+  "sonarqube",
+  "figma",
+];
 
-export function SkillsCard({ className = "" }: SkillsCardProps) {
-  const skills = ["TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind", "React.js", "Next.js", "Node.js", "Express.js", "Redux", "MongoDb",];
-
+export function SkillsCard({ className = "" }: { className?: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -19,22 +44,12 @@ export function SkillsCard({ className = "" }: SkillsCardProps) {
       className={className}
     >
       <Card className="h-full p-6 bg-secondary/50 backdrop-blur-sm">
-        <div className="flex items-center gap-3">
-          <Star className="h-8 w-8 mb-4 text-primary" />
-          <h2 className="text-xl font-semibold mb-4">Skills</h2>
+        <div className="flex items-center gap-3 mb-4">
+          <Star className="h-8 w-8 text-primary" />
+          <h2 className="text-xl font-semibold">Skills</h2>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {skills.map((skill, i) => (
-            <motion.span
-              key={skill}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.8 + i * 0.1 }}
-              className="px-3 py-1 rounded-full text-sm border border-primary/50 bg-primary/10 text-primary-foreground"
-            >
-              {skill}
-            </motion.span>
-          ))}
+        <div className="relative flex items-center justify-center max-w-lg overflow-hidden">
+          <IconCloud iconSlugs={slugs} />
         </div>
       </Card>
     </motion.div>

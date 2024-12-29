@@ -3,41 +3,31 @@
 import { motion } from "framer-motion";
 import { Card } from "../../components/ui/card";
 import { RippleButton } from "../../components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { LucideIcon } from "lucide-react";
+import { Code } from 'react-feather';
 import Link from "next/link";
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-  link: string;
-  delay: number;
-  className?: string;
-}
-
-export function ProjectCard({ title, description, icon: Icon, link, delay, className = "" }: ProjectCardProps) {
+export function ProjectCard() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay }}
-      className={className}
+      transition={{ delay: 0.2 }}
+      className="relative col-span-4"
     >
-      <Card className="h-full p-6 bg-secondary/50 backdrop-blur-sm group">
-        <div className="flex justify-between items-start">
-          <div>
-            <Icon className="h-8 w-8 mb-4 text-primary" />
-            <h2 className="text-2xl font-semibold mb-2">{title}</h2>
-            <p className="text-muted-foreground">{description}</p>
+      <Card className="h-44 p-6 backdrop-blur-sm flex flex-col justify-between">
+        <div>
+          {/* Icon and Title in a row */}
+          <div className="flex items-center gap-4 mb-4">
+            <Code className="h-8 w-8 text-primary" />
+            <h2 className="text-2xl font-semibold">My Projects</h2>
           </div>
-          <Link href={link}>
-            <RippleButton className="group-hover:translate-x-2 transition-transform">
-              View All <ArrowRight className="ml-2 h-4 w-4" />
-            </RippleButton>
-          </Link>
+          {/* Description below */}
+          <p className="text-muted-foreground">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas obcaecati sint consequatur <br />sunt libero voluptatum ad culpa quae velit blanditiis!</p>
         </div>
+        <Link href="/projects" className="flex self-end">
+          <RippleButton rippleColor="#ADD8E6">Click me</RippleButton>
+        </Link>
       </Card>
-    </motion.div>
+    </motion.div >
   );
 }

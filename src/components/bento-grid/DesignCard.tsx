@@ -3,45 +3,30 @@
 import { motion } from "framer-motion";
 import { Card } from "../../components/ui/card";
 import { RippleButton } from "../../components/ui/button";
-import { ArrowRight } from "lucide-react";
-import { LucideIcon } from "lucide-react";
+import { LayoutDashboard } from "lucide-react";
 import Link from "next/link";
 
-interface DesignCardProps {
-  title: string;
-  description: string;
-  icon: LucideIcon;
-  link: string;
-  delay: number;
-  className?: string;
-}
-
-export function DesignCard({
-  title,
-  description,
-  icon: Icon,
-  link,
-  delay,
-  className = "",
-}: DesignCardProps) {
+export function DesignCard() {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay }}
-      className={className}
+      transition={{ delay: 0.2 }}
+      className="relative col-span-2"
     >
-      <Card className="h-full flex justify-between p-6 bg-secondary/50 backdrop-blur-lg rounded-xl shadow-lg group transition-all hover:shadow-2xl">
-        <div className="flex flex-col">
-          <h2 className="text-2xl font-semibold mb-2 text-primary-foreground">{title}</h2>
-          <p className="text-sm text-muted-foreground mb-4">{description}</p>
+      <Card className="h-full p-6 backdrop-blur-sm flex flex-col justify-between">
+        <div>
+          <div className="flex items-center gap-4 mb-2">
+            <LayoutDashboard className="h-7 w-7 text-primary" />
+            <h2 className="text-2xl font-semibold">My Designs</h2>
+          </div>
+          <p className="mb-2">Lorem ipsum dolor, sit amet consectetur</p>
+          <Link href="/projects">
+            <RippleButton rippleColor="#ADD8E6">Click me</RippleButton>
+          </Link>
         </div>
-        <Link href={link}>
-          <RippleButton className="group-hover:translate-x-2 transition-transform">
-            View All <ArrowRight className="ml-2 h-4 w-4" />
-          </RippleButton>
-        </Link>
+
       </Card>
-    </motion.div>
+    </motion.div >
   );
 }
