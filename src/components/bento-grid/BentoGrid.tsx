@@ -1,6 +1,6 @@
 "use client";
 
-import { Code, Mail, Star, Github, Linkedin, Palette, Terminal } from "lucide-react";
+import { Code, Mail, Star, Terminal, Briefcase } from "lucide-react";
 import { ProfileCard } from "./ProfileCard";
 import { StatCard } from "./StatCard";
 import { SocialLinksCard } from "./SocialCard";
@@ -20,21 +20,22 @@ export function BentoGrid() {
         <GlobeCard />
 
         <StatCard
-          title="Projects"
-          value="50+"
-          description="Completed"
+          title="Total Hours Coded"
+          value="1000+"
+          description="Logged"
           icon={Terminal}
           delay={0.2}
-          className="col-span-1 md:col-span-1"
+          className="col-span-2 md:col-span-1"
         />
 
+        {/* Industry Experience */}
         <StatCard
-          title="Designs"
-          value="100+"
-          description="Created"
-          icon={Palette}
+          title="Industry Experience"
+          value="1.5+ Years"
+          description="In Corporate"
+          icon={Briefcase}
           delay={0.3}
-          className="col-span-3 md:col-span-1"
+          className="col-span-2 md:col-span-1"
         />
 
         <SocialLinksCard />

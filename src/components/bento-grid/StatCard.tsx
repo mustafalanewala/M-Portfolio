@@ -28,7 +28,7 @@ export function StatCard({
       transition={{ delay }}
       className={className}  // Use className here
     >
-      <Card className="h-full p-6 backdrop-blur-sm border-2 border-neutral-600">
+      <Card className="h-full p-4 md:p-6 backdrop-blur-sm border-2 border-neutral-600">
         <Icon className="h-8 w-8 mb-4 text-primary" />
         <h3 className="text-2xl font-bold mb-1">{value}</h3>
         <p className="text-sm text-muted-foreground">{title}</p>

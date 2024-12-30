@@ -35,7 +35,7 @@ export function ProfileCard() {
       transition={{ delay: 0.2 }}
       className="col-span-4 row-span-2 md:col-span-2"
     >
-      <Card className="h-full p-6 backdrop-blur-sm border-2 border-neutral-600 flex flex-col justify-between">
+      <Card className="h-full p-4 md:p-6 backdrop-blur-sm border-2 border-neutral-600 flex flex-col justify-between">
         <div className="flex flex-col sm:flex-row items-center gap-6 mb-6">
           {/* Avatar Section */}
           <div className="relative w-24 h-24 sm:w-32 sm:h-32">
@@ -68,7 +68,7 @@ export function ProfileCard() {
           </div>
         </div>
 
-        <div className="flex-1 mb-4">
+        <div className="flex-1 mb-4 text-center sm:text-left">
           <motion.p
             className="text-sm sm:text-base text-white"
             initial={{ opacity: 0 }}
