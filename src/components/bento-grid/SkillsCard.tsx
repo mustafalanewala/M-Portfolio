@@ -8,7 +8,6 @@ import { IconCloud } from "../../components/ui/icons"
 const slugs = [
   "figma",
   "nextdotjs",
-  "cypress",
   "nodedotjs",
   "nginx",
   "react",
@@ -42,10 +41,10 @@ export function SkillsCard({ className = "" }: { className?: string }) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.7 }}
+      transition={{ delay: 0.3 }}
       className={className}
     >
-      <Card className="h-full p-6 bg-secondary/50 border-2 border-neutral-600 backdrop-blur-sm">
+      <Card className="card h-full border-2 border-neutral-600 backdrop-blur-sm">
         <div className="flex items-center gap-3 mb-4">
           <Star className="h-8 w-8 text-primary" />
           <h2 className="text-xl font-semibold">Skills</h2>

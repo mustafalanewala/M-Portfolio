@@ -17,7 +17,7 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
     <div
       className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
     >
-      <div className="bg-neutral-800 text-white p-4 rounded-lg max-w-sm w-full sm:w-10/12 md:w-1/3">
+      <div className="bg-neutral-800 text-white p-4 rounded-2xl max-w-sm w-11/12 sm:w-10/12 md:w-1/3">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-semibold">Contact Form</h2>
           <button
@@ -84,10 +84,10 @@ export function ContactCard({ className = "" }: ContactCardProps) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.9 }}
+      transition={{ delay: 0.3 }}
       className={`${className} col-span-4 md:col-span-2`}
     >
-      <Card className="h-full p-6 backdrop-blur-sm border-2 border-neutral-600 flex flex-col justify-between">
+      <Card className="card h-full backdrop-blur-sm border-2 border-neutral-600 flex flex-col justify-between">
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-4">
             <Mail className="h-7 w-7 text-primary" />

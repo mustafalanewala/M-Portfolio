@@ -32,11 +32,11 @@ export function ProfileCard() {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
+      transition={{ delay: 0.3 }}
       className="col-span-4 row-span-2 md:col-span-2"
     >
-      <Card className="h-full p-4 md:p-6 backdrop-blur-sm border-2 border-neutral-600 flex flex-col justify-between">
-        <div className="flex flex-col sm:flex-row items-center gap-6 mb-6">
+      <Card className="card h-full backdrop-blur-sm border-2 border-neutral-600 flex flex-col justify-between">
+        <div className="flex flex-col sm:flex-row items-center gap-6 mb-2 md:mb-6">
           {/* Avatar Section */}
           <div className="relative w-24 h-24 sm:w-32 sm:h-32">
             <Image
@@ -55,7 +55,7 @@ export function ProfileCard() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              Mustafa Lanewala
+              👋 Hie! I'm <br />Mustafa Lanewala
             </motion.h1>
             <motion.p
               className="text-lg text-muted-foreground"
@@ -75,17 +75,25 @@ export function ProfileCard() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            Full-Stack Developer with expertise in frontend and backend technologies, specializing in AI and Data Science.
+            I'm a Full-Stack developer with a strong foundation in both frontend and backend technologies, Specializing on AI and Data Science.
           </motion.p>
         </div>
 
-        <RippleButton
-          rippleColor="#ADD8E6"
-          className="mt-auto bg-transparent"
-          onClick={downloadVCard}
-        >
-          Save Contact
-        </RippleButton>
+        <div className="flex w-full gap-4 mt-auto">
+          <RippleButton
+            rippleColor="#ADD8E6"
+            className="flex-1 bg-transparent"
+            onClick={downloadVCard}
+          >
+            Save Contact
+          </RippleButton>
+          <RippleButton
+            rippleColor="#ADD8E6"
+            className="flex-1 bg-transparent"
+          >
+            View CV
+          </RippleButton>
+        </div>
       </Card>
     </motion.div>
   );

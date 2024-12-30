@@ -37,9 +37,10 @@ export function SocialLinksCard() {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.3 }}
       className="col-span-4 row-span-1 md:col-span-2"
     >
-      <Card className="h-full p-6 backdrop-blur-sm border-2 border-neutral-600">
+      <Card className="card h-full backdrop-blur-sm border-2 border-neutral-600">
         <h2 className="text-xl font-bold mb-4">
           Connect with Me
         </h2>

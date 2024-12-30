@@ -11,10 +11,10 @@ export function ProjectCard() {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.2 }}
+      transition={{ delay: 0.3 }}
       className="col-span-4 md:col-span-4"
     >
-      <Card className="h-full p-6 flex flex-col justify-between border-2 border-neutral-600 backdrop-blur-sm">
+      <Card className="card h-full flex flex-col justify-between border-2 border-neutral-600 backdrop-blur-sm">
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-4">
             <Code className="h-8 w-8 text-primary" />
