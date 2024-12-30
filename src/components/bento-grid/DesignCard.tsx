@@ -21,10 +21,10 @@ export function DesignCard() {
             <h2 className="text-2xl font-semibold">My Designs</h2>
           </div>
           <p className="text-sm text-muted-foreground">
-            Lorem ipsum dolor, sit amet consectetur
+            Explore my design portfolio, showcasing design projects.
           </p>
           <Link href="/projects">
-            <RippleButton rippleColor="#ADD8E6" className="w-full sm:w-auto">
+            <RippleButton rippleColor="#ADD8E6" className="bg-transparent w-full sm:w-auto">
               View Designs
             </RippleButton>
           </Link>

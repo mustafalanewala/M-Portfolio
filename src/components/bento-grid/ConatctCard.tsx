@@ -17,7 +17,7 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
     <div
       className={`fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center transition-opacity duration-300 ${isOpen ? "opacity-100" : "opacity-0 pointer-events-none"}`}
     >
-      <div className="bg-black text-white p-6 rounded-lg max-w-lg w-full">
+      <div className="bg-neutral-800 text-white p-4 rounded-lg max-w-sm w-full sm:w-10/12 md:w-1/3">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-semibold">Contact Form</h2>
           <button
@@ -34,7 +34,7 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
             <input
               type="text"
               id="name"
-              className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-md text-white placeholder-gray-400"
+              className="w-full px-4 py-2 bg-neutral-800 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
               placeholder="Your Name"
             />
           </div>
@@ -43,7 +43,7 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
             <input
               type="email"
               id="email"
-              className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-md text-white placeholder-gray-400"
+              className="w-full px-4 py-2 bg-neutral-800 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
               placeholder="Your Email"
             />
           </div>
@@ -51,13 +51,13 @@ const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =>
             <label htmlFor="message" className="block text-sm font-medium">Message</label>
             <textarea
               id="message"
-              className="w-full px-4 py-2 bg-gray-800 border border-gray-600 rounded-md text-white placeholder-gray-400"
+              className="w-full px-4 py-2 bg-neutral-800 border border-gray-600 rounded-md text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
               placeholder="Your Message"
             ></textarea>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-center">
             <RippleButton
-              className="bg-primary hover:bg-primary/90 transition-colors w-full"
+              className="bg-primary hover:bg-primary/90 transition-colors w-full sm:w-auto"
               onClick={(e) => {
                 e.preventDefault();
                 alert("Message Sent!");
@@ -94,16 +94,15 @@ export function ContactCard({ className = "" }: ContactCardProps) {
             <h2 className="text-2xl font-semibold">Contact Me</h2>
           </div>
           <p className="text-sm text-muted-foreground">
-            Lorem ipsum dolor, sit amet consectetur
+            I'd love to hear from you. Feel free to get in touch!
           </p>
           <RippleButton
-            rippleColor="#ADD8E6" className="w-full sm:w-auto"
+            rippleColor="#ADD8E6" className="bg-transparent w-full sm:w-auto"
             onClick={handleModalToggle}
           >
             Get in Touch
           </RippleButton>
         </div>
-
       </Card>
 
       {/* Modal Popup */}

@@ -18,10 +18,12 @@ export function ProjectCard() {
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-4">
             <Code className="h-8 w-8 text-primary" />
-            <h2 className="text-2xl font-semibold">My Projects</h2>
+            <h2 className="text-2xl font-bold">
+              My Projects
+            </h2>
           </div>
           <p className="text-sm text-muted-foreground">
-            Lorem ipsum dolor, sit amet consectetur elit voluptatum ad culpa quae velit blanditiis!
+            Discover the projects I've built with passion and creativity. Take a look!
           </p>
           <Link href="/projects">
             <RippleButton rippleColor="#ADD8E6" className="bg-transparent w-full sm:w-auto">

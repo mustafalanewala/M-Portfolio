@@ -65,7 +65,7 @@ export function GlobeCard() {
       <Card className="h-full p-6 backdrop-blur-sm overflow-hidden border-2 border-neutral-600 relative group">
         <h2 className="text-xl font-semibold mb-2 relative z-20">Global Reach</h2>
         <p className="text-muted-foreground relative z-20">Working with clients worldwide</p>
-        <Globe className="absolute -bottom-48 left-10 h-24 w-24 text-primary z-20" />
+        <Globe className="absolute left-2 md:-bottom-48 md:left-11 h-24 w-24 text-primary z-20" />
         <div className="absolute inset-0 opacity-30 group-hover:opacity-50 transition-opacity" />
       </Card>
     </motion.div>
