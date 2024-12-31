@@ -7,6 +7,13 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Mustafa Lanewala',
   description: 'Portfolio Website',
+  icons: [
+    {
+      rel: 'icon',
+      type: 'image/svg+xml',
+      url: '/favicon.svg',
+    },
+  ],
 };
 
 export default function RootLayout({

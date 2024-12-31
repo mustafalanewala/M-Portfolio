@@ -38,7 +38,9 @@ export function BioCard() {
           <h2 className="text-xl font-bold">About Me</h2>
           {bioData.map((item, index) => (
             <div key={index} className="flex items-start gap-4 text-white">
-              <item.icon />
+              <div className="flex-shrink-0">
+                <item.icon className="h-5 w-5" /> {/* Adjust size with h-6 w-6 */}
+              </div>
               <div>
                 <h4 className="text-md font-bold">{item.title}</h4>
                 <p className="text-sm text-muted-foreground">{item.description}</p>
