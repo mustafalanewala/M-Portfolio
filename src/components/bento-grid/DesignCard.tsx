@@ -23,7 +23,7 @@ export function DesignCard() {
           <p className="text-sm text-muted-foreground">
             Explore my design portfolio, showcasing design projects.
           </p>
-          <Link href="/projects">
+          <Link href="/designs">
             <RippleButton rippleColor="#ADD8E6" className="bg-transparent w-full sm:w-auto">
               View Designs
             </RippleButton>
