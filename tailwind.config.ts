@@ -17,6 +17,7 @@ const config: Config = {
       animation: {
         rippling: "rippling var(--duration) ease-out",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
+        "background-position-spin":"background-position-spin 3000ms infinite alternate",
       },
       keyframes: {
         rippling: {
@@ -32,6 +33,10 @@ const config: Config = {
           "100%": {
             "offset-distance": "100%",
           },
+        },
+       "background-position-spin": {
+          "0%": { backgroundPosition: "top center" },
+          "100%": { backgroundPosition: "bottom center" },
         },
       },
     },

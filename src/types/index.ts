@@ -10,10 +10,9 @@ export interface Project {
 export interface Design {
   id: number;
   title: string;
-  category: string;
   mediaType: 'image' | 'video';
   mediaPath: string;
-  thumbnailPath?: string; 
+  thumbnailPath?: string;
   link?: string;
 }
 
