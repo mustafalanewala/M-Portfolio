@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { RippleButton } from "../../components/ui/button";
 import Image from "next/image";
 import { Card } from "../../components/ui/card";
+import Link from "next/link";
 
 const generateVCard = () => {
   const vCard = `
@@ -79,20 +80,22 @@ export function ProfileCard() {
           </motion.p>
         </div>
 
-        <div className="flex w-full gap-4 mt-auto">
+        <div className="grid grid-cols-2 gap-4 mt-auto">
           <RippleButton
             rippleColor="#ADD8E6"
-            className="flex-1 bg-transparent"
+            className="bg-transparent"
             onClick={downloadVCard}
           >
             Save Contact
           </RippleButton>
-          <RippleButton
-            rippleColor="#ADD8E6"
-            className="flex-1 bg-transparent"
-          >
-            View CV
-          </RippleButton>
+          <Link target="_blank" href="https://i.ibb.co/THstQ6k/MResume.jpg">
+            <RippleButton
+              rippleColor="#ADD8E6"
+              className="bg-transparent w-full"
+            >
+              View Resume
+            </RippleButton>
+          </Link>
         </div>
       </Card>
     </motion.div>
