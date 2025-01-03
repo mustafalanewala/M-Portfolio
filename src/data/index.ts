@@ -5,7 +5,7 @@ export const projects: Project[] = [
     id: 1,
     title: "M-Tasks",
     description: "MTask is an innovative task management platform designed to streamline productivity for individuals and teams.",
-    imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
+    imageUrl: "https://sciencecitychennai.in/maxresdefault.jpg",
     technologies: ["React.js", "JavaScript", "TailwindCSS", "Redux", "Axios", "Firebase"],
     link: "https://mtasks.vercel.app"
   },
@@ -13,24 +13,24 @@ export const projects: Project[] = [
     id: 2,
     title: "BlogBox",
     description: "BlogBox is sleek and modern blogging platform that empowers users to create, share, and manage their own blogs with ease.",
-    imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
+    imageUrl: "https://sciencecitychennai.in/maxresdefault.jpg",
     technologies: ["React.js", "Appwrite", "Tailwind", "JavaScript", "Redux"],
     link: "https://blogsbox.vercel.app"
   },
   {
     id: 3,
     title: "SkAttireHub",
-    description: "Created a responsive clothing e- commerce website for Skattirehub offering seamless navigation and secure payments.",
-    imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
-    technologies: ["WooCommerce", "Wordpress"],
+    description: "Created a responsive clothing e-commerce website for Skattirehub offering seamless navigation and secure payments.",
+    imageUrl: "https://sciencecitychennai.in/maxresdefault.jpg",
+    technologies: ["WooCommerce", "Wordpress", "SEO", "Payment Gateway"],
     link: "https://skattirehub.in"
   },
   {
     id: 4,
     title: "Crime Detection Model",
-    description: "A modern e-commerce solution built with Next.js and TypeScript",
-    imageUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
-    technologies: ["Python", "JupiterNotebook"],
+    description: "This project uses machine learning to predict crime hotspots, types, and timings based on spatial and temporal crime data analysis.",
+    imageUrl: "https://sciencecitychennai.in/maxresdefault.jpg",
+    technologies: ["Python", "Scikit-learn", "NumPy", "Pandas", "Matplotlib"],
     link: "https://github.com/mustafalanewala/Crime-Detection"
   }
 ];
@@ -40,18 +40,48 @@ export const designs: Design[] = [
     id: 1,
     title: "Smoothie Bowl",
     mediaType: "video",
-    mediaPath: "d1.mp4"
+    mediaPath: "SmoothieBowl.mp4"
   },
   {
     id: 2,
-    title: "Ice Cream Transition",
-    mediaType: "video",
-    mediaPath: "d2.mp4"
+    title: "AetherX",
+    mediaType: "image",
+    mediaPath: "AetherX.png"
   },
   {
     id: 3,
+    title: "Ethereal Essence",
+    mediaType: "image",
+    mediaPath: "EtherealEssence.png"
+  },
+  {
+    id: 4,
     title: "ExoVanguard Prime",
     mediaType: "video",
-    mediaPath: "d3.mp4"
-  }
+    mediaPath: "ExoVanguard Prime.mp4"
+  },
+  {
+    id: 5,
+    title: "Bento Grid",
+    mediaType: "image",
+    mediaPath: "BentoGrid.png"
+  },
+  {
+    id: 6,
+    title: "Ice Cream Transition",
+    mediaType: "video",
+    mediaPath: "IceCream.mp4"
+  },
+  {
+    id: 7,
+    title: "Balenciaga",
+    mediaType: "video",
+    mediaPath: "Balenciaga.mp4"
+  },
+  {
+    id: 8,
+    title: "MWatch",
+    mediaType: "image",
+    mediaPath: "MWatch.png"
+  },
 ];
