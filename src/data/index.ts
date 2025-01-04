@@ -5,31 +5,31 @@ export const projects: Project[] = [
     id: 1,
     title: "M-Tasks",
     description: "MTask is an innovative task management platform designed to streamline productivity for individuals and teams.",
-    imageUrl: "https://sciencecitychennai.in/maxresdefault.jpg",
-    technologies: ["React.js", "JavaScript", "TailwindCSS", "Redux", "Axios", "Firebase"],
+    imageUrl: "MTasks.png",
+    technologies: ["React", "JavaScript", "Tailwind", "Redux", "Axios", "Firebase"],
     link: "https://mtasks.vercel.app"
   },
   {
     id: 2,
     title: "BlogBox",
     description: "BlogBox is sleek and modern blogging platform that empowers users to create, share, and manage their own blogs with ease.",
-    imageUrl: "https://sciencecitychennai.in/maxresdefault.jpg",
-    technologies: ["React.js", "Appwrite", "Tailwind", "JavaScript", "Redux"],
+    imageUrl: "BlogBox.png",
+    technologies: ["React", "Appwrite", "Tailwind", "JavaScript", "Redux"],
     link: "https://blogsbox.vercel.app"
   },
   {
     id: 3,
     title: "SkAttireHub",
     description: "Created a responsive clothing e-commerce website for Skattirehub offering seamless navigation and secure payments.",
-    imageUrl: "https://sciencecitychennai.in/maxresdefault.jpg",
+    imageUrl: "SkAttireHub.png",
     technologies: ["WooCommerce", "Wordpress", "SEO", "Payment Gateway"],
     link: "https://skattirehub.in"
   },
   {
     id: 4,
     title: "Crime Detection Model",
-    description: "This project uses machine learning to predict crime hotspots, types, and timings based on spatial and temporal crime data analysis.",
-    imageUrl: "https://sciencecitychennai.in/maxresdefault.jpg",
+    description: "This project uses machine learning to predict crime hotspots, types, and timings based on spatial and temporal crime data.",
+    imageUrl: "CrimePrediction.png",
     technologies: ["Python", "Scikit-learn", "NumPy", "Pandas", "Matplotlib"],
     link: "https://github.com/mustafalanewala/Crime-Detection"
   }

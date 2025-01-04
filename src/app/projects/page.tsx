@@ -8,7 +8,7 @@ export default function ProjectsPage() {
   return (
     <div className="container mx-auto px-6 py-6">
       <h1 className="text-4xl font-extrabold text-center text-white mb-8">My Projects</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
@@ -17,8 +17,8 @@ export default function ProjectsPage() {
             transition={{ delay: index * 0.1 }}
           >
             <a href={project.link} target="_blank" rel="noopener noreferrer">
-              <NeonGradientCard className="max-w-sm items-center justify-center bg-gray-300">
-                <div className="relative w-full h-44">
+              <NeonGradientCard className="max-w-md items-center justify-center bg-gray-300">
+                <div className="relative w-full h-48">
                   <img
                     src={project.imageUrl}
                     alt={project.title}
