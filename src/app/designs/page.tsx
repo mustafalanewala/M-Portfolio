@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { designs } from "../../data";
 import { NeonGradientCard } from "@/components/ui/gradientcard";
 import { getMediaPath, isVideoFile } from "@/lib/media";
+import { NextSeo } from 'next-seo';
 
 interface MediaContentProps {
   mediaPath: string;
@@ -40,25 +41,31 @@ const MediaContent = ({ mediaPath, title }: MediaContentProps) => {
 
 export default function DesignsPage() {
   return (
-    <div className="mx-auto px-6 py-6">
-      <h1 className="text-4xl font-extrabold text-center text-white mb-8">My Designs</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
-        {designs.map((design, index) => (
-          <motion.div
-            key={design.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-          >
-            <a href={design.link} target="_blank" rel="noopener noreferrer">
-              <NeonGradientCard className="max-w-md items-center justify-center bg-gray-300">
-                <MediaContent mediaPath={design.mediaPath} title={design.title} />
-                <h2 className="text-lg font-semibold text-center text-white pt-2">{design.title}</h2>
-              </NeonGradientCard>
-            </a>
-          </motion.div>
-        ))}
+    <>
+      <NextSeo
+        title="Designs - Mustafa Lanewala"
+        description="Explore a collection of creative designs by Mustafa Lanewala."
+      />
+      <div className="mx-auto px-6 py-6">
+        <h1 className="text-4xl font-extrabold text-center text-white mb-8">My Designs</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6">
+          {designs.map((design, index) => (
+            <motion.div
+              key={design.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <a href={design.link} target="_blank" rel="noopener noreferrer">
+                <NeonGradientCard className="max-w-md items-center justify-center bg-gray-300">
+                  <MediaContent mediaPath={design.mediaPath} title={design.title} />
+                  <h2 className="text-lg font-semibold text-center text-white pt-2">{design.title}</h2>
+                </NeonGradientCard>
+              </a>
+            </motion.div>
+          ))}
+        </div>
       </div>
-    </div>
+    </>
   );
 }

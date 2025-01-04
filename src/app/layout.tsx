@@ -5,8 +5,8 @@ import { Inter } from 'next/font/google';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Mustafa Lanewala',
-  description: 'Portfolio Website',
+  title: 'Mustafa Lanewala | Portfolio',
+  description: 'Official portfolio website of Mustafa Lanewala, showcasing projects, designs, and more.',
   icons: [
     {
       rel: 'icon',
@@ -14,7 +14,23 @@ export const metadata: Metadata = {
       url: '/favicon.svg',
     },
   ],
+  openGraph: {
+    type: 'website',
+    locale: 'en_IE',
+    url: 'https://mustafalanewala.vercel.app',
+    title: 'Mustafa Lanewala | Portfolio',
+    description: 'Official portfolio website of Mustafa Lanewala, showcasing projects, designs, and more.',
+    images: [
+      {
+        url: 'https://mustafalanewala.vercel.app/website.png',
+        width: 800,
+        height: 600,
+        alt: 'Mustafa Lanewala Portfolio',
+      },
+    ],
+  },
 };
+
 
 export default function RootLayout({
   children,
