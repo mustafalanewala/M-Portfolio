@@ -7,13 +7,20 @@ const inter = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Mustafa Lanewala | Portfolio',
   description: 'Official portfolio website of Mustafa Lanewala, showcasing projects, designs, and more.',
-  icons: [
-    {
-      rel: 'icon',
-      type: 'image/svg+xml',
-      url: '/favicon.svg',
-    },
-  ],
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.png', type: 'image/png' },
+    ],
+    shortcut: ['/favicon.ico'],
+    other: [
+      {
+        rel: 'icon',
+        type: 'image/svg+xml',
+        url: '/favicon.svg',
+      },
+    ],
+  },
   openGraph: {
     type: 'website',
     locale: 'en_IE',
@@ -30,7 +37,6 @@ export const metadata: Metadata = {
     ],
   },
 };
-
 
 export default function RootLayout({
   children,
