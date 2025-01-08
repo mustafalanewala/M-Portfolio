@@ -14,7 +14,7 @@ import { BackgroundBeamsWithCollision } from "../ui/background";
 export function BentoGrid() {
   return (
     <BackgroundBeamsWithCollision>
-      <div className="card grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-2 md:min-h-[100vh] md:max-w-[100vw] mx-auto overflow-hidden md:overflow-auto p-4 h-full md:p-4">
+      <div className="text-white card grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-2 md:min-h-[100vh] md:max-w-[100vw] mx-auto overflow-hidden md:overflow-auto p-4 h-full md:p-4">
 
         <ProfileCard />
 

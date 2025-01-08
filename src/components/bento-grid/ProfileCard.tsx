@@ -39,13 +39,18 @@ export function ProfileCard() {
       <Card className="card h-full backdrop-blur-sm border-2 border-neutral-600 flex flex-col justify-between">
         <div className="flex flex-col sm:flex-row items-center gap-6 mb-2 md:mb-6">
           {/* Avatar Section */}
-          <div className="relative w-24 h-24 sm:w-32 sm:h-32">
-            <Image
-              src="/avatar.jpg"
-              alt="Profile"
-              fill
-              className="rounded-full object-cover border-2 border-primary"
-            />
+          <div className="relative w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0">
+            <div className="w-full h-full rounded-full border-2 border-primary overflow-hidden">
+              <Image
+                src="/avatar.jpg"
+                alt="Profile"
+                width={128}
+                height={128}
+                className="w-full h-full object-cover"
+                priority
+                unoptimized
+              />
+            </div>
           </div>
 
           {/* Text Section */}
