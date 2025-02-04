@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { BentoGrid } from "../components/bento-grid/BentoGrid";
+import { useEffect, useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { BentoGrid } from "../components/bento-grid/BentoGrid"
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000); // 2-second delay
-    return () => clearTimeout(timer);
-  }, []);
+    const timer = setTimeout(() => setIsLoading(false), 2000) // 2-second delay
+    return () => clearTimeout(timer)
+  }, [])
 
   return (
     <>
@@ -52,5 +52,5 @@ export default function Home() {
 
       {!isLoading && <BentoGrid />}
     </>
-  );
+  )
 }

@@ -1,16 +1,16 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { Card } from "../../components/ui/card";
-import { LucideIcon } from "lucide-react";
+import { motion } from "framer-motion"
+import { Card } from "../../components/ui/card"
+import { LucideIcon } from "lucide-react"
 
 interface StatCardProps {
-  title: string;
-  value: string;
-  description: string;
-  icon: LucideIcon;
-  delay: number;
-  className?: string;  // Add the optional className prop here
+  title: string
+  value: string
+  description: string
+  icon: LucideIcon
+  delay: number
+  className?: string
 }
 
 export function StatCard({
@@ -26,7 +26,7 @@ export function StatCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay }}
-      className={className}  // Use className here
+      className={className}
     >
       <Card className="card h-full backdrop-blur-sm border-2 border-neutral-600">
         <Icon className="h-8 w-8 mb-4 text-primary" />
@@ -35,5 +35,5 @@ export function StatCard({
         <p className="text-xs text-muted-foreground/80">{description}</p>
       </Card>
     </motion.div>
-  );
+  )
 }

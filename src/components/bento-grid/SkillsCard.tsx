@@ -1,8 +1,8 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { Card } from "../../components/ui/card";
-import { Star } from "lucide-react";
+import { motion } from "framer-motion"
+import { Card } from "../../components/ui/card"
+import { Star } from "lucide-react"
 import { IconCloud } from "../../components/ui/icons"
 
 const slugs = [
@@ -32,9 +32,8 @@ const slugs = [
   "visualstudiocode",
   "firebase",
   "javascript",
-  "wordpress"
-];
-
+  "wordpress",
+]
 
 export function SkillsCard({ className = "" }: { className?: string }) {
   return (
@@ -54,5 +53,5 @@ export function SkillsCard({ className = "" }: { className?: string }) {
         </div>
       </Card>
     </motion.div>
-  );
+  )
 }

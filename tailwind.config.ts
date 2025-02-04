@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss"
 
 const config: Config = {
   content: [
@@ -6,7 +6,7 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "@/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "@/styles/**/*.{js,ts,jsx,tsx,mdx}"
+    "@/styles/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -17,7 +17,8 @@ const config: Config = {
       animation: {
         rippling: "rippling var(--duration) ease-out",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
-        "background-position-spin":"background-position-spin 3000ms infinite alternate",
+        "background-position-spin":
+          "background-position-spin 3000ms infinite alternate",
       },
       keyframes: {
         rippling: {
@@ -29,12 +30,12 @@ const config: Config = {
             opacity: "0",
           },
         },
-       "border-beam": {
+        "border-beam": {
           "100%": {
             "offset-distance": "100%",
           },
         },
-       "background-position-spin": {
+        "background-position-spin": {
           "0%": { backgroundPosition: "top center" },
           "100%": { backgroundPosition: "bottom center" },
         },
@@ -42,6 +43,6 @@ const config: Config = {
     },
   },
   plugins: [],
-};
+}
 
-export default config;
+export default config

@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { Card } from "../../components/ui/card";
-import { Briefcase, GraduationCap, TreePalm } from "lucide-react"; // Icons from lucide-react
+import { motion } from "framer-motion"
+import { Card } from "../../components/ui/card"
+import { Briefcase, GraduationCap, TreePalm } from "lucide-react"
 
-export function BioCard() {
+export function BioCard({ className = "" }: { className?: string }) {
   const bioData = [
     {
       icon: GraduationCap,
@@ -23,15 +23,15 @@ export function BioCard() {
       title: "Hobbies",
       description:
         "In my free time, I enjoy coding, traveling, exploring new technologies, while finding peace in my spiritual practices.",
-    }
-  ];
+    },
+  ]
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
-      className="col-span-4 row-span-2 md:col-span-2"
+      className={className}
     >
       <Card className="card h-full flex flex-col justify-between border-2 border-neutral-600 backdrop-blur-sm">
         <div className="flex flex-col gap-3">
@@ -39,16 +39,18 @@ export function BioCard() {
           {bioData.map((item, index) => (
             <div key={index} className="flex items-start gap-4 text-white">
               <div className="flex-shrink-0">
-                <item.icon className="h-5 w-5" /> {/* Adjust size with h-6 w-6 */}
+                <item.icon className="h-5 w-5" />
               </div>
               <div>
                 <h4 className="text-md font-bold">{item.title}</h4>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
               </div>
             </div>
           ))}
         </div>
       </Card>
     </motion.div>
-  );
+  )
 }

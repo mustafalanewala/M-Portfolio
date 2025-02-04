@@ -1,54 +1,56 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import "./globals.css"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: 'Mustafa Lanewala | Portfolio',
-  description: 'Official portfolio website of Mustafa Lanewala, showcasing projects, designs, and more.',
+  title: "Mustafa Lanewala | Portfolio",
+  description:
+    "Official portfolio website of Mustafa Lanewala, showcasing projects, designs, and more.",
   icons: {
-    icon: [
-      { url: '/favicon.ico' },
-      { url: '/favicon.png', type: 'image/png' },
-    ],
-    shortcut: ['/favicon.ico'],
+    icon: [{ url: "/favicon.ico" }, { url: "/favicon.png", type: "image/png" }],
+    shortcut: ["/favicon.ico"],
     other: [
       {
-        rel: 'icon',
-        type: 'image/svg+xml',
-        url: '/favicon.svg',
+        rel: "icon",
+        type: "image/svg+xml",
+        url: "/favicon.svg",
       },
     ],
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_IE',
-    url: 'https://mustafalanewala.vercel.app',
-    title: 'Mustafa Lanewala | Portfolio',
-    description: 'Official portfolio website of Mustafa Lanewala, showcasing projects, designs, and more.',
+    type: "website",
+    locale: "en_IE",
+    url: "https://mustafalanewala.vercel.app",
+    title: "Mustafa Lanewala | Portfolio",
+    description:
+      "Official portfolio website of Mustafa Lanewala, showcasing projects, designs, and more.",
     images: [
       {
-        url: 'https://mustafalanewala.vercel.app/website.png',
+        url: "https://mustafalanewala.vercel.app/website.png",
         width: 800,
         height: 600,
-        alt: 'Mustafa Lanewala Portfolio',
+        alt: "Mustafa Lanewala Portfolio",
       },
     ],
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
       <head>
-        <meta name="google-site-verification" content="J40K-bGQWKTxNnp_8t6M7S0xn76akjELnU10Db5jaEk" />
+        <meta
+          name="google-site-verification"
+          content="J40K-bGQWKTxNnp_8t6M7S0xn76akjELnU10Db5jaEk"
+        />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
-  );
+  )
 }

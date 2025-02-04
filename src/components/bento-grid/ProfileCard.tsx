@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { RippleButton } from "../../components/ui/button";
-import Image from "next/image";
-import { Card } from "../../components/ui/card";
-import Link from "next/link";
+import { motion } from "framer-motion"
+import { RippleButton } from "../../components/ui/button"
+import Image from "next/image"
+import { Card } from "../../components/ui/card"
+import Link from "next/link"
 
 const generateVCard = () => {
   const vCard = `
@@ -14,27 +14,27 @@ FN:Mustafa Lanewala
 TEL:+91 9157302004
 EMAIL:https.mustafalanewala@gmail.com
 END:VCARD
-  `;
-  return new Blob([vCard], { type: "text/vcard" });
-};
+  `
+  return new Blob([vCard], { type: "text/vcard" })
+}
 
 const downloadVCard = () => {
-  const vCardBlob = generateVCard();
-  const link = document.createElement("a");
-  const url = URL.createObjectURL(vCardBlob);
-  link.href = url;
-  link.download = "Mustafa_Lanewala.vcf";
-  link.click();
-  URL.revokeObjectURL(url);
-};
+  const vCardBlob = generateVCard()
+  const link = document.createElement("a")
+  const url = URL.createObjectURL(vCardBlob)
+  link.href = url
+  link.download = "Mustafa_Lanewala.vcf"
+  link.click()
+  URL.revokeObjectURL(url)
+}
 
-export function ProfileCard() {
+export function ProfileCard({ className = "" }: { className?: string }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
-      className="col-span-4 row-span-2 md:col-span-2"
+      className={className}
     >
       <Card className="card h-full backdrop-blur-sm border-2 border-neutral-600 flex flex-col justify-between">
         <div className="flex flex-col sm:flex-row items-center gap-6 mb-2 md:mb-6">
@@ -61,7 +61,8 @@ export function ProfileCard() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
             >
-              👋 Hie! I'm <br />Mustafa Lanewala
+              👋 Hie! I'm <br />
+              Mustafa Lanewala
             </motion.h1>
             <motion.p
               className="text-lg text-muted-foreground"
@@ -81,7 +82,8 @@ export function ProfileCard() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            I'm a Full-Stack developer with a strong foundation in both frontend and backend technologies, Specializing on AI and Data Science.
+            I'm a Full-Stack developer with a strong foundation in both frontend
+            and backend technologies, Specializing on AI and Data Science.
           </motion.p>
         </div>
 
@@ -104,5 +106,5 @@ export function ProfileCard() {
         </div>
       </Card>
     </motion.div>
-  );
+  )
 }

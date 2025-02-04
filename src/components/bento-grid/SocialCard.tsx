@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { Card } from "../../components/ui/card";
-import { Instagram, GitHub, Linkedin, Mail } from 'react-feather';
-import Link from "next/link";
+import { motion } from "framer-motion"
+import { Card } from "../../components/ui/card"
+import { Instagram, GitHub, Linkedin, Mail } from "react-feather"
+import Link from "next/link"
 
-export function SocialLinksCard() {
+export function SocialLinksCard({ className = "" }: { className?: string }) {
   const socialLinks = [
     {
       icon: Instagram,
@@ -23,7 +23,7 @@ export function SocialLinksCard() {
       icon: GitHub,
       platform: "GitHub",
       href: "https://github.com/mustafalanewala",
-      gradient: "from-gray-800 to-gray-600", // Enhanced GitHub gradient
+      gradient: "from-gray-800 to-gray-600",
     },
     {
       icon: Mail,
@@ -31,19 +31,17 @@ export function SocialLinksCard() {
       href: "mailto:https.mustafalanewala@gmail.com",
       gradient: "from-yellow-500 to-green-400",
     },
-  ];
+  ]
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.3 }}
-      className="col-span-4 row-span-1 md:col-span-2"
+      className={className}
     >
       <Card className="card h-full backdrop-blur-sm border-2 border-neutral-600">
-        <h2 className="text-xl font-bold mb-4">
-          Connect with Me
-        </h2>
+        <h2 className="text-xl font-bold mb-4">Connect with Me</h2>
         <div className="flex justify-between gap-6">
           {socialLinks.map((link, index) => (
             <Link
@@ -59,5 +57,5 @@ export function SocialLinksCard() {
         </div>
       </Card>
     </motion.div>
-  );
+  )
 }

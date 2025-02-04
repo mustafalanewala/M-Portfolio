@@ -1,19 +1,19 @@
-"use client";
+"use client"
 
-import { useEffect, useMemo, useState } from "react";
-import { useTheme } from "next-themes";
+import { useEffect, useMemo, useState } from "react"
+import { useTheme } from "next-themes"
 import {
   Cloud,
   fetchSimpleIcons,
   ICloud,
   renderSimpleIcon,
   SimpleIcon,
-} from "react-icon-cloud";
+} from "react-icon-cloud"
 
 export type DynamicCloudProps = {
-  iconSlugs?: string[];
-  imageArray?: string[];
-};
+  iconSlugs?: string[]
+  imageArray?: string[]
+}
 
 export const cloudProps: Omit<ICloud, "children"> = {
   containerProps: {
@@ -22,7 +22,7 @@ export const cloudProps: Omit<ICloud, "children"> = {
       justifyContent: "center",
       alignItems: "center",
       width: "250px",
-      height: "250px"
+      height: "250px",
     },
   },
   options: {
@@ -39,16 +39,16 @@ export const cloudProps: Omit<ICloud, "children"> = {
     maxSpeed: 0.04,
     minSpeed: 0.03,
   },
-};
+}
 
 export const renderCustomIcon = (
   icon: SimpleIcon,
   theme: string,
-  imageArray?: string[],
+  imageArray?: string[]
 ) => {
-  const bgHex = theme === "light" ? "#f3f2ef" : "#080510";
-  const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff";
-  const minContrastRatio = theme === "dark" ? 2 : 1.2;
+  const bgHex = theme === "light" ? "#f3f2ef" : "#080510"
+  const fallbackHex = theme === "light" ? "#6e6e73" : "#ffffff"
+  const minContrastRatio = theme === "dark" ? 2 : 1.2
 
   return renderSimpleIcon({
     icon,
@@ -62,32 +62,29 @@ export const renderCustomIcon = (
       rel: undefined,
       onClick: (e: React.MouseEvent<HTMLAnchorElement>) => e.preventDefault(),
     },
-  });
-};
+  })
+}
 
-type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>;
+type IconData = Awaited<ReturnType<typeof fetchSimpleIcons>>
 
-export function IconCloud({
-  iconSlugs = [],
-  imageArray,
-}: DynamicCloudProps) {
-  const [data, setData] = useState<IconData | null>(null);
-  const { theme } = useTheme();
+export function IconCloud({ iconSlugs = [], imageArray }: DynamicCloudProps) {
+  const [data, setData] = useState<IconData | null>(null)
+  const { theme } = useTheme()
 
   useEffect(() => {
     if (iconSlugs.length > 0) {
       // Check if iconSlugs is not empty
-      fetchSimpleIcons({ slugs: iconSlugs }).then(setData);
+      fetchSimpleIcons({ slugs: iconSlugs }).then(setData)
     }
-  }, [iconSlugs]);
+  }, [iconSlugs])
 
   const renderedIcons = useMemo(() => {
-    if (!data) return null;
+    if (!data) return null
 
     return Object.values(data.simpleIcons).map((icon) =>
-      renderCustomIcon(icon, theme || "light"),
-    );
-  }, [data, theme]);
+      renderCustomIcon(icon, theme || "light")
+    )
+  }, [data, theme])
 
   return (
     // @ts-ignore
@@ -100,8 +97,8 @@ export function IconCloud({
             <a key={index} href="#" onClick={(e) => e.preventDefault()}>
               <img height="36" width="36" alt="A globe" src={image} />
             </a>
-          );
+          )
         })}
     </Cloud>
-  );
+  )
 }
