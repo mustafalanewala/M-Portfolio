@@ -4,10 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build && next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "generate-sitemap": "next-sitemap",
+    "postbuild": "next-sitemap",
     "format": "prettier --write ."
   },
   "dependencies": {

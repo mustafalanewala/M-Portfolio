@@ -6,8 +6,9 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Mustafa Lanewala | Portfolio",
-  description:
-    "Official portfolio website of Mustafa Lanewala, showcasing projects, designs, and more.",
+  description: "Official portfolio website of Mustafa Lanewala, showcasing projects, designs, and more.",
+  keywords: "Mustafa, Lanewala, Portfolio, Website, Mustafa Lanewala, Full Stack Developer, Product Engineer",
+  authors: [{ name: "Mustafa Lanewala", url: "https://mustafalanewala.vercel.app" }],
   icons: {
     icon: [{ url: "/favicon.ico" }, { url: "/favicon.png", type: "image/png" }],
     shortcut: ["/favicon.ico"],
@@ -49,6 +50,7 @@ export default function RootLayout({
           name="google-site-verification"
           content="J40K-bGQWKTxNnp_8t6M7S0xn76akjELnU10Db5jaEk"
         />
+        <meta name="robots" content="index, follow" />
       </head>
       <body className={inter.className}>{children}</body>
     </html>

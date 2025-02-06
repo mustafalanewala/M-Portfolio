@@ -8,7 +8,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 2000) // 2-second delay
+    const timer = setTimeout(() => setIsLoading(false), 1000) // 2-second delay
     return () => clearTimeout(timer)
   }, [])
 
