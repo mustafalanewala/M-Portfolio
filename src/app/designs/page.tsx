@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { designs } from "../../data"
 import { NeonGradientCard } from "@/components/ui/gradientcard"
 import { getMediaPath, isVideoFile } from "@/lib/media"
+import Image from 'next/image';
 
 interface MediaContentProps {
   mediaPath: string
@@ -28,9 +29,12 @@ const MediaContent = ({ mediaPath, title }: MediaContentProps) => {
           Your browser does not support the video tag.
         </video>
       ) : (
-        <img
+        <Image
           src={displayPath}
           alt={title}
+          quality={75}
+          sizes="(max-width: 768px) 100vw, 33vw"
+          fill
           className="absolute inset-0 w-full h-48 md:h-60 object-cover rounded-xl"
         />
       )}

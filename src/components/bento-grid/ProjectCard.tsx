@@ -65,8 +65,8 @@ export function ProjectCard({ className = "" }: { className?: string }) {
             <Image
               src={images[currentImage]}
               alt="Project Mockup"
-              width={410}
-              height={410}
+              width={400}
+              height={400}
               className="rounded-lg shadow-lg"
             />
           </motion.div>
