@@ -16,7 +16,7 @@ const MediaContent = ({ mediaPath, title }: MediaContentProps) => {
   const displayPath = getMediaPath(mediaPath, isVideo ? "video" : "image")
 
   return (
-    <div className="relative w-full h-48 md:h-60 bg-black">
+    <div className="relative w-full h-48 md:h-60">
       {isVideo ? (
         <video
           src={displayPath}
@@ -44,7 +44,7 @@ const MediaContent = ({ mediaPath, title }: MediaContentProps) => {
 
 export default function DesignsPage() {
   return (
-    <div className="mx-auto px-6 py-6">
+    <div className="mx-auto px-6 py-6 bg-black">
       <h1 className="text-4xl font-extrabold text-center text-white mb-8">
         My Designs
       </h1>
@@ -57,7 +57,7 @@ export default function DesignsPage() {
             transition={{ delay: index * 0.1 }}
           >
             <a href={design.link} target="_blank" rel="noopener noreferrer">
-              <NeonGradientCard className="max-w-md items-center justify-center bg-gray-300">
+              <NeonGradientCard className="max-w-md items-center justify-center bg-neutral-900">
                 <MediaContent
                   mediaPath={design.mediaPath}
                   title={design.title}

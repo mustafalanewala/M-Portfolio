@@ -20,7 +20,7 @@ export default function ProjectsPage() {
             transition={{ delay: index * 0.1 }}
           >
             <a href={project.link} target="_blank" rel="noopener noreferrer">
-              <NeonGradientCard className="max-w-md items-center justify-center bg-gray-300">
+              <NeonGradientCard className="max-w-md items-center justify-center bg-neutral-900">
                 <div className="relative w-full h-48">
                   <Image
                     src={project.imageUrl}
