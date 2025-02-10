@@ -46,6 +46,7 @@ export function ProfileCard({ className = "" }: { className?: string }) {
                 alt="Profile"
                 width={128}
                 height={128}
+                quality={80}
                 className="w-full h-full object-cover"
                 priority
                 unoptimized

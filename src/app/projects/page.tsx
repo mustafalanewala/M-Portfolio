@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export default function ProjectsPage() {
   return (
-    <div className="container mx-auto px-6 py-6">
+    <div className="bg-black container mx-auto px-6 py-6">
       <h1 className="text-4xl font-extrabold text-center text-white mb-8">
         My Projects
       </h1>

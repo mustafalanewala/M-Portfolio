@@ -16,7 +16,7 @@ const MediaContent = ({ mediaPath, title }: MediaContentProps) => {
   const displayPath = getMediaPath(mediaPath, isVideo ? "video" : "image")
 
   return (
-    <div className="relative w-full h-48 md:h-60">
+    <div className="relative w-full h-48 md:h-60 bg-black">
       {isVideo ? (
         <video
           src={displayPath}

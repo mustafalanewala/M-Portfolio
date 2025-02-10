@@ -11,7 +11,7 @@ import { BioCard } from "./BioCard"
 
 export function BentoGrid() {
   return (
-    <div className="text-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-2 md:min-h-[100vh] md:max-w-[100vw] mx-auto overflow-hidden md:overflow-auto p-4 h-full md:p-4">
+    <div className="bg-black text-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-2 md:min-h-[100vh] md:max-w-[100vw] mx-auto overflow-hidden md:overflow-auto p-4 h-full md:p-4">
       <ProfileCard className="col-span-4 row-span-2 md:col-span-2" />
 
       <BioCard className="col-span-4 row-span-2 md:col-span-2" />
