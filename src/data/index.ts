@@ -37,6 +37,38 @@ export const projects: Project[] = [
   },
   {
     id: 4,
+    title: "MsyncAI",
+    description:
+      "MsyncAI is lightning-fast AI-powered website generator that produces clean HTML, CSS, and JavaScript code, with instant live previews and downloadable project files.",
+    imageUrl: "MsyncAI.png",
+    technologies: [
+      "Gen AI",
+      "React",
+      "TypeScript",
+      "Tailwind",
+      "React-Dom",
+    ],
+    link: "https://msyncai.vercel.app",
+  },
+  {
+    id: 5,
+    title: "Elysium",
+    description: "Elysium is a Wallpaper App that offers high-quality wallpapers free of cost.",
+    imageUrl: "Elysium.png",
+    technologies: ["ReactNative", "Expo", "Typescript", "Axios", "Unsplash"],
+    link: "https://github.com/mustafalanewala/Elysium",
+  },
+  {
+    id: 6,
+    title: "MxStream",
+    description:
+      "Enginered full backend for scalable multimedia platform inspired by YouTube and Twitter.",
+    imageUrl: "MxStream.png",
+    technologies: ["JavaScript", "Node.js", "Express", "Cloudinary", "MongoDB"],
+    link: "https://github.com/mustafalanewala/MxStream",
+  },
+  {
+    id: 7,
     title: "Crime Detection Model",
     description:
       "This project uses machine learning to predict crime hotspots, types, and timings based on spatial and temporal crime data.",

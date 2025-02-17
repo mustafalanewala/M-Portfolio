@@ -25,7 +25,7 @@ export default function ProjectsPage() {
                   <Image
                     src={project.imageUrl}
                     alt={project.title}
-                    quality={80}
+                    quality={65}
                     sizes="(max-width: 768px) 100vw, 33vw"
                     fill
                     className="absolute inset-0 w-full h-full object-cover rounded-xl"

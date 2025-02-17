@@ -48,8 +48,6 @@ export function ProfileCard({ className = "" }: { className?: string }) {
                 height={128}
                 quality={80}
                 className="w-full h-full object-cover"
-                priority
-                unoptimized
               />
             </div>
           </div>

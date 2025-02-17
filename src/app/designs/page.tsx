@@ -32,7 +32,7 @@ const MediaContent = ({ mediaPath, title }: MediaContentProps) => {
         <Image
           src={displayPath}
           alt={title}
-          quality={75}
+          quality={65}
           sizes="(max-width: 768px) 100vw, 33vw"
           fill
           className="absolute inset-0 w-full h-48 md:h-60 object-cover rounded-xl"
