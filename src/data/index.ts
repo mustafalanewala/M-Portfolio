@@ -39,7 +39,7 @@ export const projects: Project[] = [
     id: 4,
     title: "MsyncAI",
     description:
-      "MsyncAI is lightning-fast AI-powered website generator that produces clean HTML, CSS, and JavaScript code, with instant live previews and downloadable project files.",
+      "MsyncAI is AI-powered website generator, with instant live previews and downloadable project files.",
     imageUrl: "MsyncAI.png",
     technologies: [
       "Gen AI",

@@ -28,7 +28,7 @@ export default function ProjectsPage() {
                     quality={65}
                     sizes="(max-width: 768px) 100vw, 33vw"
                     fill
-                    className="absolute inset-0 w-full h-full object-cover rounded-xl"
+                    className="absolute inset-0 w-full h-full object-cover align-top rounded-xl"
                   />
                 </div>
                 <div className="flex flex-col flex-grow py-3">
