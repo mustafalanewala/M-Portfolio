@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 export default function ProjectsPage() {
   return (
-    <div className="bg-black container mx-auto px-6 py-6">
+    <div className="bg-black mx-auto px-6 py-6">
       <h1 className="text-4xl font-extrabold text-center text-white mb-8">
         My Projects
       </h1>
@@ -21,14 +21,14 @@ export default function ProjectsPage() {
           >
             <a href={project.link} target="_blank" rel="noopener noreferrer">
               <NeonGradientCard className="max-w-md items-center justify-center bg-neutral-900">
-                <div className="relative w-full h-48">
+                <div className="relative w-full h-52">
                   <Image
                     src={project.imageUrl}
                     alt={project.title}
                     quality={65}
                     sizes="(max-width: 768px) 100vw, 33vw"
                     fill
-                    className="absolute inset-0 w-full h-full object-cover align-top rounded-xl"
+                    className="absolute inset-0 w-full h-full object-fill align-top rounded-xl"
                   />
                 </div>
                 <div className="flex flex-col flex-grow py-3">

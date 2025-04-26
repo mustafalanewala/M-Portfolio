@@ -18,7 +18,7 @@ export function BentoGrid() {
 
       <StatCard
         title="Total Hours"
-        value="1100+"
+        value="1500+"
         description="Coded"
         icon={Terminal}
         delay={0.3}

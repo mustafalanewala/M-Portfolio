@@ -14,15 +14,15 @@ export function BioCard({ className = "" }: { className?: string }) {
     },
     {
       icon: Briefcase,
-      title: "Product Engineer at CleverFlow",
+      title: "Product Engineer at Cleverflow",
       description:
-        "Currently, I work as a Product Engineer at CleverFlow for Artifacts, focusing on creating a centralized platform that streamlines and enhances communications ",
+        "Currently leading Beem Card development for digital networking, with prior product management experience for Artifacts.",
     },
     {
       icon: TreePalm,
       title: "Hobbies",
       description:
-        "In my free time, I enjoy coding, traveling, exploring new technologies, while finding peace in my spiritual practices.",
+        "I enjoy coding, traveling, exploring new technologies, while finding peace in my spiritual practices.",
     },
   ]
 

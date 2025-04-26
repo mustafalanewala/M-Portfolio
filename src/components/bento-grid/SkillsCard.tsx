@@ -33,6 +33,9 @@ const slugs = [
   "firebase",
   "javascript",
   "wordpress",
+  "prisma",
+  "drizzle",
+  "docker",
 ]
 
 export function SkillsCard({ className = "" }: { className?: string }) {

@@ -14,19 +14,26 @@ FN:Mustafa Lanewala
 TEL:+91 9157302004
 EMAIL:https.mustafalanewala@gmail.com
 END:VCARD
-  `
-  return new Blob([vCard], { type: "text/vcard" })
-}
+  `;
+  return new Blob([vCard], { type: "text/vcard" });
+};
 
 const downloadVCard = () => {
-  const vCardBlob = generateVCard()
-  const link = document.createElement("a")
-  const url = URL.createObjectURL(vCardBlob)
-  link.href = url
-  link.download = "Mustafa_Lanewala.vcf"
-  link.click()
-  URL.revokeObjectURL(url)
-}
+  try {
+    const vCardBlob = generateVCard();
+    const link = document.createElement("a");
+    const url = URL.createObjectURL(vCardBlob);
+    link.href = url;
+    link.download = "Mustafa_Lanewala.vcf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  } catch (error) {
+    console.error("Error downloading vCard:", error);
+    alert("An error occurred while trying to download the contact.");
+  }
+};
 
 export function ProfileCard({ className = "" }: { className?: string }) {
   return (
@@ -81,7 +88,7 @@ export function ProfileCard({ className = "" }: { className?: string }) {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            I'm a Full-Stack developer with a strong foundation in both frontend
+            I'm a Full-Stack Engineer with a strong foundation in both frontend
             and backend technologies, Specializing on AI and Data Science.
           </motion.p>
         </div>
@@ -94,7 +101,7 @@ export function ProfileCard({ className = "" }: { className?: string }) {
           >
             Save Contact
           </RippleButton>
-          <Link target="_blank" href="https://i.ibb.co/THstQ6k/MResume.jpg">
+          <Link target="_blank" href="https://i.ibb.co/Y4CWx72J/MResume.jpg">
             <RippleButton
               rippleColor="#ADD8E6"
               className="bg-transparent w-full"
@@ -105,5 +112,5 @@ export function ProfileCard({ className = "" }: { className?: string }) {
         </div>
       </Card>
     </motion.div>
-  )
+  );
 }
