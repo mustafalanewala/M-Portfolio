@@ -2,7 +2,6 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { Toaster } from "react-hot-toast"
 
-
 export const metadata: Metadata = {
   title: "Mustafa Lanewala | Portfolio",
   description: "Official portfolio website of Mustafa Lanewala, showcasing projects, designs, and more.",
@@ -51,8 +50,10 @@ export default function RootLayout({
         />
         <meta name="robots" content="index, follow" />
       </head>
-      <Toaster position="top-right" reverseOrder={false} />
-      <body className="flex justify-center items-center bg-black">{children}</body>
+      <body className="flex justify-center items-center bg-black">
+        {children}
+        <Toaster position="top-right" reverseOrder={false} />
+      </body>
     </html>
   )
 }

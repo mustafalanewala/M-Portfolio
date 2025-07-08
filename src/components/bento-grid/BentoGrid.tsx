@@ -13,7 +13,7 @@ import StatsAndSocialCard from "./StatsAndSocialCard"
 export function BentoGrid() {
   return (
     <div className="bg-black text-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 
-         gap-3 2xl:gap-10 md:max-w-[1440px] overflow-hidden md:overflow-auto p-4 h-screen justify-center items-center">
+         gap-3 2xl:gap-10 md:max-w-[1440px] overflow-hidden md:overflow-auto p-4 lg:h-screen h-auto justify-center items-center">
       <ProfileCard className="col-span-4 row-span-1 md:col-span-2" />
 
       <BioCard className="col-span-4 row-span-1 md:col-span-2" />

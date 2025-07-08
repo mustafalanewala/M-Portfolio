@@ -67,7 +67,7 @@ export function ProjectCard({ className = "" }: { className?: string }) {
               alt="Project Mockup"
               width={400}
               height={400}
-              className="rounded-lg shadow-lg"
+              className="w-80 h-auto rounded-lg shadow-lg"
             />
           </motion.div>
 
