@@ -43,7 +43,7 @@ export function ProfileCard({ className = "" }: { className?: string }) {
       transition={{ delay: 0.3 }}
       className={className}
     >
-      <Card className="card h-full backdrop-blur-sm border-2 border-neutral-600 flex flex-col justify-between">
+      <Card className="card h-auto backdrop-blur-sm border-2 border-neutral-600 flex flex-col justify-between">
         <div className="flex flex-col sm:flex-row items-center gap-6 mb-2 md:mb-6">
           {/* Avatar Section */}
           <div className="relative w-24 h-24 sm:w-32 sm:h-32 flex-shrink-0">
@@ -89,11 +89,11 @@ export function ProfileCard({ className = "" }: { className?: string }) {
             transition={{ delay: 0.4 }}
           >
             I'm a Full-Stack Engineer with a strong foundation in both frontend
-            and backend technologies, Specializing on AI and Data Science.
+            and backend technologies, Specializing on AI and DS.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 mt-auto">
+        <div className="grid grid-cols-2 gap-4 mt-1 mb-2">
           <RippleButton
             rippleColor="#ADD8E6"
             className="bg-transparent"

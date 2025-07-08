@@ -40,7 +40,7 @@ export function SocialLinksCard({ className = "" }: { className?: string }) {
       transition={{ delay: 0.3 }}
       className={className}
     >
-      <Card className="card h-full backdrop-blur-sm border-2 border-neutral-600">
+      <Card className="card h-auto backdrop-blur-sm border-2 border-neutral-600">
         <h2 className="text-xl font-bold mb-4">Connect with Me</h2>
         <div className="flex justify-between gap-6">
           {socialLinks.map((link, index) => (

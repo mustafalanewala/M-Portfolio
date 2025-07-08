@@ -10,7 +10,7 @@ export function BioCard({ className = "" }: { className?: string }) {
       icon: GraduationCap,
       title: "B.Tech CSE (AI and DS)",
       description:
-        "Currently pursuing B.Tech in Computer Science and Engineering with a focus on Artificial Intelligence and Data Science at ITM University.",
+        "Currently pursuing B.Tech in Computer Science and Engineering with a focus on Artificial Intelligence and Data Science.",
     },
     {
       icon: Briefcase,
@@ -22,7 +22,7 @@ export function BioCard({ className = "" }: { className?: string }) {
       icon: TreePalm,
       title: "Hobbies",
       description:
-        "I enjoy coding, traveling, exploring new technologies, while finding peace in my spiritual practices.",
+        "I enjoy coding, traveling, exploring new tech, while finding peace in my spiritual practices.",
     },
   ]
 
@@ -33,7 +33,7 @@ export function BioCard({ className = "" }: { className?: string }) {
       transition={{ delay: 0.3 }}
       className={className}
     >
-      <Card className="card h-full flex flex-col justify-between border-2 border-neutral-600 backdrop-blur-sm">
+      <Card className="card h-auto flex flex-col justify-between border-2 border-neutral-600 backdrop-blur-sm">
         <div className="flex flex-col gap-3">
           <h2 className="text-xl font-bold">About Me</h2>
           {bioData.map((item, index) => (

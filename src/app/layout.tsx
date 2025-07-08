@@ -1,8 +1,7 @@
 import "./globals.css"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Toaster } from "react-hot-toast"
 
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Mustafa Lanewala | Portfolio",
@@ -52,7 +51,8 @@ export default function RootLayout({
         />
         <meta name="robots" content="index, follow" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <Toaster position="top-right" reverseOrder={false} />
+      <body className="flex justify-center items-center bg-black">{children}</body>
     </html>
   )
 }

@@ -40,7 +40,7 @@ export function ProjectCard({ className = "" }: { className?: string }) {
       transition={{ delay: 0.3 }}
       className={className}
     >
-      <Card className="card h-full border-2 border-neutral-600 backdrop-blur-sm">
+      <Card className="card h-auto border-2 border-neutral-600 backdrop-blur-sm">
         <div className="flex items-center gap-3">
           <Award className="h-8 w-8 text-primary" />
           <h2 className="text-xl font-semibold">Projects & Designs</h2>

@@ -8,15 +8,17 @@ import { ProjectCard } from "./ProjectCard"
 import { SkillsCard } from "./SkillsCard"
 import { ContactCard } from "./ConatctCard"
 import { BioCard } from "./BioCard"
+import StatsAndSocialCard from "./StatsAndSocialCard"
 
 export function BentoGrid() {
   return (
-    <div className="bg-black text-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-2 md:min-h-[100vh] md:max-w-[100vw] mx-auto overflow-hidden md:overflow-auto p-4 h-full md:p-4">
-      <ProfileCard className="col-span-4 row-span-2 md:col-span-2" />
+    <div className="bg-black text-white grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 
+         gap-3 2xl:gap-10 md:max-w-[1440px] overflow-hidden md:overflow-auto p-4 h-screen justify-center items-center">
+      <ProfileCard className="col-span-4 row-span-1 md:col-span-2" />
 
-      <BioCard className="col-span-4 row-span-2 md:col-span-2" />
+      <BioCard className="col-span-4 row-span-1 md:col-span-2" />
 
-      <StatCard
+      {/* <StatCard
         title="Total Hours"
         value="1500+"
         description="Coded"
@@ -34,7 +36,9 @@ export function BentoGrid() {
         className="col-span-2 md:col-span-1"
       />
 
-      <SocialLinksCard className="col-span-4 row-span-1 md:col-span-2" />
+      <SocialLinksCard className="col-span-4 row-span-1 md:col-span-2" /> */}
+
+      <StatsAndSocialCard className="col-span-4 md:col-span-2" />
 
       <ProjectCard className="col-span-4 md:col-span-2 row-span-2" />
 

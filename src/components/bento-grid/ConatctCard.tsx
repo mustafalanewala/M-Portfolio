@@ -6,15 +6,14 @@ import { useState } from "react"
 import emailjs from "emailjs-com"
 import { RippleButton } from "../../components/ui/button"
 import { Card } from "../../components/ui/card"
+import toast from "react-hot-toast"
 
-// Define ContactCardProps type
 type ContactCardProps = {
   className?: string
 }
 
 export function ContactCard({ className = "" }: ContactCardProps) {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
-  const [formStatus, setFormStatus] = useState("")
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -25,8 +24,6 @@ export function ContactCard({ className = "" }: ContactCardProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-
-    setFormStatus("Sending...")
 
     try {
       const serviceId = "service_mustafa30"
@@ -44,11 +41,12 @@ export function ContactCard({ className = "" }: ContactCardProps) {
         publicKey
       )
 
-      setFormStatus("Message sent successfully!")
+      toast.success("Message sent successfully 🎉")
+
       setFormData({ name: "", email: "", message: "" })
     } catch (error) {
       console.error("Failed to send message:", error)
-      setFormStatus("Failed to send message. Please try again.")
+      toast.error("Failed to send message. Please try again.")
     }
   }
 
@@ -59,17 +57,17 @@ export function ContactCard({ className = "" }: ContactCardProps) {
       transition={{ delay: 0.3 }}
       className={`${className} col-span-4 md:col-span-2 row-span-2`}
     >
-      <Card className="card h-full backdrop-blur-sm border-2 border-neutral-600 flex flex-col justify-between p-6">
+      <Card className="card h-auto backdrop-blur-sm border-2 border-neutral-600 flex flex-col justify-between">
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-3">
             <Mail className="h-8 w-8 text-primary" />
             <h2 className="text-xl font-semibold">Contact Me</h2>
           </div>
-          <p className="text-sm text-muted-foreground">
+          <p className="text-sm text-muted-foreground mb-3.5">
             I'd love to hear from you. Feel free to get in touch!
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-2">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium">
@@ -123,9 +121,6 @@ export function ContactCard({ className = "" }: ContactCardProps) {
               </RippleButton>
             </div>
           </form>
-          {formStatus && (
-            <p className="mt-4 text-center text-sm">{formStatus}</p>
-          )}
         </div>
       </Card>
     </motion.div>
