@@ -4,9 +4,9 @@ import { motion } from "framer-motion"
 import { Mail } from "lucide-react"
 import { useState } from "react"
 import emailjs from "emailjs-com"
-import { RippleButton } from "../../components/ui/button"
 import { Card } from "../../components/ui/card"
 import toast from "react-hot-toast"
+import { Button } from "../ui/button"
 
 type ContactCardProps = {
   className?: string
@@ -112,13 +112,12 @@ export function ContactCard({ className = "" }: ContactCardProps) {
               ></textarea>
             </div>
             <div className="flex justify-center">
-              <RippleButton
-                rippleColor="#ADD8E6"
+              <Button
                 className="bg-primary hover:bg-primary/90 transition-colors w-full sm:w-auto"
                 type="submit"
               >
                 Send Message
-              </RippleButton>
+              </Button>
             </div>
           </form>
         </div>

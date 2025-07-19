@@ -2,11 +2,11 @@
 
 import { motion } from "framer-motion"
 import { Card } from "../../components/ui/card"
-import { RippleButton } from "../../components/ui/button"
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight, Award } from "react-feather"
+import { Button } from "../ui/button"
 
 const images = [
   "/mockuper1.png",
@@ -80,20 +80,18 @@ export function ProjectCard({ className = "" }: { className?: string }) {
         </div>
         <div className="flex items-center justify-center gap-4">
           <Link href="/projects">
-            <RippleButton
-              rippleColor="#ADD8E6"
+            <Button
               className="bg-transparent w-full sm:w-auto"
             >
               View Projects
-            </RippleButton>
+            </Button>
           </Link>
           <Link href="/designs">
-            <RippleButton
-              rippleColor="#ADD8E6"
+            <Button
               className="bg-transparent w-full sm:w-auto"
             >
               View Designs
-            </RippleButton>
+            </Button>
           </Link>
         </div>
       </Card>

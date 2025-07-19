@@ -1,10 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { RippleButton } from "../../components/ui/button"
 import Image from "next/image"
 import { Card } from "../../components/ui/card"
 import Link from "next/link"
+import { Button } from "../ui/button"
 
 const generateVCard = () => {
   const vCard = `
@@ -94,20 +94,18 @@ export function ProfileCard({ className = "" }: { className?: string }) {
         </div>
 
         <div className="grid grid-cols-2 gap-4 mt-1 mb-2">
-          <RippleButton
-            rippleColor="#ADD8E6"
+          <Button
             className="bg-transparent"
             onClick={downloadVCard}
           >
             Save Contact
-          </RippleButton>
+          </Button>
           <Link target="_blank" href="https://i.ibb.co/Y4CWx72J/MResume.jpg">
-            <RippleButton
-              rippleColor="#ADD8E6"
+            <Button
               className="bg-transparent w-full"
             >
               View Resume
-            </RippleButton>
+            </Button>
           </Link>
         </div>
       </Card>
