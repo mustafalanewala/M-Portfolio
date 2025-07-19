@@ -2,8 +2,8 @@
 
 import { motion } from "framer-motion"
 import { projects } from "../../data"
-import { NeonGradientCard } from "@/components/ui/gradientcard"
 import Image from 'next/image';
+import { Card } from "@/components/ui/card";
 
 export default function ProjectsPage() {
   return (
@@ -20,7 +20,7 @@ export default function ProjectsPage() {
             transition={{ delay: index * 0.1 }}
           >
             <a href={project.link} target="_blank" rel="noopener noreferrer">
-              <NeonGradientCard className="max-w-md items-center justify-center bg-neutral-900">
+              <Card className="max-w-md items-center justify-center bg-neutral-900">
                 <div className="relative w-full h-52">
                   <Image
                     src={project.imageUrl}
@@ -49,7 +49,7 @@ export default function ProjectsPage() {
                     ))}
                   </div>
                 </div>
-              </NeonGradientCard>
+              </Card>
             </a>
           </motion.div>
         ))}

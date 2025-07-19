@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion"
 import { designs } from "../../data"
-import { NeonGradientCard } from "@/components/ui/gradientcard"
 import { getMediaPath, isVideoFile } from "@/lib/media"
 import Image from 'next/image';
+import { Card } from "@/components/ui/card";
 
 interface MediaContentProps {
   mediaPath: string
@@ -57,7 +57,7 @@ export default function DesignsPage() {
             transition={{ delay: index * 0.1 }}
           >
             <a href={design.link} target="_blank" rel="noopener noreferrer">
-              <NeonGradientCard className="max-w-md items-center justify-center bg-neutral-900">
+              <Card className="max-w-md items-center justify-center bg-neutral-900">
                 <MediaContent
                   mediaPath={design.mediaPath}
                   title={design.title}
@@ -65,7 +65,7 @@ export default function DesignsPage() {
                 <h2 className="text-lg font-semibold text-center text-white pt-2">
                   {design.title}
                 </h2>
-              </NeonGradientCard>
+              </Card>
             </a>
           </motion.div>
         ))}
