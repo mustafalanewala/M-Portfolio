@@ -3,7 +3,7 @@ import { createOpenAI } from "@ai-sdk/openai"
 
 // Create OpenRouter client
 const openrouter = createOpenAI({
-  apiKey: process.env.REACT_APP_OPENROUTER_API_KEY || "",
+  apiKey: process.env.VITE_OPENROUTER_API_KEY || "",
   baseURL: "https://openrouter.ai/api/v1",
 })
 
@@ -87,7 +87,7 @@ export async function POST(req: Request) {
   try {
     const { messages } = await req.json()
 
-    if (!process.env.REACT_APP_OPENROUTER_API_KEY) {
+    if (!process.env.VITE_OPENROUTER_API_KEY) {
       return new Response(
         JSON.stringify({
           error: "OpenRouter API key not configured",
