@@ -3,7 +3,7 @@ import { createOpenAI } from "@ai-sdk/openai"
 
 // Create OpenRouter client
 const openrouter = createOpenAI({
-  apiKey: process.env.OPENROUTER_API_KEY || "",
+  apiKey: process.env.REACT_APP_OPENROUTER_API_KEY || "",
   baseURL: "https://openrouter.ai/api/v1",
 })
 
@@ -16,9 +16,9 @@ IMPORTANT: Never use bold text, asterisks (*), or any markdown formatting in you
 ABOUT MUSTAFA:
 - Full Name: Mustafa Lanewala
 - Title: AI & Full Stack Engineer
-- Location: Dohad, Gujarat, India
-- Age: 21 years old
-- Currently pursuing B.Tech in Computer Science and Engineering (AI and Data Science) at ITM SLS University
+- Location: Mumbai, India
+- Age: 22 years old
+- Currently pursuing B.Tech in Computer Science and Engineering (AI and Data Science)
 
 PROFESSIONAL EXPERIENCE:
 - Product Engineer at Cleverflow (Current Role)
@@ -87,16 +87,22 @@ export async function POST(req: Request) {
   try {
     const { messages } = await req.json()
 
-    if (!process.env.OPENROUTER_API_KEY) {
-      throw new Error("OpenRouter API key not configured")
+    if (!process.env.REACT_APP_OPENROUTER_API_KEY) {
+      return new Response(
+        JSON.stringify({
+          error: "OpenRouter API key not configured",
+        }),
+        {
+          status: 500,
+          headers: { "Content-Type": "application/json" },
+        },
+      )
     }
 
-    const result = await streamText({
+    const result = streamText({
       model: openrouter("deepseek/deepseek-chat-v3-0324:free"),
       system: MUSTAFA_INFO,
       messages: messages,
-      maxTokens: 200,
-      temperature: 0.7,
     })
 
     return result.toDataStreamResponse()
@@ -113,4 +119,15 @@ export async function POST(req: Request) {
       },
     )
   }
+}
+
+export async function OPTIONS(request: Request) {
+  return new Response(null, {
+    status: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
+  })
 }

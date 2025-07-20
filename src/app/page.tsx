@@ -6,22 +6,13 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useChat } from "ai/react"
-import {
-  ChevronLeft,
-  ChevronRight,
-  Command,
-  Github,
-  Instagram,
-  Linkedin,
-  Mail,
-  Send,
-  Sparkles,
-} from "lucide-react"
+import { ChevronLeft, ChevronRight, Command, Github, Instagram, Linkedin, Mail, Send, Sparkles } from "lucide-react"
 import Image from "next/image"
-import { useRef, useState } from "react"
+import { useRef, useState, useEffect } from "react"
 import dynamic from "next/dynamic"
 import emailjs from "emailjs-com"
 import { toast } from "react-hot-toast"
+import LoadingScreen from "@/components/ui/loading-screen"
 
 // Dynamically import IconCloud to prevent hydration issues
 const IconCloud = dynamic(() => import("@/components/ui/icons").then((mod) => mod.IconCloud), {
@@ -67,10 +58,18 @@ export default function Component() {
   const [selectedCommandIndex, setSelectedCommandIndex] = useState(0)
   const inputRef = useRef<HTMLInputElement>(null)
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
+  const [isPageLoading, setIsPageLoading] = useState(true)
 
-  const handleContactInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  useEffect(() => {
+    // Simulate page load time
+    const timer = setTimeout(() => {
+      setIsPageLoading(false)
+    }, 3000)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  const handleContactInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target
     setFormData((prev) => ({ ...prev, [id]: value }))
   }
@@ -91,7 +90,7 @@ export default function Component() {
           from_email: formData.email,
           message: formData.message,
         },
-        publicKey
+        publicKey,
       )
 
       toast.success("Message sent successfully 🎉")
@@ -238,10 +237,13 @@ export default function Component() {
     ? slashCommands.filter((cmd) => cmd.command.startsWith(input.toLowerCase()))
     : slashCommands
 
+  if (isPageLoading) {
+    return <LoadingScreen />
+  }
+
   return (
     <div className="min-h-screen bg-black p-5 lg:p-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-4">
-
         {/* Profile Card */}
         <Card className="bg-gray-900 border-gray-800 text-white sm:col-span-2 lg:col-span-1">
           <CardContent className="p-3 sm:p-4 lg:p-6 h-full flex flex-col">
@@ -423,8 +425,10 @@ export default function Component() {
                   />
                 </div>
               </div>
-              <Button className="w-full bg-white text-black hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-xs sm:text-sm mt-3 h-8 sm:h-9"
-                type="submit">
+              <Button
+                className="w-full bg-white text-black hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-xs sm:text-sm mt-3 h-8 sm:h-9"
+                type="submit"
+              >
                 Send Message
               </Button>
             </form>
