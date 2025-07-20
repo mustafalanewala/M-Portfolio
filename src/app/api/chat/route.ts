@@ -16,9 +16,9 @@ IMPORTANT: Never use bold text, asterisks (*), or any markdown formatting in you
 ABOUT MUSTAFA:
 - Full Name: Mustafa Lanewala
 - Title: AI & Full Stack Engineer
-- Location: Mumbai, India
-- Age: 22 years old
-- Currently pursuing B.Tech in Computer Science and Engineering (AI and Data Science)
+- Location: Dohad, Gujarat, India
+- Age: 21 years old
+- Currently pursuing B.Tech in Computer Science and Engineering (AI and Data Science) at ITM SLS University
 
 PROFESSIONAL EXPERIENCE:
 - Product Engineer at Cleverflow (Current Role)
