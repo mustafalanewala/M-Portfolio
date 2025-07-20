@@ -136,46 +136,41 @@ export default function Component() {
   // Slash commands for quick questions
   const slashCommands = [
     {
-      command: "/skills",
-      description: "What are Mustafa's main technical skills?",
-      question: "What are Mustafa's main technical skills and technologies he works with?",
+      command: "/about",
+      description: "Get details about Mustafa's background",
+      question: "Who is Mustafa Lanewala, including his title, location, age, education, and social links?"
     },
     {
       command: "/experience",
-      description: "Tell me about his work experience",
-      question: "Tell me about Mustafa's work experience and current role at Cleverflow",
+      description: "Learn about his professional experience",
+      question: "What is Mustafa's professional experience, including his role at Cleverflow and past work?"
     },
     {
-      command: "/ai",
-      description: "What AI/ML technologies does he use?",
-      question: "What AI and machine learning technologies does Mustafa specialize in?",
+      command: "/technical",
+      description: "Explore his technical expertise",
+      question: "What are Mustafa's technical skills across frontend, backend, AI/ML, DevOps, and core areas?"
     },
     {
       command: "/projects",
-      description: "What projects is he working on?",
-      question: "What projects is Mustafa currently working on and what has he built?",
+      description: "Check out his current projects",
+      question: "What projects is Mustafa currently working on, including their features and technologies?"
+    },
+    {
+      command: "/personality",
+      description: "Discover his personality and interests",
+      question: "What are Mustafa's personality traits and personal interests?"
     },
     {
       command: "/unique",
-      description: "What makes him unique as a developer?",
-      question: "What makes Mustafa unique as an AI and full-stack developer?",
+      description: "Understand what makes him unique",
+      question: "What makes Mustafa unique as an AI and full-stack developer?"
     },
     {
       command: "/availability",
-      description: "Is he available for opportunities?",
-      question: "Is Mustafa available for new opportunities and what kind of work is he looking for?",
-    },
-    {
-      command: "/contact",
-      description: "How can I get in touch with him?",
-      question: "What's the best way to contact Mustafa for collaboration or opportunities?",
-    },
-    {
-      command: "/education",
-      description: "Tell me about his education",
-      question: "Tell me about Mustafa's educational background and what he's currently studying",
-    },
-  ]
+      description: "Find out if he's open to opportunities",
+      question: "Is Mustafa available for new opportunities, and what kind of work is he seeking?"
+    }
+  ];
 
   const nextProject = () => {
     setCurrentProject((prev) => (prev + 1) % projects.length)
@@ -354,13 +349,7 @@ export default function Component() {
                 variant="outline"
                 className="border-gray-600 text-white hover:bg-gray-800 hover:scale-105 transition-all duration-300 flex-1 bg-transparent text-sm"
               >
-                View Projects
-              </Button>
-              <Button
-                variant="outline"
-                className="border-gray-600 text-white hover:bg-gray-800 hover:scale-105 transition-all duration-300 flex-1 bg-transparent text-sm"
-              >
-                View Designs
+                View Projects & Designs
               </Button>
             </div>
           </CardContent>
