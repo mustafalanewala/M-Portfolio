@@ -112,7 +112,7 @@ export default function LoadingScreen() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1, duration: 0.5 }}
-              className="w-96 mx-auto"
+              className="w-80 mx-auto"
             >
               <div className="relative">
                 <div className="h-1 bg-gray-800 rounded-full overflow-hidden backdrop-blur-sm">

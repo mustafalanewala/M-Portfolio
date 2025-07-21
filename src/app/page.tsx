@@ -13,6 +13,7 @@ import dynamic from "next/dynamic"
 import emailjs from "emailjs-com"
 import { toast } from "react-hot-toast"
 import LoadingScreen from "@/components/ui/loading-screen"
+import Link from "next/link"
 
 // Dynamically import IconCloud to prevent hydration issues
 const IconCloud = dynamic(() => import("@/components/ui/icons").then((mod) => mod.IconCloud), {
@@ -344,14 +345,14 @@ export default function Component() {
                 <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
               </Button>
             </div>
-            <div className="flex flex-row gap-3">
+            <Link href="/projects-and-designs">
               <Button
                 variant="outline"
-                className="border-gray-600 text-white hover:bg-gray-800 hover:scale-105 transition-all duration-300 flex-1 bg-transparent text-sm"
+                className="w-full border-gray-600 text-white hover:bg-gray-800 hover:scale-105 transition-all duration-300 flex-1 bg-transparent text-sm"
               >
                 View Projects & Designs
               </Button>
-            </div>
+            </Link>
           </CardContent>
         </Card>
 
@@ -476,21 +477,35 @@ export default function Component() {
 
                   {/* Slash Commands Dropdown */}
                   {showSlashCommands && (
-                    <div className="absolute bottom-full left-0 right-0 mb-1 p-1 bg-gray-900/90 backdrop-blur-md border border-purple-500/50 rounded-xl shadow-xl z-10 max-h-32 sm:max-h-48 overflow-y-auto">
-                      {filteredCommands.map((command, index) => (
-                        <button
-                          key={command.command}
-                          type="button"
-                          onClick={() => selectCommand(command)}
-                          className={`w - full text - left px - 4 py - 2 mr-2 mb-1 text - sm sm: text - base hover: bg - gradient - to - r hover: from - purple - 800 / 40 hover: to - blue - 800 / 40 last: border rounded-lg  - b - 0 transition - colors duration - 200 ${index === selectedCommandIndex ? "bg-gradient-to-r from-purple-700/50 to-blue-700/50" : ""
-                            } `}
-                        >
-                          <div className="flex items-center gap-2 p-[2px]">
-                            <span className="text-purple-300 font-mono">{command.command}</span>
-                            <span className="text-gray-200 truncate">{command.description}</span>
-                          </div>
-                        </button>
-                      ))}
+                    <div
+                      className="absolute bottom-full left-0 right-0 mb-1 p-1 bg-gray-900/90 backdrop-blur-md border border-purple-500/50 rounded-sm shadow-xl z-10 max-h-48 overflow-y-auto 
+                        /* --- Custom Scrollbar Styles --- */
+                        [&::-webkit-scrollbar]:w-1
+                        [&::-webkit-scrollbar-track]:rounded-full
+                        [&::-webkit-scrollbar-track]:bg-gray-800/50
+                        [&::-webkit-scrollbar-thumb]:rounded-full
+                        [&::-webkit-scrollbar-thumb]:bg-purple-600
+                        hover:[&::-webkit-scrollbar-thumb]:bg-purple-500
+                        "
+                    >
+                      <div className="flex flex-col gap-1">
+                        {filteredCommands.map((command, index) => (
+                          <button
+                            key={command.command}
+                            type="button"
+                            onClick={() => selectCommand(command)}
+                            className={`w-full text-left p-1 transition-colors duration-200 rounded-lg text-sm sm:text-base hover:bg-gradient-to-r hover:from-purple-800/40 hover:to-blue-800/40 ${index === selectedCommandIndex
+                              ? "bg-gradient-to-r from-purple-700/50 to-blue-700/50"
+                              : "bg-transparent"
+                              }`}
+                          >
+                            <div className="flex items-center gap-2">
+                              <span className="text-purple-300 font-mono flex-shrink-0">{command.command}</span>
+                              <span className="text-gray-200 truncate">{command.description}</span>
+                            </div>
+                          </button>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>

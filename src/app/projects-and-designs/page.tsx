@@ -46,6 +46,17 @@ const projectsData: ProjectItem[] = [
     githubUrl: "https://github.com/mustafalanewala/BlogBox"
   },
   {
+    id: "d-1",
+    title: "Smoothie Bowl",
+    description: "A video design showcasing a Smoothie Bowl, emphasizing smooth transitions and appealing visuals for culinary presentation.",
+    image: "SmoothieBowl.png",
+    gif: "SmoothieBowl.gif",
+    category: "design",
+    technologies: ["Figma"],
+    liveUrl: "https://www.figma.com/community/file/1445708163811090992/smoothie-bowl",
+    githubUrl: undefined
+  },
+  {
     id: "p-3",
     title: "SkAttireHub",
     description: "Created a responsive clothing e-commerce website for Skattirehub offering seamless navigation and secure payments.",
@@ -55,6 +66,17 @@ const projectsData: ProjectItem[] = [
     technologies: ["WooCommerce", "Wordpress", "SEO", "Payment Gateway"],
     liveUrl: "https://skattirehub.in",
     githubUrl: undefined,
+  },
+  {
+    id: "d-4",
+    title: "ExoVanguard Prime",
+    description: "A video design for ExoVanguard Prime, featuring dynamic motion graphics and visual storytelling.",
+    image: "ExoVanguard.png",
+    gif: "ExoVanguard Prime.gif",
+    category: "design",
+    technologies: ["Figma"],
+    liveUrl: "https://www.figma.com/community/file/1442829907230346002/exovanguard-prime",
+    githubUrl: undefined
   },
   {
     id: "p-4",
@@ -79,6 +101,17 @@ const projectsData: ProjectItem[] = [
     githubUrl: "https://github.com/mustafalanewala/Elysium"
   },
   {
+    id: "d-7",
+    title: "MWatch",
+    description: "An image-based design for MWatch, focusing on the user interface and aesthetic of a modern smartwatch.",
+    image: "MWatch.png",
+    gif: undefined,
+    category: "design",
+    technologies: ["Figma"],
+    liveUrl: "https://www.figma.com/community/file/1442829907230346002/mwatch",
+    githubUrl: undefined
+  },
+  {
     id: "p-6",
     title: "MxStream",
     description: "Enginered full backend for scalable multimedia platform inspired by YouTube and Twitter.",
@@ -88,28 +121,6 @@ const projectsData: ProjectItem[] = [
     technologies: ["JavaScript", "Node.js", "Express", "Cloudinary", "MongoDB"],
     liveUrl: undefined,
     githubUrl: "https://github.com/mustafalanewala/MxStream"
-  },
-  {
-    id: "p-7",
-    title: "Crime Detection Model",
-    description: "This project uses machine learning to predict crime hotspots, types, and timings based on spatial and temporal crime data.",
-    image: "CrimePrediction.png",
-    gif: undefined,
-    category: "project",
-    technologies: ["Python", "Scikit-learn", "NumPy", "Pandas", "Matplotlib"],
-    liveUrl: undefined,
-    githubUrl: "https://github.com/mustafalanewala/Crime-Detection"
-  },
-  {
-    id: "d-1",
-    title: "Smoothie Bowl",
-    description: "A video design showcasing a Smoothie Bowl, emphasizing smooth transitions and appealing visuals for culinary presentation.",
-    image: "SmoothieBowl.png",
-    gif: "SmoothieBowl.mp4",
-    category: "design",
-    technologies: ["Figma"],
-    liveUrl: "https://www.figma.com/community/file/1445708163811090992/smoothie-bowl",
-    githubUrl: undefined
   },
   {
     id: "d-2",
@@ -123,6 +134,17 @@ const projectsData: ProjectItem[] = [
     githubUrl: undefined
   },
   {
+    id: "p-7",
+    title: "Crime Detection Model",
+    description: "This project uses machine learning to predict crime hotspots, types, and timings based on spatial and temporal crime data.",
+    image: "CrimePrediction.png",
+    gif: undefined,
+    category: "project",
+    technologies: ["Python", "Scikit-learn", "NumPy", "Pandas", "Matplotlib"],
+    liveUrl: undefined,
+    githubUrl: "https://github.com/mustafalanewala/Crime-Detection"
+  },
+  {
     id: "d-3",
     title: "Ethereal Essence",
     description: "An image-based design for Ethereal Essence, conveying refined beauty through minimalist aesthetics.",
@@ -134,22 +156,11 @@ const projectsData: ProjectItem[] = [
     githubUrl: undefined
   },
   {
-    id: "d-4",
-    title: "ExoVanguard Prime",
-    description: "A video design for ExoVanguard Prime, featuring dynamic motion graphics and visual storytelling.",
-    image: "ExoVanguard.png",
-    gif: "ExoVanguard Prime.mp4",
-    category: "design",
-    technologies: ["Figma"],
-    liveUrl: "https://www.figma.com/community/file/1442829907230346002/exovanguard-prime",
-    githubUrl: undefined
-  },
-  {
     id: "d-5",
     title: "Ice Cream Transition",
     description: "A video design showcasing an Ice Cream Transition, using animation for smooth and delightful visual effects.",
     image: "IceCream.png",
-    gif: "IceCream.mp4",
+    gif: "IceCream.gif",
     category: "design",
     technologies: ["Figma"],
     liveUrl: "https://www.figma.com/community/file/1442039011845968196/ice-cream-transition",
@@ -160,21 +171,10 @@ const projectsData: ProjectItem[] = [
     title: "Balenciaga",
     description: "A video design for Balenciaga, capturing luxury and modern aesthetics through sleek motion.",
     image: "Balenciaga.png",
-    gif: "Balenciaga.mp4",
+    gif: "Balenciaga.gif",
     category: "design",
     technologies: ["Figma"],
     liveUrl: "https://www.figma.com/community/file/1443919596373788204/balenciaga",
-    githubUrl: undefined
-  },
-  {
-    id: "d-7",
-    title: "MWatch",
-    description: "An image-based design for MWatch, focusing on the user interface and aesthetic of a modern smartwatch.",
-    image: "MWatch.png",
-    gif: undefined,
-    category: "design",
-    technologies: ["Figma"],
-    liveUrl: "https://www.figma.com/community/file/1442829907230346002/mwatch",
     githubUrl: undefined
   }
 ]
@@ -203,11 +203,11 @@ export default function ProjectsAndDesigns() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Header */}
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-7xl mx-auto px-6 py-4 mt-2">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
+          <div className="flex flex-col sm:flex-row items-start lg:items-center gap-4">
             <Link href="/">
-              <Button variant="ghost" size="sm" className="text-gray-400 hover:text-black">
+              <Button variant="default" size="sm" className="bg-white text-gray-800 hover:bg-gray-100">
                 <ArrowLeft className="w-4 h-4 mr-2" />
                 Back to Portfolio
               </Button>
@@ -305,7 +305,7 @@ export default function ProjectsAndDesigns() {
                         <Button
                           size="sm"
                           variant="secondary"
-                          className="absolute top-3 right-3 bg-black/50 hover:bg-black/70 backdrop-blur-sm"
+                          className="absolute top-3 right-3 bg-gray-100/60 backdrop-blur-sm"
                           onClick={(e) => {
                             e.stopPropagation()
                             toggleGif(item.id)
