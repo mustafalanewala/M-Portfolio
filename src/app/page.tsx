@@ -44,7 +44,6 @@ const slugs = [
   "css3",
   "git",
   "python",
-  "visualstudiocode",
   "firebase",
   "javascript",
   "wordpress",
@@ -242,7 +241,7 @@ export default function Component() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-4">
         {/* Profile Card */}
         <Card className="bg-gray-900 border-gray-800 text-white sm:col-span-2 lg:col-span-1">
-          <CardContent className="p-3 sm:p-4 lg:p-6 h-full flex flex-col">
+          <CardContent className="p-4 lg:p-6 h-full flex flex-col">
             <div className="flex flex-row items-center justify-center lg:items-start gap-3 mb-4">
               <div className="w-28 h-28 rounded-full overflow-hidden bg-blue-200 flex-shrink-0 sm:mx-0 border-2 border-purple-500/50">
                 <Image
@@ -314,7 +313,7 @@ export default function Component() {
 
         {/* Projects & Designs Card */}
         <Card className="bg-gray-900 border-gray-800 text-white">
-          <CardContent className="p-4 sm:p-6">
+          <CardContent className="p-4 lg:p-6">
             <div className="flex items-center gap-2 mb-4 sm:mb-6">
               <h2 className="text-lg sm:text-xl font-bold">💻 Projects & Designs</h2>
             </div>
@@ -358,7 +357,7 @@ export default function Component() {
 
         {/* Enhanced AI & Full Stack Skills Card */}
         <Card className="bg-gray-900 border-gray-800 text-white">
-          <CardContent className="p-4 sm:p-6">
+          <CardContent className="p-4 lg:p-6">
             <div className="flex items-center gap-2 mb-4 sm:mb-6">
               <div className="text-yellow-400">⚡</div>
               <h2 className="text-lg sm:text-xl font-bold">AI & Tech Stack</h2>
@@ -371,7 +370,7 @@ export default function Component() {
 
         {/* Contact Me Card */}
         <Card className="bg-gray-900 border-gray-800 text-white sm:col-span-2 lg:col-span-1 h-full overflow-hidden">
-          <CardContent className="p-3 sm:p-4 lg:p-6 h-full flex flex-col">
+          <CardContent className="p-4 lg:p-6 h-full flex flex-col">
             <div className="flex items-center gap-2 mb-3">
               <h2 className="text-lg sm:text-xl font-bold">📧 Contact Me</h2>
             </div>
@@ -427,14 +426,14 @@ export default function Component() {
 
         {/* AI Assistant Card with Slash Commands */}
         <Card className="bg-gradient-to-br from-purple-900 via-gray-900 to-blue-900 border-purple-500/30 text-white sm:col-span-2 h-full overflow-hidden">
-          <CardContent className="p-3 sm:p-4 lg:p-6 h-full flex flex-col">
+          <CardContent className="p-4 lg:p-6 h-full flex flex-col">
             <div className="flex items-center gap-2 mb-3">
               <h2 className="text-lg sm:text-xl font-bold">🧠 AI Assistant</h2>
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse ml-auto"></div>
             </div>
 
             {/* AI Response Display */}
-            <div className="bg-black/30 rounded-lg p-2 sm:p-3 mb-3 flex-1 overflow-y-auto min-h-0">
+            <div className="bg-black/30 rounded-lg p-3 mb-3 flex-1 overflow-y-auto min-h-0">
               {error ? (
                 <p className="text-red-400 text-xs sm:text-sm">
                   Connection error. Please check your API key and try again.
@@ -478,7 +477,7 @@ export default function Component() {
                   {/* Slash Commands Dropdown */}
                   {showSlashCommands && (
                     <div
-                      className="absolute bottom-full left-0 right-0 mb-1 p-1 bg-gray-900/90 backdrop-blur-md border border-purple-500/50 rounded-sm shadow-xl z-10 max-h-48 overflow-y-auto 
+                      className="absolute bottom-full left-0 right-0 mb-1 p-1 bg-gray-900/90 backdrop-blur-md border border-purple-500/50 rounded-sm shadow-xl z-10 max-h-32 lg:max-h-44 overflow-y-auto 
                         /* --- Custom Scrollbar Styles --- */
                         [&::-webkit-scrollbar]:w-1
                         [&::-webkit-scrollbar-track]:rounded-full
@@ -512,10 +511,10 @@ export default function Component() {
                 <Button
                   type="submit"
                   size="icon"
-                  className="bg-purple-600 hover:bg-purple-700 hover:scale-110 transition-all duration-300 w-8 h-9 sm:w-9 sm:h-9"
+                  className="bg-purple-600 hover:bg-purple-700 hover:scale-110 transition-all duration-300 w-9 h-10 sm:w-9 sm:h-9"
                   disabled={isLoading || !input.trim()}
                 >
-                  <Send className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <Send className="w-3 h-8 sm:w-4 sm:h-4" />
                 </Button>
               </form>
             </div>
