@@ -6,8 +6,6 @@
   background-image: url("https://www.transparenttextures.com/patterns/classy-fabric.png");
 }
 
-
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -64,8 +62,6 @@
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border;
@@ -73,4 +69,9 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.scroll-touch {
+  -webkit-overflow-scrolling: touch;
+  touch-action: auto;
 }

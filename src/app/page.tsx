@@ -477,16 +477,15 @@ export default function Component() {
                   {/* Slash Commands Dropdown */}
                   {showSlashCommands && (
                     <div
-                      className="absolute bottom-full left-0 right-0 mb-1 p-1 bg-gray-900/90 backdrop-blur-md border border-purple-500/50 rounded-sm shadow-xl z-10 max-h-32 lg:max-h-44 overflow-y-auto 
-                        /* --- Custom Scrollbar Styles --- */
-                        [&::-webkit-scrollbar]:w-1
-                        [&::-webkit-scrollbar-track]:rounded-full
-                        [&::-webkit-scrollbar-track]:bg-gray-800/50
-                        [&::-webkit-scrollbar-thumb]:rounded-full
-                        [&::-webkit-scrollbar-thumb]:bg-purple-600
-                        hover:[&::-webkit-scrollbar-thumb]:bg-purple-500
-                        "
-                    >
+                      className="absolute bottom-full left-0 right-0 mb-1 p-1 bg-gray-900/90 backdrop-blur-md border border-purple-500/50 rounded-sm shadow-xl z-10 max-h-32 lg:max-h-44 overflow-y-auto scroll-touch
+                      /* --- Custom Scrollbar Styles --- */
+                      [&::-webkit-scrollbar]:w-1
+                      [&::-webkit-scrollbar-track]:rounded-full
+                      [&::-webkit-scrollbar-track]:bg-gray-800/50
+                      [&::-webkit-scrollbar-thumb]:rounded-full
+                      [&::-webkit-scrollbar-thumb]:bg-purple-600
+                      hover:[&::-webkit-scrollbar-thumb]:bg-purple-500
+                      ">
                       <div className="flex flex-col gap-1">
                         {filteredCommands.map((command, index) => (
                           <button
