@@ -35,6 +35,17 @@ const projectsData: ProjectItem[] = [
     githubUrl: "https://github.com/mustafalanewala/M-Task"
   },
   {
+    id: "d-4",
+    title: "ExoVanguard Prime",
+    description: "A video design for ExoVanguard Prime, featuring dynamic motion graphics and visual storytelling.",
+    image: "ExoVanguard.png",
+    gif: "ExoVanguard Prime.gif",
+    category: "design",
+    technologies: ["Figma"],
+    liveUrl: "https://www.figma.com/community/file/1442829907230346002/exovanguard-prime",
+    githubUrl: undefined
+  },
+  {
     id: "p-2",
     title: "BlogBox",
     description: "BlogBox is sleek and modern blogging platform that empowers users to create, share, and manage their own blogs with ease.",
@@ -57,28 +68,6 @@ const projectsData: ProjectItem[] = [
     githubUrl: undefined
   },
   {
-    id: "p-3",
-    title: "SkAttireHub",
-    description: "Created a responsive clothing e-commerce website for Skattirehub offering seamless navigation and secure payments.",
-    image: "SkAttireHub.png",
-    gif: undefined,
-    category: "project",
-    technologies: ["WooCommerce", "Wordpress", "SEO", "Payment Gateway"],
-    liveUrl: "https://skattirehub.in",
-    githubUrl: undefined,
-  },
-  {
-    id: "d-4",
-    title: "ExoVanguard Prime",
-    description: "A video design for ExoVanguard Prime, featuring dynamic motion graphics and visual storytelling.",
-    image: "ExoVanguard.png",
-    gif: "ExoVanguard Prime.gif",
-    category: "design",
-    technologies: ["Figma"],
-    liveUrl: "https://www.figma.com/community/file/1442829907230346002/exovanguard-prime",
-    githubUrl: undefined
-  },
-  {
     id: "p-4",
     title: "MsyncAI",
     description: "MsyncAI is AI-powered website generator, with instant live previews and downloadable project files.",
@@ -88,6 +77,17 @@ const projectsData: ProjectItem[] = [
     technologies: ["Gen AI", "React", "TypeScript", "Tailwind", "React-Dom"],
     liveUrl: "https://msyncai.vercel.app",
     githubUrl: "https://github.com/mustafalanewala/MsyncAI",
+  },
+  {
+    id: "d-8",
+    title: "BentoGrid",
+    description: "A design showcasing modern BentoGrid, emphasizing clean and minimalist aesthetics.",
+    image: "BentoGrid.png",
+    gif: undefined,
+    category: "design",
+    technologies: ["Figma"],
+    liveUrl: "https://www.figma.com/community/file/1445708163811090992/bentogrid",
+    githubUrl: undefined
   },
   {
     id: "p-5",
@@ -154,6 +154,17 @@ const projectsData: ProjectItem[] = [
     technologies: ["Figma"],
     liveUrl: "https://www.figma.com/community/file/1440988996373788204/ethereal-essence",
     githubUrl: undefined
+  },
+  {
+    id: "p-3",
+    title: "SkAttireHub",
+    description: "Created a responsive clothing e-commerce website for Skattirehub offering seamless navigation and secure payments.",
+    image: "SkAttireHub.png",
+    gif: undefined,
+    category: "project",
+    technologies: ["WooCommerce", "Wordpress", "SEO", "Payment Gateway"],
+    liveUrl: "https://skattirehub.in",
+    githubUrl: undefined,
   },
   {
     id: "d-5",

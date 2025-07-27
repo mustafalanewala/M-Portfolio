@@ -11,7 +11,7 @@ import Image from "next/image"
 import { useRef, useState, useEffect } from "react"
 import dynamic from "next/dynamic"
 import emailjs from "emailjs-com"
-import { toast } from "react-hot-toast"
+import { toast, Toaster } from "react-hot-toast"
 import LoadingScreen from "@/components/ui/loading-screen"
 import Link from "next/link"
 
@@ -74,6 +74,26 @@ export default function Component() {
     setFormData((prev) => ({ ...prev, [id]: value }))
   }
 
+  const handleSaveContact = () => {
+    const link = document.createElement('a');
+    link.href = '/contact.vcf';
+    link.download = 'contact.vcf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    toast.success("Contact Saved 🎉")
+  };
+
+  const handleDownload = () => {
+    const link = document.createElement('a');
+    link.href = '/MResume.pdf';
+    link.download = 'MResume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    toast.success("Resume Downloaded 🎉")
+  };
+
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
@@ -116,6 +136,10 @@ export default function Component() {
 
   const projects = [
     {
+      title: "AetherX",
+      image: "/mockuper4.png",
+    },
+    {
       title: "M-Tasks",
       image: "/mockuper1.png",
     },
@@ -126,11 +150,7 @@ export default function Component() {
     {
       title: "MSyncAI",
       image: "/mockuper3.png",
-    },
-    {
-      title: "AetherX",
-      image: "/mockuper4.png",
-    },
+    }
   ]
 
   // Slash commands for quick questions
@@ -198,24 +218,6 @@ export default function Component() {
     }
   }
 
-  // Handle keyboard navigation for slash commands
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (!showSlashCommands) return
-
-    if (e.key === "ArrowDown") {
-      e.preventDefault()
-      setSelectedCommandIndex((prev) => (prev + 1) % slashCommands.length)
-    } else if (e.key === "ArrowUp") {
-      e.preventDefault()
-      setSelectedCommandIndex((prev) => (prev - 1 + slashCommands.length) % slashCommands.length)
-    } else if (e.key === "Enter" && showSlashCommands) {
-      e.preventDefault()
-      selectCommand(slashCommands[selectedCommandIndex])
-    } else if (e.key === "Escape") {
-      setShowSlashCommands(false)
-    }
-  }
-
   // Select a slash command
   const selectCommand = (command: (typeof slashCommands)[0]) => {
     setShowSlashCommands(false)
@@ -238,7 +240,8 @@ export default function Component() {
 
   return (
     <div className="min-h-screen bg-black p-5 lg:p-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-4">
+      <Toaster position="top-right" />
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-3">
         {/* Profile Card */}
         <Card className="bg-gray-900 border-gray-800 text-white sm:col-span-2 lg:col-span-1">
           <CardContent className="p-4 lg:p-6 h-full flex flex-col">
@@ -264,46 +267,48 @@ export default function Component() {
               }
             </p>
             {/* Social Links */}
-            <div className="flex justify-center sm:justify-start items-start gap-2 mb-6">
+            <div className="flex justify-center sm:justify-start items-start gap-3 mb-6">
               <Button
                 size="icon"
                 variant="ghost"
-                className="w-10 h-10 rounded-full bg-purple-800/50 hover:bg-gradient-to-r hover:from-[#E1306C]/70 hover:to-[#FCAF45]/70 hover:scale-110 hover:shadow-lg transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-gradient-to-r from-[#E1306C]/70 to-[#FCAF45]/70 hover:scale-110 hover:shadow-lg transition-all duration-300"
               >
                 <Instagram className="w-3 h-3 sm:w-4 sm:h-4" />
               </Button>
               <Button
                 size="icon"
                 variant="ghost"
-                className="w-10 h-10 rounded-full bg-purple-800/50 hover:bg-gradient-to-r hover:from-[#0A66C2]/70 hover:to-[#33C4FF]/70 hover:scale-110 hover:shadow-lg transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-gradient-to-r from-[#0A66C2]/70 to-[#33C4FF]/70 hover:scale-110 transition-all duration-300"
               >
                 <Linkedin className="w-3 h-3 sm:w-4 sm:h-4" />
               </Button>
               <Button
                 size="icon"
                 variant="ghost"
-                className="w-10 h-10 rounded-full bg-purple-800/50 hover:bg-gradient-to-r hover:from-[#181717]/70 hover:to-[#4B4B4B]/70 hover:scale-110 hover:shadow-lg transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-gradient-to-r from-[#181717]/70 to-[#4B4B4B]/70 hover:scale-110 hover:shadow-lg transition-all duration-300"
               >
                 <Github className="w-3 h-3 sm:w-4 sm:h-4" />
               </Button>
               <Button
                 size="icon"
                 variant="ghost"
-                className="w-10 h-10 rounded-full bg-purple-800/50 hover:bg-gradient-to-r hover:from-[#EA4335]/70 hover:to-[#F28B82]/70 hover:scale-110 hover:shadow-lg transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-gradient-to-r from-[#EA4335]/70 to-[#F28B82]/70 hover:scale-110 hover:shadow-lg transition-all duration-300"
               >
                 <Mail className="w-3 h-3 sm:w-4 sm:h-4" />
               </Button>
             </div>
             <div className="flex flex-row gap-3">
               <Button
-                variant="outline"
-                className="border-gray-600 text-white hover:bg-gray-800 hover:scale-105 transition-all duration-300 flex-1 bg-transparent text-xs sm:text-sm"
+                onClick={handleSaveContact}
+                variant="default"
+                className="bg-white text-black hover:bg-gray-200 hover:scale-105 transition-all duration-300 flex-1 text-xs sm:text-sm"
               >
                 Save Contact
               </Button>
               <Button
-                variant="outline"
-                className="border-gray-600 text-white hover:bg-gray-800 hover:scale-105 transition-all duration-300 flex-1 bg-transparent text-xs sm:text-sm"
+                onClick={handleDownload}
+                variant="default"
+                className="bg-white text-black hover:bg-gray-200 hover:scale-105 transition-all duration-300 flex-1 text-xs sm:text-sm"
               >
                 Download Resume
               </Button>
@@ -346,8 +351,8 @@ export default function Component() {
             </div>
             <Link href="/projects-and-designs">
               <Button
-                variant="outline"
-                className="w-full border-gray-600 text-white hover:bg-gray-800 hover:scale-105 transition-all duration-300 flex-1 bg-transparent text-sm"
+                variant="default"
+                className="w-full bg-white text-black hover:bg-gray-200 hover:scale-105 transition-all duration-300 flex-1 text-sm"
               >
                 View Projects & Designs
               </Button>
@@ -468,7 +473,6 @@ export default function Component() {
                     ref={inputRef}
                     value={input}
                     onChange={handleInputChangeWithSlash}
-                    onKeyDown={handleKeyDown}
                     placeholder="Ask me anything about Mustafa... (type / for commands)"
                     className="bg-black/30 border-purple-500/30 text-white placeholder:text-gray-400 text-xs sm:text-sm h-10 sm:h-9"
                     disabled={isLoading}
