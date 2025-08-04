@@ -219,17 +219,17 @@ export default function Component() {
               {"I'm an AI & Full-Stack Engineer building intelligent applications with cutting-edge technologies. Specializing in ML, AI integration, and scalable web architectures."}
             </p>
             <div className="flex justify-center sm:justify-start items-start gap-3 mb-6">
-              <Button size="icon" variant="ghost" className="w-10 h-10 rounded-full bg-gradient-to-r from-[#E1306C]/70 to-[#FCAF45]/70 hover:scale-110 hover:shadow-lg transition-all duration-300">
-                <Instagram className="w-3 h-3 sm:w-4 sm:h-4" />
+              <Button size="icon" variant="ghost" className="w-10 h-10 rounded-full bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] hover:scale-110 hover:shadow-lg transition-all duration-300">
+                <Instagram className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
               </Button>
-              <Button size="icon" variant="ghost" className="w-10 h-10 rounded-full bg-gradient-to-r from-[#0A66C2]/70 to-[#33C4FF]/70 hover:scale-110 transition-all duration-300">
-                <Linkedin className="w-3 h-3 sm:w-4 sm:h-4" />
+              <Button size="icon" variant="ghost" className="w-10 h-10 rounded-full bg-gradient-to-r from-[#0077B5] to-[#00A1D6] hover:scale-110 transition-all duration-300">
+                <Linkedin className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
               </Button>
-              <Button size="icon" variant="ghost" className="w-10 h-10 rounded-full bg-gradient-to-r from-[#181717]/70 to-[#4B4B4B]/70 hover:scale-110 hover:shadow-lg transition-all duration-300">
-                <Github className="w-3 h-3 sm:w-4 sm:h-4" />
+              <Button size="icon" variant="ghost" className="w-10 h-10 rounded-full bg-gradient-to-r from-[#2b3035] to-[#575757] hover:scale-110 hover:shadow-lg transition-all duration-300">
+                <Github className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
               </Button>
-              <Button size="icon" variant="ghost" className="w-10 h-10 rounded-full bg-gradient-to-r from-[#EA4335]/70 to-[#F28B82]/70 hover:scale-110 hover:shadow-lg transition-all duration-300">
-                <Mail className="w-3 h-3 sm:w-4 sm:h-4" />
+              <Button size="icon" variant="ghost" className="w-10 h-10 rounded-full bg-gradient-to-l from-[#fa5353] to-[#edd11b] hover:scale-110 hover:shadow-lg transition-all duration-300">
+                <Mail className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
               </Button>
             </div>
             <div className="flex flex-row gap-3">
@@ -431,7 +431,7 @@ export default function Component() {
       </div>
 
       {/* Floating Chatbot (visible on mobile only) */}
-      <div className="sm:hidden fixed bottom-4 right-4 z-50">
+      <div className="sm:hidden fixed bottom-4 right-5 z-50">
         {/* Chatbot Toggle Button */}
         {!isChatOpen && (
           <Button
