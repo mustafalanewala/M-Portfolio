@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Mustafa Lanewala | Portfolio",
   description: "Official portfolio website of Mustafa Lanewala, showcasing projects, designs, and more.",
   keywords: "Mustafa, Lanewala, Portfolio, Website, Mustafa Lanewala, Full Stack Developer, Product Engineer",
-  authors: [{ name: "Mustafa Lanewala", url: "https://mustafalanewala.vercel.app" }],
+  authors: [{ name: "Mustafa Lanewala", url: "https://mustafalanewala.dev" }],
   icons: {
     icon: [{ url: "/favicon.ico" }, { url: "/favicon.png", type: "image/png" }],
     shortcut: ["/favicon.ico"],
@@ -21,13 +21,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IE",
-    url: "https://mustafalanewala.vercel.app",
+    url: "https://mustafalanewala.dev",
     title: "Mustafa Lanewala | Portfolio",
-    description:
-      "Official portfolio website of Mustafa Lanewala, showcasing projects, designs, and more.",
+    description: "Official portfolio website of Mustafa Lanewala, showcasing projects, designs, and more.",
     images: [
       {
-        url: "https://mustafalanewala.vercel.app/website.png",
+        url: "https://mustafalanewala.dev/website.png",
         width: 800,
         height: 600,
         alt: "Mustafa Lanewala Portfolio",
@@ -42,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <head>
         <meta
           name="google-site-verification"
@@ -50,7 +49,7 @@ export default function RootLayout({
         />
         <meta name="robots" content="index, follow" />
       </head>
-      <body className="flex justify-center items-center bg-black">
+      <body className="transition-colors duration-300">
         {children}
         <Toaster position="top-right" reverseOrder={false} />
       </body>

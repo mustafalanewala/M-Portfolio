@@ -1,534 +1,514 @@
 "use client"
 
-import type React from "react"
+import {
+  Moon,
+  Sun,
+  Code,
+  Briefcase,
+  User,
+  Mail,
+  FileCode,
+  Instagram,
+  Linkedin,
+  Github,
+  Globe,
+} from "lucide-react"
+
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { useChat } from "ai/react"
-import { ChevronLeft, ChevronRight, Command, Github, Instagram, Linkedin, Mail, Send, Sparkles, MessageCircle } from "lucide-react"
-import Image from "next/image"
-import { useRef, useState, useEffect } from "react"
-import dynamic from "next/dynamic"
-import emailjs from "emailjs-com"
-import { toast, Toaster } from "react-hot-toast"
-import LoadingScreen from "@/components/ui/loading-screen"
-import Link from "next/link"
+import { motion, AnimatePresence } from "framer-motion"
 
-// Dynamically import IconCloud
-const IconCloud = dynamic(() => import("@/components/ui/icons").then((mod) => mod.IconCloud), {
-  ssr: false,
-})
+export default function Home() {
+  const [darkMode, setDarkMode] = useState(false)
+  const [loading, setLoading] = useState(true)
 
-const slugs = [
-  "figma", "nextdotjs", "nodedotjs", "nginx", "react", "express", "framer", "django", "typescript",
-  "canva", "postman", "mongodb", "cplusplus", "vercel", "sass", "html5", "postgresql", "appwrite",
-  "redux", "tailwindcss", "css3", "git", "python", "firebase", "javascript", "wordpress", "prisma",
-  "drizzle", "docker",
-]
-
-export default function Component() {
-  const [currentProject, setCurrentProject] = useState(0)
-  const [showSlashCommands, setShowSlashCommands] = useState(false)
-  const [selectedCommandIndex, setSelectedCommandIndex] = useState(0)
-  const [isChatOpen, setIsChatOpen] = useState(false) // State for chatbot toggle
-  const inputRef = useRef<HTMLInputElement>(null)
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" })
-  const [isPageLoading, setIsPageLoading] = useState(true)
-
+  // Sync dark mode with localStorage
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsPageLoading(false)
-    }, 1000)
-    return () => clearTimeout(timer)
+    const storedDarkMode = localStorage.getItem("darkMode")
+    if (storedDarkMode) {
+      setDarkMode(JSON.parse(storedDarkMode))
+    }
   }, [])
 
-  const handleContactInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { id, value } = e.target
-    setFormData((prev) => ({ ...prev, [id]: value }))
+  useEffect(() => {
+    localStorage.setItem("darkMode", JSON.stringify(darkMode))
+  }, [darkMode])
+
+  // Simulate loading delay
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false)
+    }, 1000)
+    return () => clearTimeout(timeout)
+  }, [])
+
+  const toggleDarkMode = () => {
+    setDarkMode((prev) => !prev)
   }
 
-  const handleSaveContact = () => {
-    const link = document.createElement('a')
-    link.href = '/contact.vcf'
-    link.download = 'contact.vcf'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-    toast.success("Contact Saved 🎉")
-  }
-
-  const handleDownload = () => {
-    const link = document.createElement('a')
-    link.href = '/MResume.pdf'
-    link.download = 'MResume.pdf'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
-    toast.success("Resume Downloaded 🎉")
-  }
-
-  const handleContactSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    try {
-      const serviceId = "service_mustafa30"
-      const templateId = "template_9jycvia"
-      const publicKey = "4DihErRruoSz8W8n7"
-      await emailjs.send(
-        serviceId,
-        templateId,
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
-        },
-        publicKey,
-      )
-      toast.success("Message sent successfully 🎉")
-      setFormData({ name: "", email: "", message: "" })
-    } catch (error) {
-      console.error("Failed to send message:", error)
-      toast.error("Failed to send message. Please try again.")
-    }
-  }
-
-  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
-    api: "/api/chat",
-    initialMessages: [
-      {
-        id: "welcome",
-        role: "assistant",
-        content:
-          "Hi! I'm Mustafa's AI assistant. I know all about his skills, experience, and projects. What would you like to know about him? (Type / for quick commands)",
-      },
-    ],
-  })
-
-  const projects = [
-    { title: "AetherX", image: "/mockuper4.png" },
-    { title: "M-Tasks", image: "/mockuper1.png" },
-    { title: "Ethereal Essence", image: "/mockuper2.png" },
-    { title: "MSyncAI", image: "/mockuper3.png" },
-  ]
-
-  const slashCommands = [
-    {
-      command: "/about",
-      description: "Get details about Mustafa's background",
-      question: "Who is Mustafa Lanewala, including his title, location, age, education, and social links?"
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
     },
-    {
-      command: "/experience",
-      description: "Learn about his professional experience",
-      question: "What is Mustafa's professional experience, including his role at Cleverflow and past work?"
-    },
-    {
-      command: "/technical",
-      description: "Explore his technical expertise",
-      question: "What are Mustafa's technical skills across frontend, backend, AI/ML, DevOps, and core areas?"
-    },
-    {
-      command: "/projects",
-      description: "Check out his current projects",
-      question: "What projects is Mustafa currently working on, including their features and technologies?"
-    },
-    {
-      command: "/personality",
-      description: "Discover his personality and interests",
-      question: "What are Mustafa's personality traits and personal interests?"
-    },
-    {
-      command: "/unique",
-      description: "Understand what makes him unique",
-      question: "What makes Mustafa unique as an AI and full-stack developer?"
-    },
-    {
-      command: "/availability",
-      description: "Find out if he's open to opportunities",
-      question: "Is Mustafa available for new opportunities, and what kind of work is he seeking?"
-    }
-  ]
-
-  const nextProject = () => {
-    setCurrentProject((prev) => (prev + 1) % projects.length)
   }
 
-  const prevProject = () => {
-    setCurrentProject((prev) => (prev - 1 + projects.length) % projects.length)
-  }
-
-  const handleInputChangeWithSlash = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value
-    handleInputChange(e)
-    if (value === "/") {
-      setShowSlashCommands(true)
-      setSelectedCommandIndex(0)
-    } else if (value.startsWith("/") && value.length > 1) {
-      const filtered = slashCommands.filter((cmd) => cmd.command.startsWith(value.toLowerCase()))
-      setShowSlashCommands(filtered.length > 0)
-    } else {
-      setShowSlashCommands(false)
-    }
-  }
-
-  const selectCommand = (command: (typeof slashCommands)[0]) => {
-    setShowSlashCommands(false)
-    handleInputChange({ target: { value: command.question } } as React.ChangeEvent<HTMLInputElement>)
-  }
-
-  const toggleChat = () => {
-    setIsChatOpen(!isChatOpen)
-  }
-
-  const latestMessage = messages[messages.length - 1]
-  const showingWelcome = messages.length === 1
-
-  const filteredCommands = input.startsWith("/")
-    ? slashCommands.filter((cmd) => cmd.command.startsWith(input.toLowerCase()))
-    : slashCommands
-
-  if (isPageLoading) {
-    return <LoadingScreen />
+  if (loading) {
+    return (
+      <div
+        className={`flex justify-center items-center min-h-screen ${
+          darkMode ? "bg-black text-white" : "bg-white text-black"
+        }`}
+      >
+        <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-blue-500" />
+      </div>
+    )
   }
 
   return (
-    <div className="min-h-screen bg-black p-5 lg:p-6">
-      <Toaster position="top-right" />
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-3">
-        {/* Profile Card */}
-        <Card className="bg-gray-900 border-gray-800 text-white sm:col-span-2 lg:col-span-1">
-          <CardContent className="p-4 lg:p-6 h-full flex flex-col">
-            {/* ... (unchanged Profile Card content) ... */}
-            <div className="flex flex-row items-center justify-center lg:items-start gap-3 mb-4">
-              <div className="w-28 h-28 rounded-full overflow-hidden bg-blue-200 flex-shrink-0 sm:mx-0 border-2 border-purple-500/50">
-                <Image
-                  src="/avatar.jpg"
-                  alt="Mustafa Lanewala"
-                  width={80}
-                  height={80}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="text-left">
-                <div className="text-xl lg:text-2xl mb-1">🤖 {"Hie! I'm"}</div>
-                <h1 className="text-xl lg:text-2xl font-bold mb-1">Mustafa Lanewala</h1>
-                <p className="text-gray-400 text-sm lg:text-base">AI & Full Stack Engineer</p>
-              </div>
-            </div>
-            <p className="text-gray-300 mb-3 mt-1 text-xs sm:text-sm leading-relaxed text-center sm:text-left flex-1">
-              {"I'm an AI & Full-Stack Engineer building intelligent applications with cutting-edge technologies. Specializing in ML, AI integration, and scalable web architectures."}
+    <div
+      className={`min-h-screen transition-colors duration-300 font-inter ${
+        darkMode ? "bg-black text-white" : "bg-white text-black"
+      }`}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 max-w-4xl">
+        <motion.header
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col sm:flex-row justify-between items-center mb-12 sm:mb-16"
+        >
+          <div className="text-center sm:text-left">
+            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
+              Mustafa Lanewala
+            </h1>
+            <p className="text-lg sm:text-xl font-medium flex items-center justify-center sm:justify-start gap-2 mt-2">
+              <Code className="h-5 w-5" /> AI & Full Stack Engineer
             </p>
-            <div className="flex justify-center sm:justify-start items-start gap-3 mb-6">
-              <Button size="icon" variant="ghost" className="w-10 h-10 rounded-full bg-gradient-to-r from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] hover:scale-110 hover:shadow-lg transition-all duration-300">
-                <Instagram className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-              </Button>
-              <Button size="icon" variant="ghost" className="w-10 h-10 rounded-full bg-gradient-to-r from-[#0077B5] to-[#00A1D6] hover:scale-110 transition-all duration-300">
-                <Linkedin className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-              </Button>
-              <Button size="icon" variant="ghost" className="w-10 h-10 rounded-full bg-gradient-to-r from-[#2b3035] to-[#575757] hover:scale-110 hover:shadow-lg transition-all duration-300">
-                <Github className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-              </Button>
-              <Button size="icon" variant="ghost" className="w-10 h-10 rounded-full bg-gradient-to-l from-[#fa5353] to-[#edd11b] hover:scale-110 hover:shadow-lg transition-all duration-300">
-                <Mail className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
-              </Button>
-            </div>
-            <div className="flex flex-row gap-3">
-              <Button onClick={handleSaveContact} variant="default" className="bg-white text-black hover:bg-gray-200 hover:scale-105 transition-all duration-300 flex-1 text-xs sm:text-sm">
-                Save Contact
-              </Button>
-              <Button onClick={handleDownload} variant="default" className="bg-white text-black hover:bg-gray-200 hover:scale-105 transition-all duration-300 flex-1 text-xs sm:text-sm">
-                Download Resume
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Projects & Designs Card */}
-        <Card className="bg-gray-900 border-gray-800 text-white">
-          <CardContent className="p-4 lg:p-6">
-            <div className="flex items-center gap-2 mb-4 sm:mb-6">
-              <h2 className="text-lg sm:text-xl font-bold">💻 Projects & Designs</h2>
-            </div>
-            <div className="relative mb-4 sm:mb-6">
-              <div className="aspect-video bg-gray-800 rounded-lg overflow-hidden">
-                <Image
-                  src={projects[currentProject].image || "/placeholder.svg"}
-                  alt={projects[currentProject].title}
-                  width={300}
-                  height={200}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <Button size="icon" variant="ghost" className="absolute left-2 top-1/2 -translate-y-1/2 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white text-black hover:bg-gray-200 hover:scale-110 transition-all duration-300" onClick={prevProject}>
-                <ChevronLeft className="w-3 h-3 sm:w-4 sm:h-4" />
-              </Button>
-              <Button size="icon" variant="ghost" className="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white text-black hover:bg-gray-200 hover:scale-110 transition-all duration-300" onClick={nextProject}>
-                <ChevronRight className="w-3 h-3 sm:w-4 sm:h-4" />
-              </Button>
-            </div>
-            <Link href="/projects-and-designs">
-              <Button variant="default" className="w-full bg-white text-black hover:bg-gray-200 hover:scale-105 transition-all duration-300 flex-1 text-sm">
-                View Projects & Designs
-              </Button>
-            </Link>
-          </CardContent>
-        </Card>
-
-        {/* Enhanced AI & Full Stack Skills Card */}
-        <Card className="bg-gray-900 border-gray-800 text-white">
-          <CardContent className="p-4 lg:p-6">
-            <div className="flex items-center gap-2 mb-4 sm:mb-6">
-              <div className="text-yellow-400">⚡</div>
-              <h2 className="text-lg sm:text-xl font-bold">AI & Tech Stack</h2>
-            </div>
-            <div className="relative flex items-center justify-center max-w-lg overflow-hidden">
-              <IconCloud iconSlugs={slugs} />
-            </div>
-          </CardContent>
-        </Card>
-
-        {/* Contact Me Card */}
-        <Card className="bg-gray-900 border-gray-800 text-white sm:col-span-2 lg:col-span-1 h-full overflow-hidden">
-          <CardContent className="p-4 lg:p-6 h-full flex flex-col">
-            <div className="flex items-center gap-2 mb-3">
-              <h2 className="text-lg sm:text-xl font-bold">📧 Contact Me</h2>
-            </div>
-            <form onSubmit={handleContactSubmit}>
-              <div className="space-y-2 sm:space-y-3 flex-1">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  <div>
-                    <label className="text-xs text-gray-400 mb-1 block">Name</label>
-                    <Input
-                      type="text"
-                      id="name"
-                      value={formData.name}
-                      onChange={handleContactInputChange}
-                      placeholder="Your Name"
-                      required
-                      className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500 text-xs sm:text-sm h-8 sm:h-9"
-                    />
-                  </div>
-                  <div>
-                    <label className="text-xs text-gray-400 mb-1 block">Email</label>
-                    <Input
-                      type="email"
-                      id="email"
-                      value={formData.email}
-                      onChange={handleContactInputChange}
-                      placeholder="Your Email"
-                      required
-                      className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500 text-xs sm:text-sm h-8 sm:h-9"
-                    />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <label className="text-xs text-gray-400 mb-1 block">Message</label>
-                  <Textarea
-                    id="message"
-                    value={formData.message}
-                    onChange={handleContactInputChange}
-                    placeholder="Your Message"
-                    required
-                    className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500 text-xs sm:text-sm resize-none h-16 sm:h-20"
-                  />
-                </div>
-              </div>
-              <Button
-                className="w-full bg-white text-black hover:bg-gray-200 hover:scale-105 transition-all duration-300 text-xs sm:text-sm mt-3 h-8 sm:h-9"
-                type="submit"
-              >
-                Send Message
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
-
-        {/* AI Assistant Card (visible on sm and larger) */}
-        <Card className="bg-gradient-to-br from-purple-900 via-gray-900 to-blue-900 border-purple-500/30 text-white sm:col-span-2 hidden sm:block h-full overflow-hidden">
-          <CardContent className="p-4 lg:p-6 h-full flex flex-col">
-            <div className="flex items-center gap-2 mb-3">
-              <h2 className="text-lg sm:text-xl font-bold">🧠 AI Assistant</h2>
-              <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse ml-auto"></div>
-            </div>
-            <div className="bg-black/30 rounded-lg p-3 mb-3 flex-1 overflow-y-auto min-h-0">
-              {error ? (
-                <p className="text-red-400 text-xs sm:text-sm">
-                  Connection error. Please check your API key and try again.
-                </p>
-              ) : isLoading ? (
-                <div className="flex items-center gap-2 text-purple-300">
-                  <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 animate-spin" />
-                  <span className="text-xs sm:text-sm">Thinking...</span>
-                </div>
-              ) : (
-                <p className="text-xs sm:text-sm text-gray-200 leading-relaxed">
-                  {latestMessage?.content || "Hi! Ask me anything about Mustafa!"}
-                </p>
-              )}
-            </div>
-            {showingWelcome && (
-              <div className="mb-3">
-                <p className="text-xs text-purple-300 mb-2 flex items-center gap-1">
-                  <Command className="w-3 h-3" />
-                  Try typing / for quick commands:
-                </p>
-              </div>
-            )}
-            <div className="relative">
-              <form onSubmit={handleSubmit} className="flex gap-2">
-                <div className="relative flex-1">
-                  <Input
-                    ref={inputRef}
-                    value={input}
-                    onChange={handleInputChangeWithSlash}
-                    placeholder="Ask me anything about Mustafa... (type / for commands)"
-                    className="bg-black/30 border-purple-500/30 text-white placeholder:text-gray-400 text-xs sm:text-sm h-10 sm:h-9"
-                    disabled={isLoading}
-                  />
-                  {showSlashCommands && (
-                    <div
-                      className="absolute bottom-full left-0 right-0 mb-1 p-1 bg-gray-900/90 backdrop-blur-md border border-purple-500/50 rounded-sm shadow-xl z-10 max-h-32 lg:max-h-44 overflow-y-auto scroll-touch
-                      [&::-webkit-scrollbar]:w-1
-                      [&::-webkit-scrollbar-track]:rounded-full
-                      [&::-webkit-scrollbar-track]:bg-gray-800/50
-                      [&::-webkit-scrollbar-thumb]:rounded-full
-                      [&::-webkit-scrollbar-thumb]:bg-purple-600
-                      hover:[&::-webkit-scrollbar-thumb]:bg-purple-500"
-                    >
-                      <div className="flex flex-col gap-1">
-                        {filteredCommands.map((command, index) => (
-                          <button
-                            key={command.command}
-                            type="button"
-                            onClick={() => selectCommand(command)}
-                            className={`w-full text-left p-1 transition-colors duration-200 rounded-lg text-sm sm:text-base hover:bg-gradient-to-r hover:from-purple-800/40 hover:to-blue-800/40 ${index === selectedCommandIndex
-                              ? "bg-gradient-to-r from-purple-700/50 to-blue-700/50"
-                              : "bg-transparent"
-                              }`}
-                          >
-                            <div className="flex items-center gap-2">
-                              <span className="text-purple-300 font-mono flex-shrink-0">{command.command}</span>
-                              <span className="text-gray-200 truncate">{command.description}</span>
-                            </div>
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-                <Button
-                  type="submit"
-                  size="icon"
-                  className="bg-purple-600 hover:bg-purple-700 hover:scale-110 transition-all duration-300 w-9 h-10 sm:w-9 sm:h-9"
-                  disabled={isLoading || !input.trim()}
-                >
-                  <Send className="w-3 h-8 sm:w-4 sm:h-4" />
-                </Button>
-              </form>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-
-      {/* Floating Chatbot (visible on mobile only) */}
-      <div className="sm:hidden fixed bottom-4 right-5 z-50">
-        {/* Chatbot Toggle Button */}
-        {!isChatOpen && (
-          <Button
-            onClick={toggleChat}
-            className="bg-purple-600 hover:bg-purple-700 w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-all duration-300"
-          >
-            <MessageCircle className="w-6 h-6 text-white" />
-          </Button>
-        )}
-
-        {/* Chatbot Panel */}
-        {isChatOpen && (
-          <div className="bg-gradient-to-br from-purple-900 via-gray-900 to-blue-900 border border-purple-500/30 rounded-lg shadow-xl w-[90vw] max-w-[350px] h-[400px] flex flex-col">
-            <div className="flex items-center justify-between p-3 border-b border-purple-500/30">
-              <div className="flex items-center gap-2">
-                <h2 className="text-sm font-bold text-white">🧠 AI Assistant</h2>
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              </div>
-              <Button
-                onClick={toggleChat}
-                size="icon"
-                variant="ghost"
-                className="text-white hover:bg-purple-700/50 w-8 h-8"
-              >
-                ✕
-              </Button>
-            </div>
-            <div className="flex-1 p-3 overflow-y-auto">
-              {error ? (
-                <p className="text-red-400 text-xs">
-                  Connection error. Please check your API key and try again.
-                </p>
-              ) : isLoading ? (
-                <div className="flex items-center gap-2 text-purple-300">
-                  <Sparkles className="w-3 h-3 animate-spin" />
-                  <span className="text-xs">Thinking...</span>
-                </div>
-              ) : (
-                <p className="text-xs text-gray-200 leading-relaxed">
-                  {latestMessage?.content || "Hi! Ask me anything about Mustafa!"}
-                </p>
-              )}
-            </div>
-            <div className="p-3 border-t border-purple-500/30">
-              <form onSubmit={handleSubmit} className="flex gap-2">
-                <div className="relative flex-1">
-                  <Input
-                    ref={inputRef}
-                    value={input}
-                    onChange={handleInputChangeWithSlash}
-                    placeholder="Ask about Mustafa... (/ for commands)"
-                    className="bg-black/30 border-purple-500/30 text-white placeholder:text-gray-400 text-xs h-9"
-                    disabled={isLoading}
-                  />
-                  {showSlashCommands && (
-                    <div
-                      className="absolute bottom-full left-0 right-0 mb-1 p-1 bg-gray-900/90 backdrop-blur-md border border-purple-500/50 rounded-sm shadow-xl z-10 max-h-44 overflow-y-auto scroll-touch
-                      [&::-webkit-scrollbar]:w-1
-                      [&::-webkit-scrollbar-track]:rounded-full
-                      [&::-webkit-scrollbar-track]:bg-gray-800/50
-                      [&::-webkit-scrollbar-thumb]:rounded-full
-                      [&::-webkit-scrollbar-thumb]:bg-purple-600
-                      hover:[&::-webkit-scrollbar-thumb]:bg-purple-500"
-                    >
-                      <div className="flex flex-col gap-1">
-                        {filteredCommands.map((command, index) => (
-                          <button
-                            key={command.command}
-                            type="button"
-                            onClick={() => selectCommand(command)}
-                            className={`w-full text-left p-1 transition-colors duration-200 rounded-lg text-xs hover:bg-gradient-to-r hover:from-purple-800/40 hover:to-blue-800/40 ${index === selectedCommandIndex
-                              ? "bg-gradient-to-r from-purple-700/50 to-blue-700/50"
-                              : "bg-transparent"
-                              }`}
-                          >
-                            <div className="flex items-center gap-2">
-                              <span className="text-purple-300 font-mono flex-shrink-0">{command.command}</span>
-                              <span className="text-gray-200 truncate">{command.description}</span>
-                            </div>
-                          </button>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-                <Button
-                  type="submit"
-                  size="icon"
-                  className="bg-purple-600 hover:bg-purple-700 w-9 h-9"
-                  disabled={isLoading || !input.trim()}
-                >
-                  <Send className="w-4 h-4" />
-                </Button>
-              </form>
-            </div>
           </div>
-        )}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={toggleDarkMode}
+            className={`rounded-full mt-4 sm:mt-0 ${
+              darkMode ? "hover:bg-gray-800" : "hover:bg-gray-100"
+            } transition-all duration-200 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
+            aria-label={
+              darkMode ? "Switch to light mode" : "Switch to dark mode"
+            }
+          >
+            <AnimatePresence mode="wait">
+              {darkMode ? (
+                <motion.div
+                  key="sun"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Sun className="h-6 w-6 text-white" />
+                </motion.div>
+              ) : (
+                <motion.div
+                  key="moon"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <Moon className="h-6 w-6" />
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </Button>
+        </motion.header>
+
+        <motion.section
+          variants={sectionVariants}
+          initial="hidden"
+          animate="visible"
+          className="mb-12"
+        >
+          <h2 className="text-xl sm:text-2xl font-semibold flex items-center gap-2 mb-4">
+            <User className="h-5 w-5" /> About Me
+          </h2>
+          <p className="text-base sm:text-lg leading-relaxed">
+            I'm a 21-year-old AI & Full Stack Engineer with 2+ years of
+            experience building scalable web applications, working on AI and
+            automation, and designing microservices architecture. Proficient in
+            frontend & backend development, UI/UX design, and product
+            management.
+            <br />
+            <br />A calm and composed tech enthusiast, I love traveling to
+            explore diverse cultures, igniting my creativity. As a Dawoodi
+            Bohra, I find balance through prayer and community rituals. I enjoy
+            photography, cooking, and cherishing family moments. My curiosity
+            drives me to experiment with new tech stacks and create side
+            projects that blend art and code, while I stay updated through tech
+            blogs and courses.
+          </p>
+          <hr
+            className={`my-8 ${darkMode ? "border-gray-700" : "border-gray-200"}`}
+          />
+        </motion.section>
+
+        <motion.section
+          variants={sectionVariants}
+          initial="hidden"
+          animate="visible"
+          className="mb-12"
+        >
+          <h2 className="text-xl sm:text-2xl font-semibold flex items-center gap-2 mb-4">
+            <Briefcase className="h-5 w-5" /> Experience
+          </h2>
+          <ol className="list-decimal pl-5 space-y-6">
+            <li>
+              <h3 className="text-base sm:text-lg font-medium">
+                Product Engineer, Cleverflow, Dubai, UAE (Mar 2024–Present)
+              </h3>
+              <ul className="list-disc pl-5 mt-2 text-sm sm:text-base">
+                <li>
+                  Led product management for Artifacts, creating a centralized
+                  platform to enhance communication, improving operational
+                  efficiency by 30%.
+                </li>
+                <li>
+                  Developed CRM-integrated invoices, ad templates, and
+                  documents, enabling one-click generation and reducing manual
+                  effort by 70%.
+                </li>
+                <li>
+                  Led UI/UX design efforts, creating branding elements, custom
+                  layouts, and interactive features, enhancing user engagement
+                  and visual appeal.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h3 className="text-base sm:text-lg font-medium">
+                Product Engineer, Beem Cards, Dubai, UAE (Jan 2025–Present)
+              </h3>
+              <ul className="list-disc pl-5 mt-2 text-sm sm:text-base">
+                <li>
+                  Leading fullstack development of Beem Cards — a digital smart
+                  card platform for seamless professional networking.
+                </li>
+                <li>
+                  Built scalable systems with Django REST Framework, PostgreSQL,
+                  Docker Compose, and modular APIs, and developed responsive
+                  frontends using React, Next.js, TypeScript, and Axios for
+                  seamless UX.
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <h3 className="text-base sm:text-lg font-medium">
+                Founder & CEO, MxNoor Solutions (Jan 2025–Present)
+              </h3>
+              <ul className="list-disc pl-5 mt-2 text-sm sm:text-base">
+                <li>
+                  Founded a tech solutions company focused on innovative AI and
+                  full-stack development, delivering tailored web and app
+                  solutions.
+                </li>
+              </ul>
+            </li>
+          </ol>
+          <hr
+            className={`my-8 ${darkMode ? "border-gray-700" : "border-gray-200"}`}
+          />
+        </motion.section>
+
+        <motion.section
+          variants={sectionVariants}
+          initial="hidden"
+          animate="visible"
+          className="mb-12"
+        >
+          <h2 className="text-xl sm:text-2xl font-semibold flex items-center gap-2 mb-4">
+            <FileCode className="h-5 w-5" /> Projects
+          </h2>
+          <ol className="list-decimal pl-5 space-y-6">
+            <li>
+              <h3 className="text-base sm:text-lg font-medium">Beem Cards</h3>
+              <p className="text-sm sm:text-base">
+                A digital networking platform that allows professionals to
+                create, share, and manage digital business profiles with ease.
+                Supports dynamic updates, analytics, and personalized profiles
+                for streamlined networking.{" "}
+                <a
+                  href="https://beem.cards"
+                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500 mr-2`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live
+                </a>
+              </p>
+            </li>
+
+            <li>
+              <h3 className="text-base sm:text-lg font-medium">M-Tasks</h3>
+              <p className="text-sm sm:text-base">
+                A full-featured task management platform with real-time updates,
+                priority tagging, team collaboration, and dashboards. Built with
+                modern UI/UX and Firebase for instant notification and data
+                sync.{" "}
+                <a
+                  href="https://mtasks.vercel.app"
+                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500 mr-2`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live
+                </a>
+                <a
+                  href="https://github.com/mustafalanewala/M-Task"
+                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </p>
+            </li>
+
+            <li>
+              <h3 className="text-base sm:text-lg font-medium">MsyncAI</h3>
+              <p className="text-sm sm:text-base">
+                lightning-fast AI-powered website generator that produces clean
+                HTML, CSS, and JavaScript code, with instant live previews and
+                downloadable project files.{" "}
+                <a
+                  href="https://msyncai.vercel.app"
+                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500 mr-2`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live
+                </a>
+                <a
+                  href="https://github.com/mustafalanewala/msyncai"
+                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </p>
+            </li>
+
+            <li>
+              <h3 className="text-base sm:text-lg font-medium">BlogBox</h3>
+              <p className="text-sm sm:text-base">
+                A blogging platform that empowers users to create, share, and
+                manage their own blogs with ease. Built with an emphasis on
+                accessibility and performance.{" "}
+                <a
+                  href="https://blogbox.vercel.app"
+                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500 mr-2`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live
+                </a>
+                <a
+                  href="https://github.com/mustafalanewala/blogbox"
+                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </p>
+            </li>
+
+            <li>
+              <h3 className="text-base sm:text-lg font-medium">SkattireHub</h3>
+              <p className="text-sm sm:text-base">
+                An e-commerce website for a fashion brand offering secure
+                payment integration (Razorpay), dynamic product listings,
+                inventory management, and mobile responsiveness.{" "}
+                <a
+                  href="https://www.skattirehub.in"
+                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500 mr-2`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live
+                </a>
+              </p>
+            </li>
+
+            <li>
+              <h3 className="text-base sm:text-lg font-medium">Elysium</h3>
+              <p className="text-sm sm:text-base">
+                A beautiful wallpaper application that integrates with the
+                Unsplash API to provide high-quality background images. Supports
+                download, search, and light/dark themes.{" "}
+                <a
+                  href="https://github.com/mustafalanewala/elysium"
+                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </p>
+            </li>
+
+            <li>
+              <h3 className="text-base sm:text-lg font-medium">MxNoor</h3>
+              <p className="text-sm sm:text-base">
+                A full stack digital solutions company that empowers modern
+                businesses and specializes in web design, e-commerce, apps,
+                graphics, multimedia, and AI.{" "}
+                <a
+                  href="https://www.mxnoor.in"
+                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500 mr-2`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live
+                </a>
+              </p>
+            </li>
+
+            <li>
+              <h3 className="text-base sm:text-lg font-medium">
+                Crime Detection Model
+              </h3>
+              <p className="text-sm sm:text-base">
+                A machine learning model for predicting potential crime hotspots
+                based on spatial and temporal data. Utilizes clustering
+                algorithms, heatmaps, and geospatial analytics to assist in law
+                enforcement planning.{" "}
+                <a
+                  href="https://github.com/mustafalanewala/crime-detection"
+                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+              </p>
+            </li>
+          </ol>
+
+          <hr
+            className={`my-8 ${darkMode ? "border-gray-700" : "border-gray-200"}`}
+          />
+        </motion.section>
+
+        <motion.section
+          variants={sectionVariants}
+          initial="hidden"
+          animate="visible"
+          className="mb-12"
+        >
+          <h2 className="text-xl sm:text-2xl font-semibold flex items-center gap-2 mb-4">
+            Skills
+          </h2>
+          <div className="flex flex-wrap gap-3">
+            {[
+              "React.js",
+              "Next.js",
+              "TypeScript",
+              "JavaScript",
+              "Node.js",
+              "Python",
+              "Django",
+              "Flask",
+              "TensorFlow",
+              "PyTorch",
+              "Scikit-learn",
+              "PostgreSQL",
+              "MongoDB",
+              "Firebase",
+              "MySQL",
+              "Redis",
+              "Tailwind CSS",
+              "Material-UI",
+              "AWS",
+              "Docker",
+              "Git",
+              "Figma",
+              "Canva",
+              "WordPress",
+              "Woocommerce",
+              "Shopify",
+            ].map((skill) => (
+              <motion.span
+                key={skill}
+                className={`px-4 py-1.5 rounded-full text-sm font-medium ${
+                  darkMode ? "bg-gray-800 text-white" : "bg-gray-100 text-black"
+                } transition-colors duration-200`}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                {skill}
+              </motion.span>
+            ))}
+          </div>
+          <hr
+            className={`my-8 ${darkMode ? "border-gray-700" : "border-gray-200"}`}
+          />
+        </motion.section>
+
+        <motion.section
+          variants={sectionVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          <h2 className="text-xl sm:text-2xl font-semibold flex items-center gap-2 mb-4">
+            <Mail className="h-5 w-5" /> Contact
+          </h2>
+
+          <div className="flex items-center gap-4">
+            <a
+              href="mailto:https.mustafalanewala@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Mail className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/mustafa-lanewala"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Linkedin className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
+            </a>
+
+            <a
+              href="https://github.com/mustafalanewala"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
+            </a>
+
+            <a
+              href="https://www.instagram.com/mustafa.lanewala/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Instagram className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
+            </a>
+
+            <a
+              href="https://www.mustafalanewala.dev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Globe className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
+            </a>
+          </div>
+        </motion.section>
       </div>
     </div>
   )
