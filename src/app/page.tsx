@@ -78,21 +78,22 @@ export default function Home() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col sm:flex-row justify-between items-center mb-12 sm:mb-16"
+          className="flex flex-row flex-wrap justify-between items-center gap-4 mb-12 sm:mb-16"
         >
-          <div className="text-center sm:text-left">
+          <div className="text-left">
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
               Mustafa Lanewala
             </h1>
-            <p className="text-lg sm:text-xl font-medium flex items-center justify-center sm:justify-start gap-2 mt-2">
+            <p className="text-lg sm:text-xl font-medium flex items-center gap-2 mt-2">
               <Code className="h-5 w-5" /> AI & Full Stack Engineer
             </p>
           </div>
+
           <Button
             variant="ghost"
             size="icon"
             onClick={toggleDarkMode}
-            className={`rounded-full mt-4 sm:mt-0 ${
+            className={`rounded-full ${
               darkMode ? "hover:bg-gray-800" : "hover:bg-gray-100"
             } transition-all duration-200 focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
             aria-label={
@@ -124,7 +125,6 @@ export default function Home() {
             </AnimatePresence>
           </Button>
         </motion.header>
-
         <motion.section
           variants={sectionVariants}
           initial="hidden"
@@ -141,19 +141,16 @@ export default function Home() {
             frontend & backend development, UI/UX design, and product
             management.
             <br />
-            <br />A calm and composed tech enthusiast, I love traveling to
-            explore diverse cultures, igniting my creativity. As a Dawoodi
-            Bohra, I find balance through prayer and community rituals. I enjoy
-            photography, cooking, and cherishing family moments. My curiosity
-            drives me to experiment with new tech stacks and create side
-            projects that blend art and code, while I stay updated through tech
-            blogs and courses.
+            <br />
+            Beyond tech, I'm calm and curious. I enjoy traveling, photography,
+            cooking, and spending time with family. As a Dawoodi Bohra, I find
+            balance through prayer and community. I love exploring new tech
+            stacks and building creative side projects.
           </p>
           <hr
             className={`my-8 ${darkMode ? "border-gray-700" : "border-gray-200"}`}
           />
         </motion.section>
-
         <motion.section
           variants={sectionVariants}
           initial="hidden"
@@ -221,7 +218,6 @@ export default function Home() {
             className={`my-8 ${darkMode ? "border-gray-700" : "border-gray-200"}`}
           />
         </motion.section>
-
         <motion.section
           variants={sectionVariants}
           initial="hidden"
@@ -402,7 +398,6 @@ export default function Home() {
             className={`my-8 ${darkMode ? "border-gray-700" : "border-gray-200"}`}
           />
         </motion.section>
-
         <motion.section
           variants={sectionVariants}
           initial="hidden"
@@ -457,7 +452,6 @@ export default function Home() {
             className={`my-8 ${darkMode ? "border-gray-700" : "border-gray-200"}`}
           />
         </motion.section>
-
         <motion.section
           variants={sectionVariants}
           initial="hidden"
