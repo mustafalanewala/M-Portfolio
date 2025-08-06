@@ -6,12 +6,13 @@ import {
   Code,
   Briefcase,
   User,
-  Mail,
   FileCode,
   Instagram,
   Linkedin,
   Github,
   Globe,
+  MessageCircle,
+  Mail,
 } from "lucide-react"
 
 import { useEffect, useState } from "react"
@@ -81,10 +82,10 @@ export default function Home() {
           className="flex flex-row flex-wrap justify-between items-center gap-4 mb-12 sm:mb-16"
         >
           <div className="text-left">
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight">
+            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight font-poppins">
               Mustafa Lanewala
             </h1>
-            <p className="text-lg sm:text-xl font-medium flex items-center gap-2 mt-2">
+            <p className="text-lg sm:text-xl font-medium flex items-center gap-2 mt-2 font-inter">
               <Code className="h-5 w-5" /> AI & Full Stack Engineer
             </p>
           </div>
@@ -131,10 +132,10 @@ export default function Home() {
           animate="visible"
           className="mb-12"
         >
-          <h2 className="text-xl sm:text-2xl font-semibold flex items-center gap-2 mb-4">
+          <h2 className="text-xl sm:text-2xl font-bold flex items-center gap-2 mb-4 font-poppins">
             <User className="h-5 w-5" /> About Me
           </h2>
-          <p className="text-base sm:text-lg leading-relaxed">
+          <p className="text-base sm:text-lg leading-relaxed font-inter">
             I'm a 21-year-old AI & Full Stack Engineer with 2+ years of
             experience building scalable web applications, working on AI and
             automation, and designing microservices architecture. Proficient in
@@ -157,15 +158,15 @@ export default function Home() {
           animate="visible"
           className="mb-12"
         >
-          <h2 className="text-xl sm:text-2xl font-semibold flex items-center gap-2 mb-4">
+          <h2 className="text-xl sm:text-2xl font-bold flex items-center gap-2 mb-4 font-poppins">
             <Briefcase className="h-5 w-5" /> Experience
           </h2>
           <ol className="list-decimal pl-5 space-y-6">
             <li>
-              <h3 className="text-base sm:text-lg font-medium">
+              <h3 className="text-base sm:text-lg font-medium font-inter">
                 Product Engineer, Cleverflow, Dubai, UAE (Mar 2024–Present)
               </h3>
-              <ul className="list-disc pl-5 mt-2 text-sm sm:text-base">
+              <ul className="list-disc pl-5 mt-2 text-sm sm:text-base font-inter">
                 <li>
                   Led product management for Artifacts, creating a centralized
                   platform to enhance communication, improving operational
@@ -184,10 +185,10 @@ export default function Home() {
               </ul>
             </li>
             <li>
-              <h3 className="text-base sm:text-lg font-medium">
+              <h3 className="text-base sm:text-lg font-medium font-inter">
                 Product Engineer, Beem Cards, Dubai, UAE (Jan 2025–Present)
               </h3>
-              <ul className="list-disc pl-5 mt-2 text-sm sm:text-base">
+              <ul className="list-disc pl-5 mt-2 text-sm sm:text-base font-inter">
                 <li>
                   Leading fullstack development of Beem Cards — a digital smart
                   card platform for seamless professional networking.
@@ -200,12 +201,11 @@ export default function Home() {
                 </li>
               </ul>
             </li>
-
             <li>
-              <h3 className="text-base sm:text-lg font-medium">
+              <h3 className="text-base sm:text-lg font-medium font-inter">
                 Founder & CEO, MxNoor Solutions (Jan 2025–Present)
               </h3>
-              <ul className="list-disc pl-5 mt-2 text-sm sm:text-base">
+              <ul className="list-disc pl-5 mt-2 text-sm sm:text-base font-inter">
                 <li>
                   Founded a tech solutions company focused on innovative AI and
                   full-stack development, delivering tailored web and app
@@ -224,13 +224,15 @@ export default function Home() {
           animate="visible"
           className="mb-12"
         >
-          <h2 className="text-xl sm:text-2xl font-semibold flex items-center gap-2 mb-4">
+          <h2 className="text-xl sm:text-2xl font-bold flex items-center gap-2 mb-4 font-poppins">
             <FileCode className="h-5 w-5" /> Projects
           </h2>
           <ol className="list-decimal pl-5 space-y-6">
             <li>
-              <h3 className="text-base sm:text-lg font-medium">Beem Cards</h3>
-              <p className="text-sm sm:text-base">
+              <h3 className="text-base sm:text-lg font-medium font-inter">
+                Beem Cards
+              </h3>
+              <p className="text-sm sm:text-base font-inter">
                 A digital networking platform that allows professionals to
                 create, share, and manage digital business profiles with ease.
                 Supports dynamic updates, analytics, and personalized profiles
@@ -245,10 +247,11 @@ export default function Home() {
                 </a>
               </p>
             </li>
-
             <li>
-              <h3 className="text-base sm:text-lg font-medium">M-Tasks</h3>
-              <p className="text-sm sm:text-base">
+              <h3 className="text-base sm:text-lg font-medium font-inter">
+                M-Tasks
+              </h3>
+              <p className="text-sm sm:text-base font-inter">
                 A full-featured task management platform with real-time updates,
                 priority tagging, team collaboration, and dashboards. Built with
                 modern UI/UX and Firebase for instant notification and data
@@ -271,10 +274,11 @@ export default function Home() {
                 </a>
               </p>
             </li>
-
             <li>
-              <h3 className="text-base sm:text-lg font-medium">MsyncAI</h3>
-              <p className="text-sm sm:text-base">
+              <h3 className="text-base sm:text-lg font-medium font-inter">
+                MsyncAI
+              </h3>
+              <p className="text-sm sm:text-base font-inter">
                 lightning-fast AI-powered website generator that produces clean
                 HTML, CSS, and JavaScript code, with instant live previews and
                 downloadable project files.{" "}
@@ -296,10 +300,11 @@ export default function Home() {
                 </a>
               </p>
             </li>
-
             <li>
-              <h3 className="text-base sm:text-lg font-medium">BlogBox</h3>
-              <p className="text-sm sm:text-base">
+              <h3 className="text-base sm:text-lg font-medium font-inter">
+                BlogBox
+              </h3>
+              <p className="text-sm sm:text-base font-inter">
                 A blogging platform that empowers users to create, share, and
                 manage their own blogs with ease. Built with an emphasis on
                 accessibility and performance.{" "}
@@ -321,10 +326,11 @@ export default function Home() {
                 </a>
               </p>
             </li>
-
             <li>
-              <h3 className="text-base sm:text-lg font-medium">SkattireHub</h3>
-              <p className="text-sm sm:text-base">
+              <h3 className="text-base sm:text-lg font-medium font-inter">
+                SkAttireHub
+              </h3>
+              <p className="text-sm sm:text-base font-inter">
                 An e-commerce website for a fashion brand offering secure
                 payment integration (Razorpay), dynamic product listings,
                 inventory management, and mobile responsiveness.{" "}
@@ -338,10 +344,11 @@ export default function Home() {
                 </a>
               </p>
             </li>
-
             <li>
-              <h3 className="text-base sm:text-lg font-medium">Elysium</h3>
-              <p className="text-sm sm:text-base">
+              <h3 className="text-base sm:text-lg font-medium font-inter">
+                Elysium
+              </h3>
+              <p className="text-sm sm:text-base font-inter">
                 A beautiful wallpaper application that integrates with the
                 Unsplash API to provide high-quality background images. Supports
                 download, search, and light/dark themes.{" "}
@@ -355,10 +362,11 @@ export default function Home() {
                 </a>
               </p>
             </li>
-
             <li>
-              <h3 className="text-base sm:text-lg font-medium">MxNoor</h3>
-              <p className="text-sm sm:text-base">
+              <h3 className="text-base sm:text-lg font-medium font-inter">
+                MxNoor
+              </h3>
+              <p className="text-sm sm:text-base font-inter">
                 A full stack digital solutions company that empowers modern
                 businesses and specializes in web design, e-commerce, apps,
                 graphics, multimedia, and AI.{" "}
@@ -372,12 +380,11 @@ export default function Home() {
                 </a>
               </p>
             </li>
-
             <li>
-              <h3 className="text-base sm:text-lg font-medium">
+              <h3 className="text-base sm:text-lg font-medium font-inter">
                 Crime Detection Model
               </h3>
-              <p className="text-sm sm:text-base">
+              <p className="text-sm sm:text-base font-inter">
                 A machine learning model for predicting potential crime hotspots
                 based on spatial and temporal data. Utilizes clustering
                 algorithms, heatmaps, and geospatial analytics to assist in law
@@ -393,7 +400,6 @@ export default function Home() {
               </p>
             </li>
           </ol>
-
           <hr
             className={`my-8 ${darkMode ? "border-gray-700" : "border-gray-200"}`}
           />
@@ -404,22 +410,21 @@ export default function Home() {
           animate="visible"
           className="mb-12"
         >
-          <h2 className="text-xl sm:text-2xl font-semibold flex items-center gap-2 mb-4">
-            Skills
+          <h2 className="text-xl sm:text-2xl font-bold flex items-center gap-2 mb-4 font-poppins">
+            <Code className="h-5 w-5" /> Skills
           </h2>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-2">
             {[
+              "HTML5",
+              "CSS3",
               "React.js",
               "Next.js",
               "TypeScript",
               "JavaScript",
               "Node.js",
+              "Express.js",
               "Python",
               "Django",
-              "Flask",
-              "TensorFlow",
-              "PyTorch",
-              "Scikit-learn",
               "PostgreSQL",
               "MongoDB",
               "Firebase",
@@ -427,21 +432,22 @@ export default function Home() {
               "Redis",
               "Tailwind CSS",
               "Material-UI",
-              "AWS",
               "Docker",
               "Git",
+              "CI/CD",
               "Figma",
               "Canva",
               "WordPress",
-              "Woocommerce",
               "Shopify",
+              "REST API",
+              "Prisma",
             ].map((skill) => (
               <motion.span
                 key={skill}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium ${
+                className={`px-4 py-1.5 rounded-full text-sm font-medium font-inter ${
                   darkMode ? "bg-gray-800 text-white" : "bg-gray-100 text-black"
-                } transition-colors duration-200`}
-                whileHover={{ scale: 1.05 }}
+                } transition-colors duration-200 shadow-sm hover:shadow-md`}
+                whileHover={{ scale: 1.05, y: -2 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 {skill}
@@ -457,10 +463,9 @@ export default function Home() {
           initial="hidden"
           animate="visible"
         >
-          <h2 className="text-xl sm:text-2xl font-semibold flex items-center gap-2 mb-4">
-            <Mail className="h-5 w-5" /> Contact
+          <h2 className="text-xl sm:text-2xl font-bold flex items-center gap-2 mb-4 font-poppins">
+            <MessageCircle className="h-5 w-5" /> Contact
           </h2>
-
           <div className="flex items-center gap-4">
             <a
               href="mailto:https.mustafalanewala@gmail.com"
@@ -469,7 +474,6 @@ export default function Home() {
             >
               <Mail className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
             </a>
-
             <a
               href="https://www.linkedin.com/in/mustafa-lanewala"
               target="_blank"
@@ -477,7 +481,6 @@ export default function Home() {
             >
               <Linkedin className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
             </a>
-
             <a
               href="https://github.com/mustafalanewala"
               target="_blank"
@@ -485,7 +488,6 @@ export default function Home() {
             >
               <Github className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
             </a>
-
             <a
               href="https://www.instagram.com/mustafa.lanewala/"
               target="_blank"
@@ -493,7 +495,6 @@ export default function Home() {
             >
               <Instagram className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
             </a>
-
             <a
               href="https://www.mustafalanewala.dev"
               target="_blank"
