@@ -1,0 +1,103 @@
+{
+  "name": "Mustafa Lanewala",
+  "tagline": "AI & Full Stack Engineer",
+  "about": "I'm Mustafa Lanewala, Founder & CEO of MxNoor Solutions, a 21-year-old AI & Full Stack Engineer with 3+ years of experience building scalable web applications, working on AI and automation, and designing microservices architecture. Proficient in frontend & backend development, UI/UX design, and product management.\n\nBeyond tech, I'm calm and curious. I enjoy traveling, photography, cooking, and spending time with family. As a Dawoodi Bohra, I find balance through prayer and community. I love exploring new tech stacks and building creative side projects.",
+  "experience": [
+    {
+      "title": "Founder & CEO",
+      "company": "MxNoor Solutions",
+      "period": "Jan 2025–Present",
+      "location": "",
+      "bullets": ["Founded a tech solutions company focused on innovative AI and full-stack development, delivering tailored web and app solutions.", "Led the development and delivery of 15+ client projects, including e-commerce platforms, websites, AI-powered applications, and custom web solutions.", "Built and led a skilled team fostering innovation and collaboration, and established strategic partnerships."]
+    },
+    {
+      "title": "Product Engineer",
+      "company": "Beem Cards",
+      "period": "Jan 2025–Present",
+      "location": "Dubai, UAE",
+      "bullets": ["Leading fullstack development of Beem Cards — a digital smart card platform for seamless professional networking.", "Built scalable systems with Django REST Framework, PostgreSQL, Docker Compose, and modular APIs, and developed responsive frontends using React, Next.js, TypeScript, and Axios."]
+    },
+    {
+      "title": "Product Engineer",
+      "company": "Cleverflow",
+      "period": "Mar 2024–Present",
+      "location": "Dubai, UAE",
+      "bullets": ["Led product management for Artifacts, creating a centralized platform to enhance communication and improve operational efficiency.", "Developed CRM-integrated invoices, ad templates, and documents, enabling one-click generation and reducing manual effort.", "Led UI/UX design efforts, creating branding elements, custom layouts, and interactive features."]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Beem Cards",
+      "description": "Revolutionized networking with a digital card platform using Django REST, PostgreSQL, Docker, React, Next.js, TypeScript for scalable, seamless experiences.",
+      "links": [{ "text": "Live Demo", "url": "https://beem.cards" }]
+    },
+    {
+      "title": "SkAttireHub",
+      "description": "Developed an e-commerce platform with Razorpay integration, product listings, inventory management and streamlined shopping experiences.",
+      "links": [{ "text": "Live Demo", "url": "https://www.skattirehub.in" }]
+    },
+    {
+      "title": "MxNoor Solutions",
+      "description": "Launched a solutions company specializing in web design, e-commerce, apps, graphics, multimedia to empower modern businesses with tailored solutions.",
+      "links": [{ "text": "Live Demo", "url": "https://www.mxnoor.in" }]
+    },
+    {
+      "title": "Guidance",
+      "description": "Developed website for Guidance Tamil Nadu with responsive design, and CMS integration to showcase opportunities and support investors.",
+      "links": [{ "text": "Live Demo", "url": "https://guidancetamilnadu.vercel.app" }]
+    },
+    {
+      "title": "Howdy Chats",
+      "description": "Developed the landing website for Howdy Chats, a social app with WhatsApp and Instagram features, featuring responsive design and feature pages.",
+      "links": [{ "text": "Live Demo", "url": "https://howdy-chats.vercel.app" }]
+    },
+    {
+      "title": "Mubarak Collection",
+      "description": "Developed the e-commerce website for Mubarak Collection, a trusted Dawoodi Bohra Topis brand since 2011, blending tradition, craftsmanship, and innovation.",
+      "links": [{ "text": "Live Demo", "url": "https://mubarakcollection.in" }]
+    },
+    {
+      "title": "Gujarat Food Products",
+      "description": "Developed the website for Gujarat Food Products, pioneers in high-quality Makai Poha, combining traditional wisdom with modern technology for authentic Gujarati taste.",
+      "links": [{ "text": "Live Demo", "url": "https://gujaratfoodproducts.in" }]
+    },
+    {
+      "title": "M-Tasks",
+      "description": "Engineered a task management platform with real-time updates, team collaboration, Firebase integration for notifications, and modern UI/UX for enhanced productivity.",
+      "links": [{ "text": "Live Demo", "url": "https://mtasks.vercel.app" }, { "text": "GitHub", "url": "https://github.com/mustafalanewala/M-Task" }]
+    },
+    {
+      "title": "MsyncAI",
+      "description": "Pioneered website generator delivering HTML, CSS, JavaScript code with live previews, enabling rapid prototyping and downloadable files for developers.",
+      "links": [{ "text": "Live Demo", "url": "https://msyncai.vercel.app" }, { "text": "GitHub", "url": "https://github.com/mustafalanewala/msyncai" }]
+    },
+    {
+      "title": "BlogsBox",
+      "description": "Created blogging platform empowering users to create and manage content effortlessly, focused on performance and user experience with modern web technologies.",
+      "links": [{ "text": "Live Demo", "url": "https://blogsbox.vercel.app" }, { "text": "GitHub", "url": "https://github.com/mustafalanewala/blogbox" }]
+    }
+  ],
+  "skills": ["HTML5", "CSS3", "React.js", "Next.js", "TypeScript", "JavaScript", "Node.js", "Express.js", "Python", "Django", "PostgreSQL", "MongoDB", "Firebase", "MySQL", "Redis", "Tailwind CSS", "Material-UI", "Docker", "Git", "CI/CD", "Figma", "Canva", "WordPress", "Shopify", "REST API", "Prisma"],
+  "contacts": [
+    {
+      "type": "mail",
+      "url": "mailto:https.mustafalanewala@gmail.com"
+    },
+    {
+      "type": "linkedin",
+      "url": "https://www.linkedin.com/in/mustafa-lanewala"
+    },
+    {
+      "type": "github",
+      "url": "https://github.com/mustafalanewala"
+    },
+    {
+      "type": "instagram",
+      "url": "https://www.instagram.com/mustafa.lanewala/"
+    },
+    {
+      "type": "website",
+      "url": "https://www.mustafalanewala.dev"
+    }
+  ]
+}

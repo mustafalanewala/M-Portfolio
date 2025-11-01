@@ -6,7 +6,6 @@ import {
   Code,
   Briefcase,
   User,
-  FileCode,
   Instagram,
   Linkedin,
   Github,
@@ -18,10 +17,12 @@ import {
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { motion, AnimatePresence } from "framer-motion"
+import portfolio from "@/data/portfolio.json"
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [showAll, setShowAll] = useState(false)
 
   // Sync dark mode with localStorage
   useEffect(() => {
@@ -55,6 +56,46 @@ export default function Home() {
       transition: { duration: 0.5, ease: "easeOut" },
     },
   }
+  // Load data from JSON
+  const projects = portfolio.projects
+  const skills = portfolio.skills
+  const name = portfolio.name
+  const tagline = portfolio.tagline
+  const about = portfolio.about
+  const experience = portfolio.experience
+  const contacts = portfolio.contacts
+
+  const displayedProjects = showAll ? projects : projects.slice(0, 6)
+  const aboutParagraphs = about.split("\n\n")
+
+  const getIcon = (type: string) => {
+    switch (type) {
+      case "mail":
+        return (
+          <Mail className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
+        )
+      case "linkedin":
+        return (
+          <Linkedin className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
+        )
+      case "github":
+        return (
+          <Github className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
+        )
+      case "instagram":
+        return (
+          <Instagram className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
+        )
+      case "website":
+        return (
+          <Globe className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
+        )
+      default:
+        return (
+          <Globe className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
+        )
+    }
+  }
 
   if (loading) {
     return (
@@ -74,7 +115,7 @@ export default function Home() {
         darkMode ? "bg-black text-white" : "bg-white text-black"
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 max-w-4xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 max-w-5xl">
         <motion.header
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -83,10 +124,10 @@ export default function Home() {
         >
           <div className="text-left">
             <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight font-poppins">
-              Mustafa Lanewala
+              {name}
             </h1>
             <p className="text-lg sm:text-xl font-medium flex items-center gap-2 mt-2 font-inter">
-              <Code className="h-5 w-5" /> AI & Full Stack Engineer
+              <Code className="h-5 w-5" /> {tagline}
             </p>
           </div>
 
@@ -135,19 +176,13 @@ export default function Home() {
           <h2 className="text-xl sm:text-2xl font-bold flex items-center gap-2 mb-4 font-poppins">
             <User className="h-5 w-5" /> About Me
           </h2>
-          <p className="text-base sm:text-lg leading-relaxed font-inter">
-            I'm a 21-year-old AI & Full Stack Engineer with 2+ years of
-            experience building scalable web applications, working on AI and
-            automation, and designing microservices architecture. Proficient in
-            frontend & backend development, UI/UX design, and product
-            management.
-            <br />
-            <br />
-            Beyond tech, I'm calm and curious. I enjoy traveling, photography,
-            cooking, and spending time with family. As a Dawoodi Bohra, I find
-            balance through prayer and community. I love exploring new tech
-            stacks and building creative side projects.
-          </p>
+          <div className="leading-relaxed">
+            {aboutParagraphs.map((para, i) => (
+              <p key={i} className="text-base sm:text-lg font-inter mb-4">
+                {para}
+              </p>
+            ))}
+          </div>
           <hr
             className={`my-8 ${darkMode ? "border-gray-700" : "border-gray-200"}`}
           />
@@ -162,57 +197,20 @@ export default function Home() {
             <Briefcase className="h-5 w-5" /> Experience
           </h2>
           <ol className="list-decimal pl-5 space-y-6">
-            <li>
-              <h3 className="text-base sm:text-lg font-medium font-inter">
-                Product Engineer, Cleverflow, Dubai, UAE (Mar 2024–Present)
-              </h3>
-              <ul className="list-disc pl-5 mt-2 text-sm sm:text-base font-inter">
-                <li>
-                  Led product management for Artifacts, creating a centralized
-                  platform to enhance communication, improving operational
-                  efficiency by 30%.
-                </li>
-                <li>
-                  Developed CRM-integrated invoices, ad templates, and
-                  documents, enabling one-click generation and reducing manual
-                  effort by 70%.
-                </li>
-                <li>
-                  Led UI/UX design efforts, creating branding elements, custom
-                  layouts, and interactive features, enhancing user engagement
-                  and visual appeal.
-                </li>
-              </ul>
-            </li>
-            <li>
-              <h3 className="text-base sm:text-lg font-medium font-inter">
-                Product Engineer, Beem Cards, Dubai, UAE (Jan 2025–Present)
-              </h3>
-              <ul className="list-disc pl-5 mt-2 text-sm sm:text-base font-inter">
-                <li>
-                  Leading fullstack development of Beem Cards — a digital smart
-                  card platform for seamless professional networking.
-                </li>
-                <li>
-                  Built scalable systems with Django REST Framework, PostgreSQL,
-                  Docker Compose, and modular APIs, and developed responsive
-                  frontends using React, Next.js, TypeScript, and Axios for
-                  seamless UX.
-                </li>
-              </ul>
-            </li>
-            <li>
-              <h3 className="text-base sm:text-lg font-medium font-inter">
-                Founder & CEO, MxNoor Solutions (Jan 2025–Present)
-              </h3>
-              <ul className="list-disc pl-5 mt-2 text-sm sm:text-base font-inter">
-                <li>
-                  Founded a tech solutions company focused on innovative AI and
-                  full-stack development, delivering tailored web and app
-                  solutions.
-                </li>
-              </ul>
-            </li>
+            {experience.map((exp, idx) => (
+              <li key={idx}>
+                <h3 className="text-base sm:text-lg font-medium font-inter">
+                  {exp.title}
+                  {exp.company ? `, ${exp.company}` : ""}{" "}
+                  {exp.period ? ` (${exp.period})` : ""}
+                </h3>
+                <ul className="list-disc pl-5 mt-2 text-sm sm:text-base font-inter">
+                  {exp.bullets.map((b, i) => (
+                    <li key={i}>{b}</li>
+                  ))}
+                </ul>
+              </li>
+            ))}
           </ol>
           <hr
             className={`my-8 ${darkMode ? "border-gray-700" : "border-gray-200"}`}
@@ -225,181 +223,46 @@ export default function Home() {
           className="mb-12"
         >
           <h2 className="text-xl sm:text-2xl font-bold flex items-center gap-2 mb-4 font-poppins">
-            <FileCode className="h-5 w-5" /> Projects
+            <Briefcase className="h-5 w-5" /> Portfolio
           </h2>
-          <ol className="list-decimal pl-5 space-y-6">
-            <li>
-              <h3 className="text-base sm:text-lg font-medium font-inter">
-                Beem Cards
-              </h3>
-              <p className="text-sm sm:text-base font-inter">
-                A digital networking platform that allows professionals to
-                create, share, and manage digital business profiles with ease.
-                Supports dynamic updates, analytics, and personalized profiles
-                for streamlined networking.{" "}
-                <a
-                  href="https://beem.cards"
-                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500 mr-2`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Live
-                </a>
-              </p>
-            </li>
-            <li>
-              <h3 className="text-base sm:text-lg font-medium font-inter">
-                M-Tasks
-              </h3>
-              <p className="text-sm sm:text-base font-inter">
-                A full-featured task management platform with real-time updates,
-                priority tagging, team collaboration, and dashboards. Built with
-                modern UI/UX and Firebase for instant notification and data
-                sync.{" "}
-                <a
-                  href="https://mtasks.vercel.app"
-                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500 mr-2`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Live
-                </a>
-                <a
-                  href="https://github.com/mustafalanewala/M-Task"
-                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
-              </p>
-            </li>
-            <li>
-              <h3 className="text-base sm:text-lg font-medium font-inter">
-                MsyncAI
-              </h3>
-              <p className="text-sm sm:text-base font-inter">
-                lightning-fast AI-powered website generator that produces clean
-                HTML, CSS, and JavaScript code, with instant live previews and
-                downloadable project files.{" "}
-                <a
-                  href="https://msyncai.vercel.app"
-                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500 mr-2`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Live
-                </a>
-                <a
-                  href="https://github.com/mustafalanewala/msyncai"
-                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
-              </p>
-            </li>
-            <li>
-              <h3 className="text-base sm:text-lg font-medium font-inter">
-                BlogBox
-              </h3>
-              <p className="text-sm sm:text-base font-inter">
-                A blogging platform that empowers users to create, share, and
-                manage their own blogs with ease. Built with an emphasis on
-                accessibility and performance.{" "}
-                <a
-                  href="https://blogbox.vercel.app"
-                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500 mr-2`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Live
-                </a>
-                <a
-                  href="https://github.com/mustafalanewala/blogbox"
-                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
-              </p>
-            </li>
-            <li>
-              <h3 className="text-base sm:text-lg font-medium font-inter">
-                SkAttireHub
-              </h3>
-              <p className="text-sm sm:text-base font-inter">
-                An e-commerce website for a fashion brand offering secure
-                payment integration (Razorpay), dynamic product listings,
-                inventory management, and mobile responsiveness.{" "}
-                <a
-                  href="https://www.skattirehub.in"
-                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500 mr-2`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Live
-                </a>
-              </p>
-            </li>
-            <li>
-              <h3 className="text-base sm:text-lg font-medium font-inter">
-                Elysium
-              </h3>
-              <p className="text-sm sm:text-base font-inter">
-                A beautiful wallpaper application that integrates with the
-                Unsplash API to provide high-quality background images. Supports
-                download, search, and light/dark themes.{" "}
-                <a
-                  href="https://github.com/mustafalanewala/elysium"
-                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
-              </p>
-            </li>
-            <li>
-              <h3 className="text-base sm:text-lg font-medium font-inter">
-                MxNoor
-              </h3>
-              <p className="text-sm sm:text-base font-inter">
-                A full stack digital solutions company that empowers modern
-                businesses and specializes in web design, e-commerce, apps,
-                graphics, multimedia, and AI.{" "}
-                <a
-                  href="https://www.mxnoor.in"
-                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500 mr-2`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Live
-                </a>
-              </p>
-            </li>
-            <li>
-              <h3 className="text-base sm:text-lg font-medium font-inter">
-                Crime Detection Model
-              </h3>
-              <p className="text-sm sm:text-base font-inter">
-                A machine learning model for predicting potential crime hotspots
-                based on spatial and temporal data. Utilizes clustering
-                algorithms, heatmaps, and geospatial analytics to assist in law
-                enforcement planning.{" "}
-                <a
-                  href="https://github.com/mustafalanewala/crime-detection"
-                  className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
-              </p>
-            </li>
-          </ol>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {displayedProjects.map((project, index) => (
+              <div
+                key={index}
+                className={`p-6 rounded-lg border text-sm font-inter shadow-sm hover:shadow-md transition-shadow ${darkMode ? "bg-gray-800 text-white border-gray-700" : "bg-gray-100 text-black border-gray-200"}`}
+              >
+                <h3 className="text-lg font-semibold font-inter mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-sm sm:text-base font-inter mb-4">
+                  {project.description}
+                </p>
+                <div className="flex gap-2">
+                  {project.links.map((link, linkIndex) => (
+                    <a
+                      key={linkIndex}
+                      href={link.url}
+                      className={`underline ${darkMode ? "text-blue-300" : "text-blue-600"} hover:text-blue-500`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {link.text}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+          {projects.length > 6 && (
+            <div className="text-center mt-6">
+              <Button
+                onClick={() => setShowAll(!showAll)}
+                className={`px-6 py-2 rounded-full font-medium transition-colors duration-200 border ${darkMode ? "bg-gray-800 text-white border-gray-700 hover:bg-gray-700" : "bg-gray-100 text-black border-gray-200 hover:bg-gray-200"}`}
+              >
+                {showAll ? "Show Less" : "Show More"}
+              </Button>
+            </div>
+          )}
           <hr
             className={`my-8 ${darkMode ? "border-gray-700" : "border-gray-200"}`}
           />
@@ -414,34 +277,7 @@ export default function Home() {
             <Code className="h-5 w-5" /> Skills
           </h2>
           <div className="flex flex-wrap gap-2">
-            {[
-              "HTML5",
-              "CSS3",
-              "React.js",
-              "Next.js",
-              "TypeScript",
-              "JavaScript",
-              "Node.js",
-              "Express.js",
-              "Python",
-              "Django",
-              "PostgreSQL",
-              "MongoDB",
-              "Firebase",
-              "MySQL",
-              "Redis",
-              "Tailwind CSS",
-              "Material-UI",
-              "Docker",
-              "Git",
-              "CI/CD",
-              "Figma",
-              "Canva",
-              "WordPress",
-              "Shopify",
-              "REST API",
-              "Prisma",
-            ].map((skill) => (
+            {skills.map((skill) => (
               <motion.span
                 key={skill}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium font-inter ${
@@ -467,41 +303,11 @@ export default function Home() {
             <MessageCircle className="h-5 w-5" /> Contact
           </h2>
           <div className="flex items-center gap-4">
-            <a
-              href="mailto:https.mustafalanewala@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Mail className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/mustafa-lanewala"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Linkedin className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
-            </a>
-            <a
-              href="https://github.com/mustafalanewala"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Github className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
-            </a>
-            <a
-              href="https://www.instagram.com/mustafa.lanewala/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Instagram className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
-            </a>
-            <a
-              href="https://www.mustafalanewala.dev"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Globe className="h-6 w-6 hover:text-blue-500 transition-colors duration-200" />
-            </a>
+            {contacts.map((c, i) => (
+              <a key={i} href={c.url} target="_blank" rel="noopener noreferrer">
+                {getIcon(c.type)}
+              </a>
+            ))}
           </div>
         </motion.section>
       </div>
