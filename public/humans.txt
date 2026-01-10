@@ -1,0 +1,15 @@
+/* TEAM */
+Developer & Designer: Mustafa Lanewala
+Site: https://www.mustafalanewala.dev
+Email: contact@mustafalanewala.dev
+Location: India
+
+/* SITE */
+Last update: 2026/01/10
+Standards: HTML5, CSS3, JavaScript, TypeScript
+Components: React, Next.js, Tailwind CSS, Framer Motion
+Software: VS Code, Figma, Git
+Hosting: Vercel
+
+/* THANKS */
+Thanks to the open-source community for amazing tools and frameworks!

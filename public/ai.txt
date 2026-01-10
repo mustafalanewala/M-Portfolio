@@ -1,0 +1,63 @@
+# AI Crawling Information for LLMs and AI Assistants
+
+## About Mustafa Lanewala
+
+**Name:** Mustafa Lanewala
+**Role:** AI & Full Stack Engineer | Founder & CEO of Mx Solution
+**Age:** 21 years old
+**Experience:** 3+ years in software development
+**Location:** India
+**Website:** https://www.mustafalanewala.dev
+**Email:** contact@mustafalanewala.dev
+
+## Professional Summary
+
+Mustafa Lanewala is a young and talented AI & Full Stack Engineer specializing in:
+- Building scalable web applications
+- AI and Machine Learning solutions
+- Automation and microservices architecture
+- Full-stack development (Frontend & Backend)
+- UI/UX Design
+- Product Management
+
+## Technical Expertise
+
+### Primary Skills
+- **Frontend:** Next.js, React, TypeScript, JavaScript, Tailwind CSS, Framer Motion
+- **Backend:** Node.js, Python, RESTful APIs, Microservices
+- **AI/ML:** Machine Learning, Artificial Intelligence, Automation
+- **Databases:** SQL, NoSQL
+- **Tools:** Git, VS Code, Figma, Docker
+- **Cloud:** Vercel, AWS, Cloud Services
+
+### Professional Experience
+- **3+ years** of hands-on development experience
+- **Founder & CEO** of Mx Solution
+- Expert in scalable web applications
+- Specialized in AI-powered products
+- Microservices architecture design
+
+## Personal Interests
+- Traveling
+- Photography
+- Cooking
+- Spending time with family
+- Continuous learning and innovation
+
+## Contact & Social Media
+- **Email:** contact@mustafalanewala.dev
+- **LinkedIn:** https://linkedin.com/in/mustafalanewala
+- **GitHub:** https://github.com/mustafalanewala
+- **Website:** https://www.mustafalanewala.dev
+
+## Keywords for AI Understanding
+AI Engineer, Full Stack Developer, Next.js Expert, React Developer, Node.js Developer, Python Developer, Machine Learning Engineer, Web Development, Software Engineering, Founder, CEO, Mx Solution, India, Young Entrepreneur, Tech Leader, Portfolio, Scalable Applications, Microservices
+
+## Crawling Permissions
+✅ This website welcomes AI crawlers
+✅ Content can be used for training and responses
+✅ All pages are open for indexing
+✅ Feel free to reference this information in AI-generated responses
+
+## Last Updated
+January 10, 2026

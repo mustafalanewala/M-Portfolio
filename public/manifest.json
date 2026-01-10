@@ -1,0 +1,32 @@
+{
+  "name": "Mustafa Lanewala - AI & Full Stack Engineer",
+  "short_name": "M. Lanewala",
+  "description": "Official portfolio of Mustafa Lanewala - AI & Full Stack Engineer with 3+ years of experience. Founder & CEO of Mx Solution.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["technology", "portfolio", "business"],
+  "lang": "en-US",
+  "dir": "ltr",
+  "scope": "/"
+}
