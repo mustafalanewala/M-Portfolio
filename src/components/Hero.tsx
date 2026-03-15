@@ -1,7 +1,8 @@
 import { motion } from "framer-motion"
 import { Github, Linkedin, Mail } from "lucide-react"
+import { SocialLink } from "@/types/portfolio"
 
-const socialLinks = [
+const socialLinks: SocialLink[] = [
   {
     icon: Linkedin,
     href: "https://linkedin.com/in/mustafalanewala",

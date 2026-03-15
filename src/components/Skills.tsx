@@ -4,10 +4,12 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { Sparkles } from "lucide-react"
+import { SkillCategory } from "@/types/portfolio"
+import { memo } from "react"
 
-const SparkleIcon = () => <Sparkles className="w-5 h-5 text-primary" />
+const SparkleIcon = memo(() => <Sparkles className="w-5 h-5 text-primary" />)
 
-const skills = {
+const skills: SkillCategory = {
   Frontend: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "JavaScript"],
   Backend: ["Node.js", "Python", "Django", "REST API", "Express.js"],
   Database: ["PostgreSQL", "MongoDB", "Firebase", "Redis", "SQLite"],
@@ -15,7 +17,7 @@ const skills = {
   "AI Tools": ["ChatGPT", "GitHub Copilot", "Claude Code", "Cursor", "Ollama"],
 }
 
-const Skills = () => {
+const Skills = memo(() => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -82,6 +84,6 @@ const Skills = () => {
       </motion.div>
     </section>
   )
-}
+})
 
 export default Skills

@@ -2,10 +2,11 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { ArrowUpRight, Briefcase } from "lucide-react"
 import { useRef } from "react"
+import { ExperienceItem } from "@/types/portfolio"
 
 const BriefcaseIcon = () => <Briefcase className="w-5 h-5" />
 
-const experiences = [
+const experiences: ExperienceItem[] = [
   {
     title: "Founder & CEO",
     company: "Mx Solution",

@@ -2,10 +2,12 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { ArrowUpRight, Send } from "lucide-react"
+import { ContactItem } from "@/types/portfolio"
+import { memo } from "react"
 
-const SendIcon = () => <Send className="w-5 h-5" />
+const SendIcon = memo(() => <Send className="w-5 h-5" />)
 
-const contacts = [
+const contacts: ContactItem[] = [
   {
     label: "contact@mustafalanewala.dev",
     href: "mailto:contact@mustafalanewala.dev",
@@ -24,7 +26,7 @@ const contacts = [
   },
 ]
 
-const Contact = () => {
+const Contact = memo(() => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -94,6 +96,6 @@ const Contact = () => {
       </motion.div>
     </section>
   )
-}
+})
 
 export default Contact

@@ -2,11 +2,11 @@ import { motion, useMotionValueEvent, useScroll } from "framer-motion"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import ThemeToggle from "./ThemeToggle"
+import { NavLink } from "@/types/portfolio"
 
-const navLinks = [
+const navLinks: NavLink[] = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
-  { href: "#portfolio", label: "Projects" },
   { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
 ]

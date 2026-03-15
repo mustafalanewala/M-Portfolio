@@ -2,10 +2,11 @@ import { motion } from "framer-motion"
 import { useInView } from "framer-motion"
 import { useRef } from "react"
 import { User } from "lucide-react"
+import { memo } from "react"
 
-const UserIcon = () => <User className="w-5 h-5" />
+const UserIcon = memo(() => <User className="w-5 h-5" />)
 
-const About = () => {
+const About = memo(() => {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
@@ -57,6 +58,6 @@ const About = () => {
       </motion.div>
     </section>
   )
-}
+})
 
 export default About
