@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { ArrowUpRight, Briefcase } from "lucide-react";
-import { useRef } from "react";
+import { motion } from "framer-motion"
+import { useInView } from "framer-motion"
+import { ArrowUpRight, Briefcase } from "lucide-react"
+import { useRef } from "react"
 
-const BriefcaseIcon = () => <Briefcase className="w-5 h-5" />;
+const BriefcaseIcon = () => <Briefcase className="w-5 h-5" />
 
 const experiences = [
   {
@@ -16,24 +16,25 @@ const experiences = [
   },
   {
     title: "Product Engineer",
-    company: "Beem Cards",
-    period: "Jan 2025 – Present",
+    company: "Ruby CRM",
+    period: "Jun 2025 – Present",
     description:
-      "Leading fullstack development of a digital smart card platform with Django REST Framework, PostgreSQL, React, and Next.js.",
-    link: "https://beem.cards",
+      "Building features and driving frontend development for the UAE's top AI-powered real estate CRM.",
+    link: "https://www.rubycrm.ai",
   },
   {
     title: "Product Engineer",
     company: "Cleverflow",
-    period: "Mar 2024 – Present",
-    description: "Led product management for Artifacts platform. Developed CRM-integrated invoices and ad templates.",
+    period: "Mar 2024 – May 2025",
+    description:
+      "Led product management for Artifacts platform. Developed CRM-integrated invoices and ad templates.",
     link: "https://cleverflow.com",
   },
-];
+]
 
 const Experience = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
     <section id="experience" className="section-container" ref={ref}>
@@ -65,7 +66,9 @@ const Experience = () => {
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-semibold text-base sm:text-lg">{exp.title}</h3>
+                    <h3 className="font-semibold text-base sm:text-lg">
+                      {exp.title}
+                    </h3>
                     {exp.link && (
                       <a
                         href={exp.link}
@@ -77,8 +80,12 @@ const Experience = () => {
                       </a>
                     )}
                   </div>
-                  <p className="text-muted-foreground text-sm sm:text-base mb-2">{exp.company}</p>
-                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">{exp.description}</p>
+                  <p className="text-muted-foreground text-sm sm:text-base mb-2">
+                    {exp.company}
+                  </p>
+                  <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                    {exp.description}
+                  </p>
                 </div>
                 <span className="text-xs font-mono text-muted-foreground shrink-0 order-first sm:order-last">
                   {exp.period}
@@ -89,7 +96,7 @@ const Experience = () => {
         </div>
       </motion.div>
     </section>
-  );
-};
+  )
+}
 
-export default Experience;
+export default Experience

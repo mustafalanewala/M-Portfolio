@@ -1,39 +1,29 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { Layers } from "lucide-react";
+import { motion } from "framer-motion"
+import { useInView } from "framer-motion"
+import { useRef } from "react"
+import { Layers } from "lucide-react"
 
-const LayersIcon = () => <Layers className="w-5 h-5" />;
+const LayersIcon = () => <Layers className="w-5 h-5" />
 
 const projects = [
   {
     title: "Beem Cards",
-    description: "Digital card platform with Django REST, PostgreSQL, React, Next.js.",
+    description:
+      "Digital card platform with Django REST, PostgreSQL, React, Next.js.",
     link: "https://beem.cards/",
     tags: ["Django", "Next.js", "React.js"],
   },
   {
-    title: "Mx Solution",
-    description: "We turn ideas into scalable digital systems for real business results.",
-    link: "https://www.mxsolution.in/",
-    tags: ["Full Stack", "Business"],
-  },
-  {
     title: "SkAttireHub",
-    description: "E-commerce platform with Razorpay integration and inventory management.",
+    description:
+      "E-commerce platform with Razorpay integration and inventory management.",
     link: "https://www.skattirehub.in/",
     tags: ["E-commerce", "Woocommerce", "Wordpress"],
   },
   {
     title: "Guidance Tamil Nadu",
-    description: "Government website with responsive design and CMS integration.",
-    link: "https://guidancetamilnadu.vercel.app/",
-    tags: ["Next.js", "TypeScript"],
-  },
-  {
-    title: "Howdy Chats",
-    description: "Landing website for a social app with WhatsApp and Instagram features.",
-    link: "https://howdy-chats.vercel.app/",
+    description: "Official investment portal for Guidance Tamil Nadu.",
+    link: "https://investingintamilnadu.com//",
     tags: ["Next.js", "TypeScript"],
   },
   {
@@ -42,11 +32,11 @@ const projects = [
     link: "https://mubarakcollection.in/",
     tags: ["E-commerce", "Next.js", "TypeScript"],
   },
-];
+]
 
 const Portfolio = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
     <section id="portfolio" className="section-container" ref={ref}>
@@ -80,7 +70,9 @@ const Portfolio = () => {
             >
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-2">
-                  <h3 className="font-semibold text-base sm:text-lg">{project.title}</h3>
+                  <h3 className="font-semibold text-base sm:text-lg">
+                    {project.title}
+                  </h3>
                   <motion.span
                     initial={{ opacity: 0, x: -5 }}
                     whileHover={{ opacity: 1, x: 0 }}
@@ -119,7 +111,7 @@ const Portfolio = () => {
         </div>
       </motion.div>
     </section>
-  );
-};
+  )
+}
 
-export default Portfolio;
+export default Portfolio

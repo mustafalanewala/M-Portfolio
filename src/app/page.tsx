@@ -1,18 +1,18 @@
 "use client"
 
-import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Experience from "@/components/Experience";
-import Portfolio from "@/components/Portfolio";
-import Skills from "@/components/Skills";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
-import SectionDivider from "@/components/SectionDivider";
-import useLenis from "@/hooks/useLenis";
+import Navigation from "@/components/Navigation"
+import Hero from "@/components/Hero"
+import About from "@/components/About"
+import Experience from "@/components/Experience"
+// import Portfolio from "@/components/Portfolio"
+import Skills from "@/components/Skills"
+import Contact from "@/components/Contact"
+import Footer from "@/components/Footer"
+import SectionDivider from "@/components/SectionDivider"
+import useLenis from "@/hooks/useLenis"
 
 export default function Home() {
-  useLenis();
+  useLenis()
 
   return (
     <div className="min-h-screen bg-background">
@@ -24,7 +24,7 @@ export default function Home() {
         <SectionDivider />
         <Experience />
         <SectionDivider />
-        <Portfolio />
+        {/* <Portfolio /> */}
         <SectionDivider />
         <Skills />
         <SectionDivider />
@@ -32,5 +32,5 @@ export default function Home() {
       </main>
       <Footer />
     </div>
-  );
+  )
 }
