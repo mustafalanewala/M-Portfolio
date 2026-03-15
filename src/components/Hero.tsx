@@ -12,25 +12,16 @@ const socialLinks: SocialLink[] = [
   { icon: Github, href: "https://github.com/mustafalanewala", label: "GitHub" },
 ]
 
-const TextReveal = ({ text, delay = 0 }: { text: string; delay?: number }) => {
+const TextReveal = ({ text }: { text: string }) => {
   return (
-    <span className="inline-flex overflow-hidden">
-      {text.split("").map((char, i) => (
-        <motion.span
-          key={i}
-          initial={{ y: "100%" }}
-          animate={{ y: 0 }}
-          transition={{
-            duration: 0.3,
-            delay: delay + i * 0.02,
-            ease: [0.33, 1, 0.68, 1],
-          }}
-          className="inline-block"
-        >
-          {char === " " ? "\u00A0" : char}
-        </motion.span>
-      ))}
-    </span>
+    <motion.span
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+      className="inline-block"
+    >
+      {text}
+    </motion.span>
   )
 }
 
@@ -43,9 +34,12 @@ const Hero = () => {
     >
       <div className="section-container py-0">
         <motion.p
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 0.3 }}
+          transition={{
+            duration: 0.6,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
           className="text-xs sm:text-sm font-mono text-muted-foreground mb-3 sm:mb-4"
         >
           AI & Full Stack Engineer
@@ -55,13 +49,16 @@ const Hero = () => {
           className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6"
           id="hero-heading"
         >
-          <TextReveal text="Mustafa Lanewala" delay={0.05} />
+          <TextReveal text="Mustafa Lanewala" />
         </h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 0.4 }}
+          transition={{
+            duration: 0.6,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
           className="text-base sm:text-lg text-muted-foreground max-w-xl mb-6 sm:mb-8 leading-relaxed"
         >
           Founder & CEO of Mx Solution. Building scalable applications &
@@ -71,10 +68,13 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3, delay: 0.5 }}
+          transition={{
+            duration: 0.6,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
           className="flex items-center gap-3 sm:gap-4"
         >
-          {socialLinks.map((link) => (
+          {socialLinks.map((link, index) => (
             <motion.a
               key={link.label}
               href={link.href}
@@ -82,6 +82,12 @@ const Hero = () => {
               rel="noopener noreferrer"
               className="p-2.5 sm:p-3 rounded-lg border border-border hover:bg-muted transition-colors"
               aria-label={link.label}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              }}
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.95 }}
             >

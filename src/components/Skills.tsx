@@ -30,14 +30,19 @@ const Skills = memo(() => {
     >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        viewport={{ once: true }}
       >
         <motion.h2
           className="section-title flex items-center gap-2 mb-8"
-          initial={{ opacity: 0, x: -20 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
+          viewport={{ once: true }}
           id="skills-heading"
         >
           <SparkleIcon />
@@ -51,8 +56,12 @@ const Skills = memo(() => {
               key={category}
               className="rounded-xl border border-border p-4 md:p-5 transition-colors hover:border-primary/40"
               initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.2 + categoryIndex * 0.1 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              }}
+              viewport={{ once: true }}
             >
               <h3 className="font-semibold text-sm sm:text-base mb-3 text-foreground">
                 {category}
@@ -66,12 +75,13 @@ const Skills = memo(() => {
                   <motion.li
                     key={skill}
                     className="text-sm text-muted-foreground whitespace-nowrap"
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     transition={{
-                      duration: 0.3,
-                      delay: 0.3 + categoryIndex * 0.1 + skillIndex * 0.05,
+                      duration: 0.6,
+                      ease: [0.25, 0.46, 0.45, 0.94],
                     }}
+                    viewport={{ once: true }}
                     whileHover={{ x: 3, color: "hsl(var(--foreground))" }}
                   >
                     {skill}

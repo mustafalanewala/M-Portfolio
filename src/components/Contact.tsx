@@ -1,6 +1,4 @@
 import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
 import { ArrowUpRight, Send } from "lucide-react"
 import { ContactItem } from "@/types/portfolio"
 import { memo } from "react"
@@ -27,26 +25,27 @@ const contacts: ContactItem[] = [
 ]
 
 const Contact = memo(() => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
   return (
     <section
       id="contact"
       className="section-container"
-      ref={ref}
       aria-labelledby="contact-heading"
     >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        viewport={{ once: true }}
       >
         <motion.h2
           className="section-title"
-          initial={{ opacity: 0, x: -20 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
+          viewport={{ once: true }}
           id="contact-heading"
         >
           <SendIcon />
@@ -56,8 +55,12 @@ const Contact = memo(() => {
         <motion.p
           className="text-muted-foreground mb-6 leading-relaxed text-base sm:text-lg"
           initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
+          viewport={{ once: true }}
         >
           Have a project in mind or want to collaborate? I'm always open to
           discussing new opportunities.
@@ -76,8 +79,12 @@ const Contact = memo(() => {
               }
               className="group flex items-center gap-2 text-sm sm:text-base transition-colors"
               initial={{ opacity: 0, y: 10 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.6,
+                ease: [0.25, 0.46, 0.45, 0.94],
+              }}
+              viewport={{ once: true }}
               whileHover={{ x: 4 }}
             >
               <span className="text-muted-foreground group-hover:text-foreground transition-colors">

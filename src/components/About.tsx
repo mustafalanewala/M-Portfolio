@@ -19,14 +19,19 @@ const About = memo(() => {
     >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        viewport={{ once: true }}
       >
         <motion.h2
           className="section-title"
-          initial={{ opacity: 0, x: -20 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.6,
+            ease: [0.25, 0.46, 0.45, 0.94],
+          }}
+          viewport={{ once: true }}
           id="about-heading"
         >
           <UserIcon />
@@ -36,8 +41,12 @@ const About = memo(() => {
         <div className="space-y-4 text-muted-foreground leading-relaxed text-base sm:text-lg">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
+            viewport={{ once: true }}
           >
             I'm <span className="text-foreground">Mustafa Lanewala</span>, a
             21-year-old AI & Full Stack Engineer with 3+ years of experience
@@ -47,8 +56,12 @@ const About = memo(() => {
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              ease: [0.25, 0.46, 0.45, 0.94],
+            }}
+            viewport={{ once: true }}
           >
             Proficient in frontend & backend development, UI/UX design, and
             product management. Beyond tech, I'm calm and curious. I enjoy
