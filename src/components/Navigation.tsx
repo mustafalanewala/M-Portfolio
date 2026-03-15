@@ -1,6 +1,5 @@
 import { motion, useMotionValueEvent, useScroll } from "framer-motion"
 import { useState } from "react"
-import { Menu, X } from "lucide-react"
 import ThemeToggle from "./ThemeToggle"
 import { NavLink } from "@/types/portfolio"
 
@@ -13,7 +12,6 @@ const navLinks: NavLink[] = [
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -70,60 +68,10 @@ const Navigation = () => {
 
             <div className="flex items-center gap-1">
               <ThemeToggle />
-              <motion.button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden p-2 rounded-full hover:bg-muted transition-colors"
-                whileTap={{ scale: 0.95 }}
-                aria-label={
-                  isMobileMenuOpen
-                    ? "Close navigation menu"
-                    : "Open navigation menu"
-                }
-                aria-expanded={isMobileMenuOpen}
-                aria-controls="mobile-menu"
-              >
-                {isMobileMenuOpen ? (
-                  <X className="w-4 h-4" />
-                ) : (
-                  <Menu className="w-4 h-4" />
-                )}
-              </motion.button>
             </div>
           </div>
         </nav>
       </motion.header>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -20 }}
-          className="fixed top-20 left-1/2 -translate-x-1/2 z-40 bg-background/95 backdrop-blur-md border border-border rounded-2xl shadow-lg md:hidden"
-          id="mobile-menu"
-          role="menu"
-          aria-label="Mobile navigation menu"
-        >
-          <ul className="p-4 space-y-2">
-            {navLinks.map((link, index) => (
-              <motion.li
-                key={link.href}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: index * 0.05 }}
-              >
-                <a
-                  href={link.href}
-                  className="block px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {link.label}
-                </a>
-              </motion.li>
-            ))}
-          </ul>
-        </motion.div>
-      )}
     </>
   )
 }
