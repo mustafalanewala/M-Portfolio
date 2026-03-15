@@ -1,6 +1,7 @@
 import "./globals.css"
 import type { Metadata } from "next"
 import { Toaster } from "react-hot-toast"
+import { registerServiceWorker } from "@/lib/serviceWorker"
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://mustafalanewala.dev"),
@@ -197,12 +198,21 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(profilePageJsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(profilePageJsonLd),
+          }}
         />
       </head>
       <body className="transition-colors duration-300">
         {children}
         <Toaster position="top-right" reverseOrder={false} />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (${registerServiceWorker.toString()})();
+            `,
+          }}
+        />
       </body>
     </html>
   )

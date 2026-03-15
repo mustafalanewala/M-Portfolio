@@ -10,6 +10,14 @@ import Contact from "@/components/Contact"
 import Footer from "@/components/Footer"
 import SectionDivider from "@/components/SectionDivider"
 import useLenis from "@/hooks/useLenis"
+import { Suspense } from "react"
+import {
+  HeroSkeleton,
+  AboutSkeleton,
+  ExperienceSkeleton,
+  SkillsSkeleton,
+  ContactSkeleton,
+} from "@/components/ui/skeleton"
 
 export default function Home() {
   useLenis()
@@ -17,18 +25,28 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <main>
-        <Hero />
+      <main id="main-content">
+        <Suspense fallback={<HeroSkeleton />}>
+          <Hero />
+        </Suspense>
         <SectionDivider />
-        <About />
+        <Suspense fallback={<AboutSkeleton />}>
+          <About />
+        </Suspense>
         <SectionDivider />
-        <Experience />
+        <Suspense fallback={<ExperienceSkeleton />}>
+          <Experience />
+        </Suspense>
         <SectionDivider />
         {/* <Portfolio /> */}
         <SectionDivider />
-        <Skills />
+        <Suspense fallback={<SkillsSkeleton />}>
+          <Skills />
+        </Suspense>
         <SectionDivider />
-        <Contact />
+        <Suspense fallback={<ContactSkeleton />}>
+          <Contact />
+        </Suspense>
       </main>
       <Footer />
     </div>

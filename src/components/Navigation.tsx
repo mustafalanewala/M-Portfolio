@@ -1,7 +1,7 @@
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import ThemeToggle from "./ThemeToggle";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion"
+import { useState } from "react"
+import { Menu, X } from "lucide-react"
+import ThemeToggle from "./ThemeToggle"
 
 const navLinks = [
   { href: "#about", label: "About" },
@@ -9,19 +9,27 @@ const navLinks = [
   { href: "#portfolio", label: "Projects" },
   { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
-];
+]
 
 const Navigation = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { scrollY } = useScroll();
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsScrolled(latest > 50);
-  });
+    setIsScrolled(latest > 50)
+  })
 
   return (
     <>
+      {/* Skip to content link */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+      >
+        Skip to main content
+      </a>
+
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -30,8 +38,12 @@ const Navigation = () => {
       >
         <nav
           className={`px-4 sm:px-6 py-2.5 rounded-full border border-border transition-all duration-300 -translate-x-1/2 ${
-            isScrolled ? "bg-background/90 backdrop-blur-md shadow-lg" : "bg-background/70 backdrop-blur-sm"
+            isScrolled
+              ? "bg-background/90 backdrop-blur-md shadow-lg"
+              : "bg-background/70 backdrop-blur-sm"
           }`}
+          role="navigation"
+          aria-label="Main navigation"
         >
           <div className="flex items-center gap-4 sm:gap-6">
             <motion.a
@@ -62,8 +74,19 @@ const Navigation = () => {
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="md:hidden p-2 rounded-full hover:bg-muted transition-colors"
                 whileTap={{ scale: 0.95 }}
+                aria-label={
+                  isMobileMenuOpen
+                    ? "Close navigation menu"
+                    : "Open navigation menu"
+                }
+                aria-expanded={isMobileMenuOpen}
+                aria-controls="mobile-menu"
               >
-                {isMobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+                {isMobileMenuOpen ? (
+                  <X className="w-4 h-4" />
+                ) : (
+                  <Menu className="w-4 h-4" />
+                )}
               </motion.button>
             </div>
           </div>
@@ -77,6 +100,9 @@ const Navigation = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
           className="fixed top-20 left-1/2 -translate-x-1/2 z-40 bg-background/95 backdrop-blur-md border border-border rounded-2xl shadow-lg md:hidden"
+          id="mobile-menu"
+          role="menu"
+          aria-label="Mobile navigation menu"
         >
           <ul className="p-4 space-y-2">
             {navLinks.map((link, index) => (
@@ -99,7 +125,7 @@ const Navigation = () => {
         </motion.div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation

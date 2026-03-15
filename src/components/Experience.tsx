@@ -37,7 +37,12 @@ const Experience = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="experience" className="section-container" ref={ref}>
+    <section
+      id="experience"
+      className="section-container"
+      ref={ref}
+      aria-labelledby="experience-heading"
+    >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -48,6 +53,7 @@ const Experience = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
+          id="experience-heading"
         >
           <BriefcaseIcon />
           Experience

@@ -1,23 +1,40 @@
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
-import { ArrowUpRight, Send } from "lucide-react";
+import { motion } from "framer-motion"
+import { useInView } from "framer-motion"
+import { useRef } from "react"
+import { ArrowUpRight, Send } from "lucide-react"
 
-const SendIcon = () => <Send className="w-5 h-5" />;
+const SendIcon = () => <Send className="w-5 h-5" />
 
 const contacts = [
-  { label: "contact@mustafalanewala.dev", href: "mailto:contact@mustafalanewala.dev" },
-  { label: "github.com/mustafalanewala", href: "https://github.com/mustafalanewala" },
-  { label: "linkedin.com/in/mustafalanewala", href: "https://linkedin.com/in/mustafalanewala" },
-  { label: "instagram.com/mustafa.lanewala", href: "https://www.instagram.com/mustafa.lanewala" },
-];
+  {
+    label: "contact@mustafalanewala.dev",
+    href: "mailto:contact@mustafalanewala.dev",
+  },
+  {
+    label: "github.com/mustafalanewala",
+    href: "https://github.com/mustafalanewala",
+  },
+  {
+    label: "linkedin.com/in/mustafalanewala",
+    href: "https://linkedin.com/in/mustafalanewala",
+  },
+  {
+    label: "instagram.com/mustafa.lanewala",
+    href: "https://www.instagram.com/mustafa.lanewala",
+  },
+]
 
 const Contact = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="contact" className="section-container" ref={ref}>
+    <section
+      id="contact"
+      className="section-container"
+      ref={ref}
+      aria-labelledby="contact-heading"
+    >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -28,6 +45,7 @@ const Contact = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
+          id="contact-heading"
         >
           <SendIcon />
           Contact
@@ -39,7 +57,8 @@ const Contact = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Have a project in mind or want to collaborate? I'm always open to discussing new opportunities.
+          Have a project in mind or want to collaborate? I'm always open to
+          discussing new opportunities.
         </motion.p>
 
         <div className="space-y-2 sm:space-y-3">
@@ -48,7 +67,11 @@ const Contact = () => {
               key={contact.label}
               href={contact.href}
               target={contact.href.startsWith("mailto") ? undefined : "_blank"}
-              rel={contact.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+              rel={
+                contact.href.startsWith("mailto")
+                  ? undefined
+                  : "noopener noreferrer"
+              }
               className="group flex items-center gap-2 text-sm sm:text-base transition-colors"
               initial={{ opacity: 0, y: 10 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -70,7 +93,7 @@ const Contact = () => {
         </div>
       </motion.div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact

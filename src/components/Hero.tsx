@@ -1,11 +1,15 @@
-import { motion } from "framer-motion";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { motion } from "framer-motion"
+import { Github, Linkedin, Mail } from "lucide-react"
 
 const socialLinks = [
-  { icon: Linkedin, href: "https://linkedin.com/in/mustafalanewala", label: "LinkedIn" },
+  {
+    icon: Linkedin,
+    href: "https://linkedin.com/in/mustafalanewala",
+    label: "LinkedIn",
+  },
   { icon: Mail, href: "mailto:contact@mustafalanewala.dev", label: "Email" },
   { icon: Github, href: "https://github.com/mustafalanewala", label: "GitHub" },
-];
+]
 
 const TextReveal = ({ text, delay = 0 }: { text: string; delay?: number }) => {
   return (
@@ -26,12 +30,16 @@ const TextReveal = ({ text, delay = 0 }: { text: string; delay?: number }) => {
         </motion.span>
       ))}
     </span>
-  );
-};
+  )
+}
 
 const Hero = () => {
   return (
-    <section className="pt-24 pb-16 sm:pt-32 sm:pb-20">
+    <section
+      className="pt-24 pb-16 sm:pt-32 sm:pb-20"
+      role="banner"
+      aria-labelledby="hero-heading"
+    >
       <div className="section-container py-0">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -42,7 +50,10 @@ const Hero = () => {
           AI & Full Stack Engineer
         </motion.p>
 
-        <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6">
+        <h1
+          className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6"
+          id="hero-heading"
+        >
           <TextReveal text="Mustafa Lanewala" delay={0.05} />
         </h1>
 
@@ -52,7 +63,8 @@ const Hero = () => {
           transition={{ duration: 0.3, delay: 0.4 }}
           className="text-base sm:text-lg text-muted-foreground max-w-xl mb-6 sm:mb-8 leading-relaxed"
         >
-          Founder & CEO of Mx Solution. Building scalable applications & AI-powered products.
+          Founder & CEO of Mx Solution. Building scalable applications &
+          AI-powered products.
         </motion.p>
 
         <motion.div
@@ -78,7 +90,7 @@ const Hero = () => {
         </motion.div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

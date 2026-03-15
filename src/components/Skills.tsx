@@ -20,7 +20,12 @@ const Skills = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="skills" className="section-container" ref={ref}>
+    <section
+      id="skills"
+      className="section-container"
+      ref={ref}
+      aria-labelledby="skills-heading"
+    >
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -31,6 +36,7 @@ const Skills = () => {
           initial={{ opacity: 0, x: -20 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.1 }}
+          id="skills-heading"
         >
           <SparkleIcon />
           Skills
