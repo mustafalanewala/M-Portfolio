@@ -38,8 +38,7 @@ User-agent: Googlebot
 Allow: /
 
 # Host
-Host: https://www.mustafalanewala.dev
+Host: https://mustafalanewala.dev
 
 # Sitemaps
-Sitemap: https://www.mustafalanewala.dev/sitemap.xml
 Sitemap: https://mustafalanewala.dev/sitemap.xml

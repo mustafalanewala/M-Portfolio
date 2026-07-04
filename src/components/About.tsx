@@ -49,7 +49,7 @@ const About = memo(() => {
             viewport={{ once: true }}
           >
             I'm <span className="text-foreground">Mustafa Lanewala</span>, a
-            21-year-old AI & Full Stack Engineer with 3+ years of experience
+            22-year-old AI & Full Stack Engineer with 3+ years of experience
             building scalable web applications, working on AI and automation,
             and designing microservices architecture.
           </motion.p>

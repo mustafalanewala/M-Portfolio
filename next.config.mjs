@@ -45,6 +45,17 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "www.mustafalanewala.dev",
+          },
+        ],
+        destination: "https://mustafalanewala.dev/:path*",
+        permanent: true,
+      },
+      {
         source: "/home",
         destination: "/",
         permanent: true,
