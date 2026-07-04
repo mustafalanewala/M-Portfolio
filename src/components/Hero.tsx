@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { GitHub as Github, Linkedin, Mail } from "react-feather"
 import { SocialLink } from "@/types/portfolio"
 
 const socialLinks: SocialLink[] = [
