@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { GitHub as Github, Linkedin, Mail } from "react-feather"
+import { GitHub as Github, Linkedin } from "react-feather"
 import { SocialLink } from "@/types/portfolio"
 import { person, socials } from "@/data/profile"
 import { hoverLift, transition } from "@/lib/motion"
@@ -17,7 +17,6 @@ const XIcon = ({ className }: { className?: string }) => (
 
 const socialLinks: SocialLink[] = [
   { icon: Linkedin, href: socials.linkedin, label: "LinkedIn" },
-  { icon: Mail, href: `mailto:${person.email}`, label: "Email" },
   { icon: Github, href: socials.github, label: "GitHub" },
   { icon: XIcon, href: socials.x, label: "X" },
 ]

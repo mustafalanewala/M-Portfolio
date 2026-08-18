@@ -15,7 +15,6 @@ export const person = {
   familyName: "Lanewala",
   jobTitle: "AI & Full Stack Engineer",
   headline: "AI & Full Stack Engineer | Founder & CEO of Mx Solution",
-  email: "contact@mustafalanewala.tech",
   yearsOfExperience: 3,
   country: "India",
   countryCode: "IN",

@@ -15,7 +15,6 @@ const SendIcon = memo(function SendIcon() {
 })
 
 const contacts: ContactItem[] = [
-  { label: person.email, href: `mailto:${person.email}` },
   { label: socials.github.replace("https://", ""), href: socials.github },
   { label: socials.linkedin.replace("https://", ""), href: socials.linkedin },
   {
@@ -54,12 +53,8 @@ const Contact = memo(function Contact() {
             <motion.a
               key={contact.label}
               href={contact.href}
-              target={contact.href.startsWith("mailto") ? undefined : "_blank"}
-              rel={
-                contact.href.startsWith("mailto")
-                  ? undefined
-                  : "noopener noreferrer"
-              }
+              target="_blank"
+              rel="noopener noreferrer"
               className="group focus-ring flex w-fit items-center gap-2 text-sm sm:text-base"
               {...revealItemAt(index)}
               {...hoverSlide}

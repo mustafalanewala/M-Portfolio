@@ -47,13 +47,12 @@ const Navigation = () => {
           aria-label="Main navigation"
         >
           <div className="flex items-center gap-4 sm:gap-6">
-            <motion.a
+            <a
               href="#"
               className="font-display font-bold text-base text-foreground focus-ring"
-              {...hoverLift}
             >
               ML
-            </motion.a>
+            </a>
 
             <ul className="hidden md:flex items-center gap-4 lg:gap-5">
               {navLinks.map((link) => (

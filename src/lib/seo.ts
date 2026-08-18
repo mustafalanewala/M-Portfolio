@@ -70,7 +70,6 @@ export function buildStructuredData(lastModified: string) {
         familyName: person.familyName,
         url: SITE_URL,
         image: { "@id": ID.image },
-        email: `mailto:${person.email}`,
         jobTitle: person.jobTitle,
         description: person.summary,
         disambiguatingDescription: person.headline,
@@ -111,12 +110,6 @@ export function buildStructuredData(lastModified: string) {
         founder: { "@id": ID.person },
         logo: { "@id": ID.image },
         areaServed: { "@type": "Place", name: "Worldwide" },
-        contactPoint: {
-          "@type": "ContactPoint",
-          contactType: "business enquiries",
-          email: `mailto:${person.email}`,
-          availableLanguage: [...person.languages],
-        },
       },
       {
         "@type": "ImageObject",

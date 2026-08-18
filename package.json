@@ -8,7 +8,8 @@
     "postbuild": "next-sitemap",
     "start": "next start",
     "lint": "eslint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "seo:ping": "node scripts/indexnow.mjs"
   },
   "dependencies": {
     "framer-motion": "^13.1.0",
