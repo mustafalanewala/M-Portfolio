@@ -1,10 +1,32 @@
 import "./globals.css"
 import type { Metadata } from "next"
+import { Outfit, Syne } from "next/font/google"
 import { Toaster } from "react-hot-toast"
 import { registerServiceWorker } from "@/lib/serviceWorker"
 import { THEME_INIT_SCRIPT } from "@/lib/theme"
 import { SITE_URL, person, socials } from "@/data/profile"
 import { buildStructuredData, keywords } from "@/lib/seo"
+
+/**
+ * Self-hosted at build time. The previous `@import url(fonts.googleapis.com)`
+ * inside globals.css forced a render-blocking chain — stylesheet, then Google's
+ * CSS, then the font files, each on a fresh connection — which delayed LCP.
+ * next/font emits the @font-face locally with size-adjust metrics to stop the
+ * swap from shifting layout.
+ */
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-outfit",
+  display: "swap",
+})
+
+const syne = Syne({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-syne",
+  display: "swap",
+})
 
 const title = `${person.name} | ${person.jobTitle}`
 
@@ -51,7 +73,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description: person.summary,
-    creator: "@mustafalanewala",
+    creator: "@mustafa_l53",
   },
   robots: {
     index: true,
@@ -71,9 +93,6 @@ export const metadata: Metadata = {
       "x-default": SITE_URL,
     },
   },
-  verification: {
-    google: "12gzgm63lSl59EtjuBQ8Knk9PrvUWS3v9GctORYxPXY",
-  },
   category: "technology",
   other: {
     "profile:username": "mustafalanewala",
@@ -89,7 +108,11 @@ export default function RootLayout({
   const structuredData = buildStructuredData(new Date().toISOString())
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${outfit.variable} ${syne.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         {/* Applies the stored theme before first paint — prevents a white
             flash for dark-mode visitors. Must stay ahead of any styles. */}

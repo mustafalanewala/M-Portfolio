@@ -74,7 +74,12 @@ export function buildStructuredData(lastModified: string) {
         jobTitle: person.jobTitle,
         description: person.summary,
         disambiguatingDescription: person.headline,
-        sameAs: [socials.github, socials.linkedin, socials.instagram],
+        sameAs: [
+          socials.github,
+          socials.linkedin,
+          socials.instagram,
+          socials.x,
+        ],
         worksFor: { "@id": ID.organization },
         founder: { "@id": ID.organization },
         knowsAbout: [...expertise, ...allSkills],

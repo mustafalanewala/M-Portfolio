@@ -35,6 +35,7 @@ export const socials = {
   github: "https://github.com/mustafalanewala",
   linkedin: "https://linkedin.com/in/mustafalanewala",
   instagram: "https://www.instagram.com/mustafa.lanewala",
+  x: "https://x.com/mustafa_l53",
 } as const
 
 export const organization = {
