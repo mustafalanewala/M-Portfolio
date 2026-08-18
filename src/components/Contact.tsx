@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { ArrowUpRight, Send } from "lucide-react"
 import { ContactItem } from "@/types/portfolio"
-import { person, socials } from "@/data/profile"
+import { socials } from "@/data/profile"
 import {
   hoverSlide,
   revealItem,
@@ -17,6 +17,7 @@ const SendIcon = memo(function SendIcon() {
 const contacts: ContactItem[] = [
   { label: socials.github.replace("https://", ""), href: socials.github },
   { label: socials.linkedin.replace("https://", ""), href: socials.linkedin },
+  { label: socials.x.replace("https://", ""), href: socials.x },
   {
     label: socials.instagram.replace("https://www.", ""),
     href: socials.instagram,
