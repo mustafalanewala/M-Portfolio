@@ -1,10 +1,17 @@
 import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
 import { ArrowUpRight, Briefcase } from "lucide-react"
-import { useRef } from "react"
+import { memo } from "react"
 import { ExperienceItem } from "@/types/portfolio"
+import {
+  hoverSlide,
+  revealItem,
+  revealItemAt,
+  revealSection,
+} from "@/lib/motion"
 
-const BriefcaseIcon = () => <Briefcase className="w-5 h-5" />
+const BriefcaseIcon = memo(function BriefcaseIcon() {
+  return <Briefcase className="w-5 h-5 text-primary" />
+})
 
 const experiences: ExperienceItem[] = [
   {
@@ -33,32 +40,17 @@ const experiences: ExperienceItem[] = [
   },
 ]
 
-const Experience = () => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
+const Experience = memo(function Experience() {
   return (
     <section
       id="experience"
       className="section-container"
-      ref={ref}
       aria-labelledby="experience-heading"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-        viewport={{ once: true }}
-      >
+      <motion.div {...revealSection}>
         <motion.h2
           className="section-title"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            ease: [0.25, 0.46, 0.45, 0.94],
-          }}
-          viewport={{ once: true }}
+          {...revealItem}
           id="experience-heading"
         >
           <BriefcaseIcon />
@@ -69,14 +61,8 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <motion.div
               key={exp.company}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                ease: [0.25, 0.46, 0.45, 0.94],
-              }}
-              viewport={{ once: true }}
-              whileHover={{ x: 4 }}
+              {...revealItemAt(index)}
+              {...hoverSlide}
               className="group cursor-default"
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-4">
@@ -90,7 +76,8 @@ const Experience = () => {
                         href={exp.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="opacity-0 group-hover:opacity-100 transition-opacity"
+                        className="reveal-arrow text-link focus-ring"
+                        aria-label={`Visit ${exp.company}`}
                       >
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </a>
@@ -113,6 +100,6 @@ const Experience = () => {
       </motion.div>
     </section>
   )
-}
+})
 
 export default Experience

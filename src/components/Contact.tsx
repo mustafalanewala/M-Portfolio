@@ -1,9 +1,17 @@
 import { motion } from "framer-motion"
 import { ArrowUpRight, Send } from "lucide-react"
 import { ContactItem } from "@/types/portfolio"
+import {
+  hoverSlide,
+  revealItem,
+  revealItemAt,
+  revealSection,
+} from "@/lib/motion"
 import { memo } from "react"
 
-const SendIcon = memo(() => <Send className="w-5 h-5" />)
+const SendIcon = memo(function SendIcon() {
+  return <Send className="w-5 h-5 text-primary" />
+})
 
 const contacts: ContactItem[] = [
   {
@@ -24,28 +32,17 @@ const contacts: ContactItem[] = [
   },
 ]
 
-const Contact = memo(() => {
+const Contact = memo(function Contact() {
   return (
     <section
       id="contact"
       className="section-container"
       aria-labelledby="contact-heading"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-        viewport={{ once: true }}
-      >
+      <motion.div {...revealSection}>
         <motion.h2
           className="section-title"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            ease: [0.25, 0.46, 0.45, 0.94],
-          }}
-          viewport={{ once: true }}
+          {...revealItem}
           id="contact-heading"
         >
           <SendIcon />
@@ -54,16 +51,10 @@ const Contact = memo(() => {
 
         <motion.p
           className="text-muted-foreground mb-6 leading-relaxed text-base sm:text-lg"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            ease: [0.25, 0.46, 0.45, 0.94],
-          }}
-          viewport={{ once: true }}
+          {...revealItem}
         >
-          Have a project in mind or want to collaborate? I'm always open to
-          discussing new opportunities.
+          Have a project in mind or want to collaborate? I&rsquo;m always open
+          to discussing new opportunities.
         </motion.p>
 
         <div className="space-y-2 sm:space-y-3">
@@ -77,26 +68,14 @@ const Contact = memo(() => {
                   ? undefined
                   : "noopener noreferrer"
               }
-              className="group flex items-center gap-2 text-sm sm:text-base transition-colors"
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                ease: [0.25, 0.46, 0.45, 0.94],
-              }}
-              viewport={{ once: true }}
-              whileHover={{ x: 4 }}
+              className="group focus-ring flex w-fit items-center gap-2 text-sm sm:text-base"
+              {...revealItemAt(index)}
+              {...hoverSlide}
             >
-              <span className="text-muted-foreground group-hover:text-foreground transition-colors">
-                {contact.label}
-              </span>
-              <motion.span
-                initial={{ opacity: 0, x: -5 }}
-                whileHover={{ opacity: 1, x: 0 }}
-                className="opacity-0 group-hover:opacity-100 transition-opacity"
-              >
+              <span className="text-link">{contact.label}</span>
+              <span className="reveal-arrow text-link">
                 <ArrowUpRight className="w-3 h-3" />
-              </motion.span>
+              </span>
             </motion.a>
           ))}
         </div>

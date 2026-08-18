@@ -2,6 +2,7 @@ import "./globals.css"
 import type { Metadata } from "next"
 import { Toaster } from "react-hot-toast"
 import { registerServiceWorker } from "@/lib/serviceWorker"
+import { THEME_INIT_SCRIPT } from "@/lib/theme"
 
 // 1. High-Impact, Spec-Compliant Google Metadata Configuration
 export const metadata: Metadata = {
@@ -153,15 +154,19 @@ export default function RootLayout({
   }
 
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" suppressHydrationWarning>
       <head>
+        {/* Applies the stored theme before first paint — prevents a white
+            flash for dark-mode visitors. Must stay ahead of any styles. */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+
         {/* Consolidated Structured Data Engine */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(unifiedJsonLd) }}
         />
       </head>
-      <body className="transition-colors duration-300">
+      <body>
         {children}
         <Toaster position="top-right" reverseOrder={false} />
         <script

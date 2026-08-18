@@ -1,7 +1,10 @@
+"use client"
+
 import { motion, useMotionValueEvent, useScroll } from "framer-motion"
 import { useState } from "react"
 import ThemeToggle from "./ThemeToggle"
 import { NavLink } from "@/types/portfolio"
+import { hoverLift, transition } from "@/lib/motion"
 
 const navLinks: NavLink[] = [
   { href: "#about", label: "About" },
@@ -23,7 +26,7 @@ const Navigation = () => {
       {/* Skip to content link */}
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium focus-ring"
       >
         Skip to main content
       </a>
@@ -31,7 +34,7 @@ const Navigation = () => {
       <motion.header
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.4 }}
+        transition={transition}
         className="fixed top-4 left-1/2 z-50"
       >
         <nav
@@ -46,23 +49,23 @@ const Navigation = () => {
           <div className="flex items-center gap-4 sm:gap-6">
             <motion.a
               href="#"
-              className="font-display font-bold text-base"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="font-display font-bold text-base text-foreground focus-ring"
+              {...hoverLift}
             >
               ML
             </motion.a>
 
             <ul className="hidden md:flex items-center gap-4 lg:gap-5">
               {navLinks.map((link) => (
-                <motion.li key={link.href}>
-                  <a
+                <li key={link.href}>
+                  <motion.a
                     href={link.href}
-                    className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                    className="text-link text-sm font-medium"
+                    {...hoverLift}
                   >
                     {link.label}
-                  </a>
-                </motion.li>
+                  </motion.a>
+                </li>
               ))}
             </ul>
 

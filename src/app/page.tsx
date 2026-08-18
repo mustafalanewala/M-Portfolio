@@ -37,7 +37,6 @@ export default function Home() {
         <Suspense fallback={<ExperienceSkeleton />}>
           <Experience />
         </Suspense>
-        <SectionDivider />
         {/* <Portfolio /> */}
         <SectionDivider />
         <Suspense fallback={<SkillsSkeleton />}>

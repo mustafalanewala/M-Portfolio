@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { GitHub as Github, Linkedin, Mail } from "react-feather"
 import { SocialLink } from "@/types/portfolio"
+import { hoverLift, transition } from "@/lib/motion"
 
 const socialLinks: SocialLink[] = [
   {
@@ -17,7 +18,7 @@ const TextReveal = ({ text }: { text: string }) => {
     <motion.span
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+      transition={transition}
       className="inline-block"
     >
       {text}
@@ -36,10 +37,7 @@ const Hero = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            ease: [0.25, 0.46, 0.45, 0.94],
-          }}
+          transition={transition}
           className="text-xs sm:text-sm font-mono text-muted-foreground mb-3 sm:mb-4"
         >
           AI & Full Stack Engineer
@@ -55,10 +53,7 @@ const Hero = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            ease: [0.25, 0.46, 0.45, 0.94],
-          }}
+          transition={transition}
           className="text-base sm:text-lg text-muted-foreground max-w-xl mb-6 sm:mb-8 leading-relaxed"
         >
           Founder & CEO of Mx Solution. Building scalable applications &
@@ -68,10 +63,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.6,
-            ease: [0.25, 0.46, 0.45, 0.94],
-          }}
+          transition={transition}
           className="flex items-center gap-3 sm:gap-4"
         >
           {socialLinks.map((link, index) => (
@@ -80,16 +72,12 @@ const Hero = () => {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2.5 sm:p-3 rounded-lg border border-border hover:bg-muted transition-colors"
+              className="icon-button h-10 w-10 sm:h-11 sm:w-11"
               aria-label={link.label}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                ease: [0.25, 0.46, 0.45, 0.94],
-              }}
-              whileHover={{ y: -2 }}
-              whileTap={{ scale: 0.95 }}
+              transition={{ ...transition, delay: index * 0.05 }}
+              {...hoverLift}
             >
               <link.icon className="w-4 h-4 sm:w-5 sm:h-5" />
             </motion.a>
