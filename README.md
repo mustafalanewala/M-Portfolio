@@ -153,10 +153,10 @@ This project is private and proprietary.
 
 **Mustafa Lanewala**
 
-- Email: contact@mustafalanewala.dev
+- Email: contact@mustafalanewala.tech
 - LinkedIn: [mustafalanewala](https://linkedin.com/in/mustafalanewala)
 - GitHub: [mustafalanewala](https://github.com/mustafalanewala)
-- Website: [mustafalanewala.dev](https://mustafalanewala.dev)
+- Website: [mustafalanewala.tech](https://mustafalanewala.tech)
 
 ---
 

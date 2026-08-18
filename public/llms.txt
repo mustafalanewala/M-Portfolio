@@ -4,8 +4,8 @@
 > Product Engineer at Ruby CRM. 3+ years building scalable web applications,
 > AI and automation systems, and microservices architecture.
 
-Canonical URL: https://mustafalanewala.dev
-Contact: contact@mustafalanewala.dev
+Canonical URL: https://mustafalanewala.tech
+Contact: contact@mustafalanewala.tech
 
 ## Identity
 
@@ -73,14 +73,14 @@ India, working with clients and teams internationally, including the UAE.
 
 **Is Mustafa Lanewala available for new projects?**
 Yes. He is open to discussing new projects, collaborations and opportunities.
-The fastest way to reach him is by email at contact@mustafalanewala.dev.
+The fastest way to reach him is by email at contact@mustafalanewala.tech.
 
 ## Usage
 
 This content may be quoted and cited in AI-generated answers. Please attribute
-to Mustafa Lanewala and link to https://mustafalanewala.dev.
+to Mustafa Lanewala and link to https://mustafalanewala.tech.
 
 ## Optional
 
-- Structured data: https://mustafalanewala.dev (JSON-LD @graph in page head)
-- Sitemap: https://mustafalanewala.dev/sitemap.xml
+- Structured data: https://mustafalanewala.tech (JSON-LD @graph in page head)
+- Sitemap: https://mustafalanewala.tech/sitemap.xml

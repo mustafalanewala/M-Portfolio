@@ -261,19 +261,42 @@
     color: hsl(var(--foreground));
     background-color: transparent;
     cursor: pointer;
+    position: relative;
+    /* Skips the double-tap-zoom wait mobile browsers add before firing click. */
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
     transition:
       background-color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
       border-color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
       color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
+  /* Invisible 44x44 hit area — the button renders at 36px, which is under the
+     recommended touch target and caused missed taps that read as lag. */
+  .icon-button::after {
+    content: "";
+    position: absolute;
+    inset: 50%;
+    width: 44px;
+    height: 44px;
+    transform: translate(-50%, -50%);
+  }
+
+  @media (hover: hover) {
+    .icon-button::after {
+      display: none;
+    }
+  }
+
   .icon-button-round {
     border-radius: 9999px;
   }
 
-  .icon-button:hover {
-    background-color: hsl(var(--muted));
-    border-color: hsl(var(--foreground) / 0.28);
+  @media (hover: hover) {
+    .icon-button:hover {
+      background-color: hsl(var(--muted));
+      border-color: hsl(var(--foreground) / 0.28);
+    }
   }
 
   .icon-button:focus-visible {
@@ -288,9 +311,11 @@
     transition: color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .text-link:hover,
-  .group:hover .text-link {
-    color: hsl(var(--foreground));
+  @media (hover: hover) {
+    .text-link:hover,
+    .group:hover .text-link {
+      color: hsl(var(--foreground));
+    }
   }
 
   .text-link:focus-visible {
@@ -312,11 +337,17 @@
       color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .group:hover .reveal-arrow,
   .group:focus-within .reveal-arrow,
   .reveal-arrow:focus-visible {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+  }
+
+  @media (hover: hover) {
+    .group:hover .reveal-arrow {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
   }
 
   .skill-card {
@@ -325,9 +356,11 @@
       background-color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .skill-card:hover {
-    border-color: hsl(var(--foreground) / 0.28);
-    background-color: hsl(var(--muted) / 0.4);
+  @media (hover: hover) {
+    .skill-card:hover {
+      border-color: hsl(var(--foreground) / 0.28);
+      background-color: hsl(var(--muted) / 0.4);
+    }
   }
 
   .skill-item {
@@ -338,23 +371,30 @@
       transform 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .skill-item:hover {
-    color: hsl(var(--foreground));
-    transform: translate3d(3px, 0, 0);
+  @media (hover: hover) {
+    .skill-item:hover {
+      color: hsl(var(--foreground));
+      transform: translate3d(3px, 0, 0);
+    }
   }
 
   .project-card {
     transition: background-color 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .project-card:hover {
-    background-color: hsl(var(--muted) / 0.5);
+  @media (hover: hover) {
+    .project-card:hover {
+      background-color: hsl(var(--muted) / 0.5);
+    }
   }
 
   .theme-icon {
+    /* Plain ease-out, no overshoot: the bounce needed a longer window than the
+       reveal and left the icons still settling after the wipe finished. */
     transition:
-      transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1),
-      opacity 260ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform 240ms cubic-bezier(0.33, 1, 0.68, 1),
+      opacity 200ms cubic-bezier(0.33, 1, 0.68, 1);
+    will-change: transform, opacity;
   }
 }
 
@@ -383,11 +423,11 @@
 .theme-animating *::before,
 .theme-animating *::after {
   transition:
-    background-color 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    border-color 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    color 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    fill 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    stroke 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    background-color 260ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 260ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    color 260ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    fill 260ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    stroke 260ms cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
 }
 
 @media (prefers-reduced-motion: reduce) {

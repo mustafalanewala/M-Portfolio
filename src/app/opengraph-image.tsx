@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og"
-import { person, socials } from "@/data/profile"
+import { SITE_URL, person, socials } from "@/data/profile"
 
 export const alt = `${person.name} — ${person.jobTitle}`
 export const size = { width: 1200, height: 630 }
@@ -71,7 +71,9 @@ export default function OpengraphImage() {
           color: "#9a9a9a",
         }}
       >
-        <div style={{ display: "flex" }}>mustafalanewala.dev</div>
+        <div style={{ display: "flex" }}>
+          {SITE_URL.replace("https://", "")}
+        </div>
         <div style={{ display: "flex" }}>
           {socials.github.replace("https://", "")}
         </div>

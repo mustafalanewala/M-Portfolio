@@ -1,7 +1,7 @@
 /* TEAM */
 Developer & Designer: Mustafa Lanewala
-Site: https://mustafalanewala.dev
-Email: contact@mustafalanewala.dev
+Site: https://mustafalanewala.tech
+Email: contact@mustafalanewala.tech
 Location: India
 
 /* SITE */

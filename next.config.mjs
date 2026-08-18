@@ -41,15 +41,11 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Consolidate www onto the apex so only one host is ever indexed.
       {
         source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "www.mustafalanewala.dev",
-          },
-        ],
-        destination: "https://mustafalanewala.dev/:path*",
+        has: [{ type: "host", value: "www.mustafalanewala.tech" }],
+        destination: "https://mustafalanewala.tech/:path*",
         permanent: true,
       },
       {

@@ -9,7 +9,9 @@ type ViewTransitionDocument = Document & {
   startViewTransition?: (callback: () => void) => { ready: Promise<void> }
 }
 
-const REVEAL_MS = 620
+// Shorter than it looks it should be: the wipe covers the whole viewport, so
+// perceived duration runs long. 620ms measured as sluggish on phones.
+const REVEAL_MS = 420
 
 /**
  * Stateless by design: the icons are driven by the `dark` class via CSS, so
@@ -60,7 +62,7 @@ const ThemeToggle = () => {
           },
           {
             duration: REVEAL_MS,
-            easing: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+            easing: "cubic-bezier(0.33, 1, 0.68, 1)",
             pseudoElement: "::view-transition-new(root)",
           }
         )

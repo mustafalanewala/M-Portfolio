@@ -1,4 +1,4 @@
-# https://mustafalanewala.dev
+# https://mustafalanewala.tech
 # Search engines and AI assistants are both welcome.
 
 User-agent: *
@@ -75,8 +75,8 @@ Allow: /
 User-agent: MistralAI-User
 Allow: /
 
-# Structured summary for LLMs: https://mustafalanewala.dev/llms.txt
+# Structured summary for LLMs: https://mustafalanewala.tech/llms.txt
 
-Host: https://mustafalanewala.dev
+Host: https://mustafalanewala.tech
 
-Sitemap: https://mustafalanewala.dev/sitemap.xml
+Sitemap: https://mustafalanewala.tech/sitemap.xml

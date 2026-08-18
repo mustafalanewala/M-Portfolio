@@ -7,7 +7,7 @@
  * is how `ai.txt` ended up claiming a different age than the About section.
  */
 
-export const SITE_URL = "https://mustafalanewala.dev"
+export const SITE_URL = "https://mustafalanewala.tech"
 
 export const person = {
   name: "Mustafa Lanewala",
@@ -15,7 +15,7 @@ export const person = {
   familyName: "Lanewala",
   jobTitle: "AI & Full Stack Engineer",
   headline: "AI & Full Stack Engineer | Founder & CEO of Mx Solution",
-  email: "contact@mustafalanewala.dev",
+  email: "contact@mustafalanewala.tech",
   yearsOfExperience: 3,
   country: "India",
   countryCode: "IN",

@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: process.env.SITE_URL || "https://mustafalanewala.dev",
+  siteUrl: process.env.SITE_URL || "https://mustafalanewala.tech",
   generateRobotsTxt: false, // We're managing robots.txt manually
   generateIndexSitemap: false,
   autoLastmod: true,
@@ -52,7 +52,7 @@ module.exports = {
         allow: "/",
       },
     ],
-    additionalSitemaps: ["https://mustafalanewala.dev/sitemap.xml"],
+    additionalSitemaps: ["https://mustafalanewala.tech/sitemap.xml"],
   },
   transform: async (config, path) => {
     return {
