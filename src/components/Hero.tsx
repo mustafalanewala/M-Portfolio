@@ -38,7 +38,7 @@ const TextReveal = ({ text }: { text: string }) => {
 const Hero = () => {
   return (
     <section
-      className="pt-24 pb-16 sm:pt-32 sm:pb-20"
+      className="pt-32 pb-16 sm:pt-32 sm:pb-20"
       aria-labelledby="hero-heading"
     >
       <div className="section-container py-0">

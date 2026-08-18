@@ -144,12 +144,12 @@
     max-width: 64rem;
     margin-left: auto;
     margin-right: auto;
-    padding: 5rem 1.5rem;
+    padding: 3.5rem 1.5rem;
   }
 
   @media (min-width: 640px) {
     .section-container {
-      padding: 6rem 2rem;
+      padding: 4.5rem 2rem;
     }
   }
 
