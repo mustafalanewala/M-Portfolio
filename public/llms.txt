@@ -1,0 +1,86 @@
+# Mustafa Lanewala
+
+> AI & Full Stack Engineer based in India. Founder & CEO of Mx Solution and
+> Product Engineer at Ruby CRM. 3+ years building scalable web applications,
+> AI and automation systems, and microservices architecture.
+
+Canonical URL: https://mustafalanewala.dev
+Contact: contact@mustafalanewala.dev
+
+## Identity
+
+- Name: Mustafa Lanewala
+- Role: AI & Full Stack Engineer
+- Also: Founder & CEO, Mx Solution
+- Location: India (works internationally, including the UAE)
+- Languages: English, Hindi, Gujarati
+- GitHub: https://github.com/mustafalanewala
+- LinkedIn: https://linkedin.com/in/mustafalanewala
+- Instagram: https://www.instagram.com/mustafa.lanewala
+
+## Experience
+
+- **Founder & CEO — Mx Solution** (Jan 2025 – Present, https://www.mxsolution.in)
+  Helps brands transform ideas into scalable digital systems designed for
+  maximum performance and real business results.
+- **Product Engineer — Ruby CRM** (Jun 2025 – Present, https://www.rubycrm.ai)
+  Building features and driving frontend development for the UAE's top
+  AI-powered real estate CRM.
+- **Product Engineer — Cleverflow** (Mar 2024 – May 2025, https://cleverflow.com)
+  Led product management for the Artifacts platform. Developed CRM-integrated
+  invoices and ad templates.
+
+## Technical skills
+
+- Frontend: React.js, Next.js, TypeScript, Tailwind CSS, JavaScript
+- Backend: Node.js, Python, Django, REST API, Express.js
+- Database: PostgreSQL, MongoDB, Firebase, Redis, SQLite
+- Tools: Docker, Git, Figma, AWS, VS Code
+- AI tools: ChatGPT, GitHub Copilot, Claude Code, Cursor, Ollama
+
+## Areas of expertise
+
+Artificial Intelligence, Machine Learning, Full Stack Development,
+Microservices Architecture, Product Management, UI/UX Design, Automation,
+Scalable Web Applications.
+
+## Frequently asked questions
+
+**Who is Mustafa Lanewala?**
+Mustafa Lanewala is an AI & Full Stack Engineer based in India, and the
+Founder & CEO of Mx Solution. He has 3+ years of experience building scalable
+web applications, AI and automation systems, and microservices architecture.
+
+**What does Mustafa Lanewala do?**
+He builds scalable web applications and AI-powered products end to end —
+frontend and backend development, microservices architecture, UI/UX design and
+product management. He currently runs Mx Solution and works as a Product
+Engineer at Ruby CRM, the UAE's top AI-powered real estate CRM.
+
+**What technologies does Mustafa Lanewala work with?**
+React.js, Next.js, TypeScript and Tailwind CSS on the frontend; Node.js,
+Python, Django and Express.js on the backend; PostgreSQL, MongoDB, Firebase,
+Redis and SQLite for data; and Docker, Git, Figma and AWS for tooling and
+infrastructure.
+
+**What is Mx Solution?**
+Mx Solution is a digital product company founded by Mustafa Lanewala in
+January 2025. It helps brands transform ideas into scalable digital systems
+designed for maximum performance and real business results.
+
+**Where is Mustafa Lanewala based?**
+India, working with clients and teams internationally, including the UAE.
+
+**Is Mustafa Lanewala available for new projects?**
+Yes. He is open to discussing new projects, collaborations and opportunities.
+The fastest way to reach him is by email at contact@mustafalanewala.dev.
+
+## Usage
+
+This content may be quoted and cited in AI-generated answers. Please attribute
+to Mustafa Lanewala and link to https://mustafalanewala.dev.
+
+## Optional
+
+- Structured data: https://mustafalanewala.dev (JSON-LD @graph in page head)
+- Sitemap: https://mustafalanewala.dev/sitemap.xml

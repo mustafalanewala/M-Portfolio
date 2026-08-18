@@ -3,19 +3,23 @@ import type { Metadata } from "next"
 import { Toaster } from "react-hot-toast"
 import { registerServiceWorker } from "@/lib/serviceWorker"
 import { THEME_INIT_SCRIPT } from "@/lib/theme"
+import { SITE_URL, person, socials } from "@/data/profile"
+import { buildStructuredData, keywords } from "@/lib/seo"
 
-// 1. High-Impact, Spec-Compliant Google Metadata Configuration
+const title = `${person.name} | ${person.jobTitle}`
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mustafalanewala.dev"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Mustafa Lanewala | AI & Full Stack Engineer",
-    template: "%s | Mustafa Lanewala",
+    default: title,
+    template: `%s | ${person.name}`,
   },
-  description:
-    "Mustafa Lanewala - AI & Full Stack Engineer and Founder & CEO of Mx Solution. Specializing in Next.js, React, Node.js, Python, and scalable AI architectures.",
-  authors: [{ name: "Mustafa Lanewala", url: "https://mustafalanewala.dev" }],
-  creator: "Mustafa Lanewala",
-  publisher: "Mustafa Lanewala",
+  description: person.summary,
+  keywords,
+  applicationName: `${person.name} Portfolio`,
+  authors: [{ name: person.name, url: SITE_URL }],
+  creator: person.name,
+  publisher: person.name,
   formatDetection: {
     email: false,
     address: false,
@@ -32,20 +36,22 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   openGraph: {
-    type: "website",
+    type: "profile",
+    firstName: person.givenName,
+    lastName: person.familyName,
+    username: "mustafalanewala",
     locale: "en_IN",
     alternateLocale: ["en_US", "en_GB"],
-    url: "https://mustafalanewala.dev",
-    siteName: "Mustafa Lanewala Portfolio",
-    title: "Mustafa Lanewala | AI & Full Stack Engineer",
-    description:
-      "AI & Full Stack Engineer specializing in scalable web applications, AI/ML solutions, and product development. Founder & CEO of Mx Solution.",
+    url: SITE_URL,
+    siteName: `${person.name} Portfolio`,
+    title,
+    description: person.summary,
   },
   twitter: {
-    card: "summary",
-    title: "Mustafa Lanewala | AI & Full Stack Engineer",
-    description:
-      "AI & Full Stack Engineer. Building scalable applications & AI-powered products.",
+    card: "summary_large_image",
+    title,
+    description: person.summary,
+    creator: "@mustafalanewala",
   },
   robots: {
     index: true,
@@ -59,15 +65,19 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://mustafalanewala.dev",
+    canonical: SITE_URL,
     languages: {
-      "en-IN": "https://mustafalanewala.dev",
+      "en-IN": SITE_URL,
+      "x-default": SITE_URL,
     },
   },
   verification: {
     google: "J40K-bGQWKTxNnp_8t6M7S0xn76akjELnU10Db5jaEk",
   },
   category: "technology",
+  other: {
+    "profile:username": "mustafalanewala",
+  },
 }
 
 export default function RootLayout({
@@ -75,83 +85,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  // 2. Fully Interlinked Schema Graph (100% Validated Entity Modeling)
-  const unifiedJsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Person",
-        "@id": "https://mustafalanewala.dev/#person",
-        name: "Mustafa Lanewala",
-        url: "https://mustafalanewala.dev",
-        sameAs: [
-          "https://github.com/mustafalanewala",
-          "https://linkedin.com/in/mustafalanewala",
-        ],
-        jobTitle: "AI & Full Stack Engineer",
-        description:
-          "AI & Full Stack Engineer with 3+ years of experience building scalable web applications, AI/ML solutions, and microservices architecture. Founder & CEO of Mx Solution.",
-        worksFor: {
-          "@id": "https://mustafalanewala.dev/#organization",
-        },
-        knowsAbout: [
-          "Artificial Intelligence",
-          "Machine Learning",
-          "Full Stack Development",
-          "Next.js",
-          "React",
-          "Node.js",
-          "Python",
-          "TypeScript",
-          "Microservices Architecture",
-          "Product Management",
-        ],
-        address: {
-          "@type": "PostalAddress",
-          addressCountry: "IN",
-        },
-        mainEntityOfPage: "https://mustafalanewala.dev/#profilepage",
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://mustafalanewala.dev/#organization",
-        name: "Mx Solution",
-        url: "https://mustafalanewala.dev",
-      },
-      {
-        "@type": "WebSite",
-        "@id": "https://mustafalanewala.dev/#website",
-        url: "https://mustafalanewala.dev",
-        name: "Mustafa Lanewala Portfolio",
-        description:
-          "Official portfolio website showcasing projects, experience, and skills of Mustafa Lanewala - AI & Full Stack Engineer",
-        inLanguage: "en-IN",
-        author: {
-          "@id": "https://mustafalanewala.dev/#person",
-        },
-      },
-      {
-        "@type": "WebPage",
-        "@id": "https://mustafalanewala.dev/#webpage",
-        url: "https://mustafalanewala.dev",
-        name: "Mustafa Lanewala | AI & Full Stack Engineer Portfolio",
-        isPartOf: {
-          "@id": "https://mustafalanewala.dev/#website",
-        },
-      },
-      {
-        "@type": "ProfilePage",
-        "@id": "https://mustafalanewala.dev/#profilepage",
-        url: "https://mustafalanewala.dev",
-        mainEntity: {
-          "@id": "https://mustafalanewala.dev/#person",
-        },
-        isPartOf: {
-          "@id": "https://mustafalanewala.dev/#website",
-        },
-      },
-    ],
-  }
+  // Build timestamp — gives crawlers an honest `dateModified` per deploy.
+  const structuredData = buildStructuredData(new Date().toISOString())
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -163,7 +98,7 @@ export default function RootLayout({
         {/* Consolidated Structured Data Engine */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(unifiedJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
       <body>

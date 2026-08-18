@@ -3,10 +3,12 @@ module.exports = {
   siteUrl: process.env.SITE_URL || "https://mustafalanewala.dev",
   generateRobotsTxt: false, // We're managing robots.txt manually
   generateIndexSitemap: false,
+  autoLastmod: true,
   changefreq: "weekly",
   priority: 1.0,
   sitemapSize: 5000,
-  exclude: [],
+  // /opengraph-image is an image endpoint, not a crawlable page.
+  exclude: ["/opengraph-image"],
   robotsTxtOptions: {
     policies: [
       {

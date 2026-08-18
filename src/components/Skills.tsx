@@ -2,21 +2,13 @@
 
 import { motion } from "framer-motion"
 import { Sparkles } from "lucide-react"
-import { SkillCategory } from "@/types/portfolio"
+import { skills } from "@/data/profile"
 import { memo } from "react"
 import { revealItem, revealItemAt, revealSection } from "@/lib/motion"
 
 const SparkleIcon = memo(function SparkleIcon() {
   return <Sparkles className="w-5 h-5 text-primary" />
 })
-
-const skills: SkillCategory = {
-  Frontend: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "JavaScript"],
-  Backend: ["Node.js", "Python", "Django", "REST API", "Express.js"],
-  Database: ["PostgreSQL", "MongoDB", "Firebase", "Redis", "SQLite"],
-  Tools: ["Docker", "Git", "Figma", "AWS", "VS Code"],
-  "AI Tools": ["ChatGPT", "GitHub Copilot", "Claude Code", "Cursor", "Ollama"],
-}
 
 const Skills = memo(function Skills() {
   return (

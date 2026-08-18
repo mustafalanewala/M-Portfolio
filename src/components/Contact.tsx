@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import { ArrowUpRight, Send } from "lucide-react"
 import { ContactItem } from "@/types/portfolio"
+import { person, socials } from "@/data/profile"
 import {
   hoverSlide,
   revealItem,
@@ -14,21 +15,12 @@ const SendIcon = memo(function SendIcon() {
 })
 
 const contacts: ContactItem[] = [
+  { label: person.email, href: `mailto:${person.email}` },
+  { label: socials.github.replace("https://", ""), href: socials.github },
+  { label: socials.linkedin.replace("https://", ""), href: socials.linkedin },
   {
-    label: "contact@mustafalanewala.dev",
-    href: "mailto:contact@mustafalanewala.dev",
-  },
-  {
-    label: "github.com/mustafalanewala",
-    href: "https://github.com/mustafalanewala",
-  },
-  {
-    label: "linkedin.com/in/mustafalanewala",
-    href: "https://linkedin.com/in/mustafalanewala",
-  },
-  {
-    label: "instagram.com/mustafa.lanewala",
-    href: "https://www.instagram.com/mustafa.lanewala",
+    label: socials.instagram.replace("https://www.", ""),
+    href: socials.instagram,
   },
 ]
 

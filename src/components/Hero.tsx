@@ -1,16 +1,13 @@
 import { motion } from "framer-motion"
 import { GitHub as Github, Linkedin, Mail } from "react-feather"
 import { SocialLink } from "@/types/portfolio"
+import { person, socials } from "@/data/profile"
 import { hoverLift, transition } from "@/lib/motion"
 
 const socialLinks: SocialLink[] = [
-  {
-    icon: Linkedin,
-    href: "https://linkedin.com/in/mustafalanewala",
-    label: "LinkedIn",
-  },
-  { icon: Mail, href: "mailto:contact@mustafalanewala.dev", label: "Email" },
-  { icon: Github, href: "https://github.com/mustafalanewala", label: "GitHub" },
+  { icon: Linkedin, href: socials.linkedin, label: "LinkedIn" },
+  { icon: Mail, href: `mailto:${person.email}`, label: "Email" },
+  { icon: Github, href: socials.github, label: "GitHub" },
 ]
 
 const TextReveal = ({ text }: { text: string }) => {
@@ -30,7 +27,6 @@ const Hero = () => {
   return (
     <section
       className="pt-24 pb-16 sm:pt-32 sm:pb-20"
-      role="banner"
       aria-labelledby="hero-heading"
     >
       <div className="section-container py-0">

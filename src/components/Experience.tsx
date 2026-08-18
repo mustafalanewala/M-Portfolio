@@ -1,7 +1,7 @@
 import { motion } from "framer-motion"
 import { ArrowUpRight, Briefcase } from "lucide-react"
 import { memo } from "react"
-import { ExperienceItem } from "@/types/portfolio"
+import { roles } from "@/data/profile"
 import {
   hoverSlide,
   revealItem,
@@ -12,33 +12,6 @@ import {
 const BriefcaseIcon = memo(function BriefcaseIcon() {
   return <Briefcase className="w-5 h-5 text-primary" />
 })
-
-const experiences: ExperienceItem[] = [
-  {
-    title: "Founder & CEO",
-    company: "Mx Solution",
-    period: "Jan 2025 – Present",
-    description:
-      "We help brands transform ideas into scalable digital systems designed for maximum performance and real business results.",
-    link: "https://www.mxsolution.in",
-  },
-  {
-    title: "Product Engineer",
-    company: "Ruby CRM",
-    period: "Jun 2025 – Present",
-    description:
-      "Building features and driving frontend development for the UAE's top AI-powered real estate CRM.",
-    link: "https://www.rubycrm.ai",
-  },
-  {
-    title: "Product Engineer",
-    company: "Cleverflow",
-    period: "Mar 2024 – May 2025",
-    description:
-      "Led product management for Artifacts platform. Developed CRM-integrated invoices and ad templates.",
-    link: "https://cleverflow.com",
-  },
-]
 
 const Experience = memo(function Experience() {
   return (
@@ -58,7 +31,7 @@ const Experience = memo(function Experience() {
         </motion.h2>
 
         <div className="space-y-6 sm:space-y-8">
-          {experiences.map((exp, index) => (
+          {roles.map((exp, index) => (
             <motion.div
               key={exp.company}
               {...revealItemAt(index)}
@@ -71,9 +44,9 @@ const Experience = memo(function Experience() {
                     <h3 className="font-semibold text-base sm:text-lg">
                       {exp.title}
                     </h3>
-                    {exp.link && (
+                    {exp.companyUrl && (
                       <a
-                        href={exp.link}
+                        href={exp.companyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="reveal-arrow text-link focus-ring"

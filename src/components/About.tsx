@@ -23,9 +23,9 @@ const About = memo(function About() {
         <div className="space-y-4 text-muted-foreground leading-relaxed text-base sm:text-lg">
           <motion.p {...revealItem}>
             I&rsquo;m <span className="text-foreground">Mustafa Lanewala</span>,
-            a 22-year-old AI & Full Stack Engineer with 3+ years of experience
-            building scalable web applications, working on AI and automation,
-            and designing microservices architecture.
+            an AI &amp; Full Stack Engineer with 3+ years of experience building
+            scalable web applications, working on AI and automation, and
+            designing microservices architecture.
           </motion.p>
 
           <motion.p {...revealItem}>
