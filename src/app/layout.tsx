@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     default: title,
     template: `%s | ${person.name}`,
   },
-  description: person.summary,
+  description: person.description,
   keywords,
   applicationName: `${person.name} Portfolio`,
   authors: [{ name: person.name, url: SITE_URL }],
@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     icon: [
       { url: "/favicon.ico?v=3", sizes: "32x32" },
       { url: "/icon.svg?v=3", type: "image/svg+xml" },
+      { url: "/icon-192.png?v=3", sizes: "192x192", type: "image/png" },
     ],
     apple: [
       {
@@ -58,17 +59,17 @@ export const metadata: Metadata = {
     firstName: person.givenName,
     lastName: person.familyName,
     username: "mustafalanewala",
-    locale: "en_IN",
-    alternateLocale: ["en_US", "en_GB"],
+    locale: "en_US",
+    alternateLocale: ["en_GB"],
     url: SITE_URL,
-    siteName: `${person.name} Portfolio`,
+    siteName: person.name,
     title,
-    description: person.summary,
+    description: person.description,
   },
   twitter: {
     card: "summary_large_image",
     title,
-    description: person.summary,
+    description: person.description,
     creator: "@mustafa_l53",
   },
   robots: {
@@ -84,10 +85,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: SITE_URL,
-    languages: {
-      "en-IN": SITE_URL,
-      "x-default": SITE_URL,
-    },
   },
   category: "technology",
   other: {
@@ -104,11 +101,7 @@ export default function RootLayout({
   const structuredData = buildStructuredData(new Date().toISOString())
 
   return (
-    <html
-      lang="en"
-      className={figtree.variable}
-      suppressHydrationWarning
-    >
+    <html lang="en" className={figtree.variable} suppressHydrationWarning>
       <head>
         {/* Applies the stored theme before first paint — prevents a white
             flash for dark-mode visitors. Must stay ahead of any styles. */}

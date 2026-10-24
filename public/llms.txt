@@ -1,8 +1,9 @@
 # Mustafa Lanewala
 
-> AI & Full Stack Engineer based in India. Founder & CEO of Mx Solution and
-> Product Engineer at Ruby CRM and Beem Cards. 2+ years building scalable web
-> applications, AI and automation solutions, and API integrations.
+> AI & Full Stack Engineer working remotely with international teams. Founder &
+> CEO of Mx Solution and Product Engineer at Ruby CRM and Beem Cards. 2+ years
+> building scalable web applications, AI and automation solutions, and API
+> integrations.
 
 Canonical URL: https://mustafalanewala.tech
 Contact: via LinkedIn — https://linkedin.com/in/mustafalanewala
@@ -12,8 +13,8 @@ Contact: via LinkedIn — https://linkedin.com/in/mustafalanewala
 - Name: Mustafa Lanewala
 - Role: AI & Full Stack Engineer
 - Also: Founder & CEO, Mx Solution
-- Location: India (works internationally, including the UAE)
-- Languages: English, Hindi, Gujarati
+- Works: Remotely, with teams internationally, including the UAE
+- Languages: English
 - GitHub: https://github.com/mustafalanewala
 - LinkedIn: https://linkedin.com/in/mustafalanewala
 - Instagram: https://www.instagram.com/mustafa.lanewala
@@ -22,10 +23,10 @@ Contact: via LinkedIn — https://linkedin.com/in/mustafalanewala
 ## Experience
 
 - **Founder & CEO — Mx Solution** (Jan 2025 – Present, https://www.mxsolution.in)
-  Founded a technology studio that solves business problems with technology,
-  from websites and e-commerce to custom software, automation and SEO. Shipped
-  platforms for Guidance Tamil Nadu (Government of Tamil Nadu), SK Attire Hub,
-  Mubarak Collection and Gujarat Food Products.
+  Founded and lead a technology studio that builds custom software, e-commerce
+  platforms, automation and SEO-driven websites for growing businesses.
+  Delivered a government investment portal and a shopify storefront for a
+  beauty brand, along with commercial websites and business management systems.
 - **Product Engineer — Ruby CRM** (Jun 2025 – Present, https://www.rubycrm.ai)
   Delivered 50+ core features across frontend, backend services, integrations
   and platform improvements. Worked on lead management, property listings,
@@ -38,7 +39,7 @@ Contact: via LinkedIn — https://linkedin.com/in/mustafalanewala
 ## Education
 
 - **B.Tech Computer Science — Artificial Intelligence & Data Science**
-  ITM SLS University, Vadodara, Gujarat (2022 – 2026)
+  ITM SLS University (2022 – 2026)
 
 ## Technical skills
 
@@ -58,8 +59,8 @@ Scalable Web Applications.
 ## Frequently asked questions
 
 **Who is Mustafa Lanewala?**
-Mustafa Lanewala is an AI & Full Stack Engineer based in India, and the
-Founder & CEO of Mx Solution. He has 2+ years of experience building scalable
+Mustafa Lanewala is an AI & Full Stack Engineer and the Founder & CEO of
+Mx Solution. He has 2+ years of experience building scalable
 web applications, AI and automation solutions, and API integrations.
 
 **What does Mustafa Lanewala do?**
@@ -71,7 +72,7 @@ Cards, a digital smart card platform.
 
 **Where did Mustafa Lanewala study?**
 He studied B.Tech Computer Science with a specialization in Artificial
-Intelligence & Data Science at ITM SLS University, Vadodara (2022 – 2026).
+Intelligence & Data Science at ITM SLS University (2022 – 2026).
 
 **What technologies does Mustafa Lanewala work with?**
 React.js, Next.js, TypeScript and Tailwind CSS on the web, and React Native
@@ -84,13 +85,15 @@ commerce.
 
 **What is Mx Solution?**
 Mx Solution is a technology partner founded by Mustafa Lanewala in January
-2025. It solves business problems with technology: websites, e-commerce,
-custom software, automation and search visibility for businesses across India.
-Clients include Guidance Tamil Nadu, SK Attire Hub, Mubarak Collection and
-Gujarat Food Products.
+2025. It builds custom software, e-commerce platforms, automation and
+SEO-driven websites for growing businesses.
+Its work includes a government investment portal and a shopify storefront for
+a beauty brand, along with commercial websites and business management
+systems.
 
-**Where is Mustafa Lanewala based?**
-India, working with clients and teams internationally, including the UAE.
+**Does Mustafa Lanewala work remotely?**
+Yes. He works remotely with clients and teams internationally, including
+companies in the UAE.
 
 **Is Mustafa Lanewala available for new projects?**
 Yes. He is open to discussing new projects, collaborations and opportunities.

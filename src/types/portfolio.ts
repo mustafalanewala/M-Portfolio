@@ -27,10 +27,3 @@ export interface SocialLink {
   href: string
   label: string
 }
-
-export interface Project {
-  title: string
-  description: string
-  link?: string
-  tags: string[]
-}

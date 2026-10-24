@@ -32,7 +32,7 @@ const Education = memo(function Education() {
                 {education.degree}
               </h3>
               <p className="text-muted-foreground text-sm sm:text-base mb-2">
-                {education.school}, {education.location}
+                {education.school}
               </p>
               <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                 Specialization in {education.field}.

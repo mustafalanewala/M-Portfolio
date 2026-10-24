@@ -40,24 +40,23 @@ const Experience = memo(function Experience() {
             >
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-4">
                 <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-1">
-                    <h3 className="font-semibold text-base sm:text-lg">
-                      {exp.title}
-                    </h3>
-                    {exp.companyUrl && (
-                      <a
-                        href={exp.companyUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="reveal-arrow text-link focus-ring"
-                        aria-label={`Visit ${exp.company}`}
-                      >
-                        <ArrowUpRight className="w-3.5 h-3.5" />
-                      </a>
-                    )}
-                  </div>
-                  <p className="text-muted-foreground text-sm sm:text-base mb-2">
-                    {exp.company}
+                  <h3 className="font-semibold text-base sm:text-lg mb-1">
+                    {exp.title}
+                  </h3>
+                  {/* Underline and arrow stay visible so the link is obvious on touch screens too */}
+                  <p className="text-sm sm:text-base mb-2">
+                    <a
+                      href={exp.companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-muted-foreground underline decoration-border underline-offset-4 transition-colors hover:text-foreground hover:decoration-foreground focus-ring"
+                    >
+                      {exp.company}
+                      <ArrowUpRight
+                        className="w-3.5 h-3.5"
+                        aria-hidden="true"
+                      />
+                    </a>
                   </p>
                   <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
                     {exp.description}

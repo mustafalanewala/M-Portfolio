@@ -16,7 +16,6 @@ export const ID = {
   website: `${SITE_URL}/#website`,
   webpage: `${SITE_URL}/#webpage`,
   profilePage: `${SITE_URL}/#profilepage`,
-  breadcrumb: `${SITE_URL}/#breadcrumb`,
   image: `${SITE_URL}/#primaryimage`,
 } as const
 
@@ -32,14 +31,14 @@ export const keywords: string[] = Array.from(
     person.jobTitle,
     "AI Engineer",
     "Full Stack Developer",
-    "Full Stack Engineer India",
+    "Remote Full Stack Engineer",
     "Founder Mx Solution",
     "Mx Solution",
     "Ruby CRM",
     "Beem Cards",
     "Product Engineer",
     "Freelance Next.js developer",
-    "Hire full stack developer India",
+    "Hire full stack developer",
     ...expertise,
     ...allSkills,
   ])
@@ -75,7 +74,6 @@ export function buildStructuredData(lastModified: string) {
         givenName: person.givenName,
         familyName: person.familyName,
         url: SITE_URL,
-        image: { "@id": ID.image },
         jobTitle: person.jobTitle,
         description: person.summary,
         disambiguatingDescription: person.headline,
@@ -89,7 +87,6 @@ export function buildStructuredData(lastModified: string) {
         alumniOf: {
           "@type": "CollegeOrUniversity",
           name: education.school,
-          address: education.location,
         },
         knowsAbout: Array.from(new Set([...expertise, ...allSkills])),
         knowsLanguage: person.languages.map((name) => ({
@@ -102,11 +99,6 @@ export function buildStructuredData(lastModified: string) {
           occupationalCategory: "15-1252.00 Software Developers",
           skills: allSkills.join(", "),
         },
-        nationality: { "@type": "Country", name: person.country },
-        address: {
-          "@type": "PostalAddress",
-          addressCountry: person.countryCode,
-        },
         mainEntityOfPage: { "@id": ID.profilePage },
       },
       {
@@ -117,7 +109,6 @@ export function buildStructuredData(lastModified: string) {
         description: organization.description,
         foundingDate: organization.foundingDate,
         founder: { "@id": ID.person },
-        logo: { "@id": ID.image },
         areaServed: { "@type": "Place", name: "Worldwide" },
       },
       {
@@ -133,7 +124,8 @@ export function buildStructuredData(lastModified: string) {
         "@type": "WebSite",
         "@id": ID.website,
         url: SITE_URL,
-        name: `${person.name} Portfolio`,
+        name: person.name,
+        alternateName: ["mustafalanewala", `${person.name} Portfolio`],
         description: person.summary,
         inLanguage: person.locale,
         publisher: { "@id": ID.person },
@@ -147,46 +139,9 @@ export function buildStructuredData(lastModified: string) {
         isPartOf: { "@id": ID.website },
         about: { "@id": ID.person },
         mainEntity: { "@id": ID.person },
+        primaryImageOfPage: { "@id": ID.image },
         dateModified: lastModified,
         inLanguage: person.locale,
-        breadcrumb: { "@id": ID.breadcrumb },
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": ID.breadcrumb,
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "About",
-            item: `${SITE_URL}/#about`,
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: "Experience",
-            item: `${SITE_URL}/#experience`,
-          },
-          {
-            "@type": "ListItem",
-            position: 4,
-            name: "Education",
-            item: `${SITE_URL}/#education`,
-          },
-          {
-            "@type": "ListItem",
-            position: 5,
-            name: "Skills",
-            item: `${SITE_URL}/#skills`,
-          },
-          {
-            "@type": "ListItem",
-            position: 6,
-            name: "Contact",
-            item: `${SITE_URL}/#contact`,
-          },
-        ],
       },
     ],
   }

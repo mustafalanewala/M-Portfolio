@@ -6,7 +6,7 @@
 **Name:** Mustafa Lanewala
 **Role:** AI & Full Stack Engineer | Founder & CEO of Mx Solution
 **Experience:** 2+ years in software development
-**Location:** India
+**Works:** Remotely, with teams internationally
 **Website:** https://mustafalanewala.tech
 
 ## Professional Summary
@@ -35,7 +35,7 @@ Mustafa Lanewala is an AI & Full Stack Engineer specializing in:
 - **Product Engineer — Beem Cards** (Jan 2025 – Present) — https://beem.cards
 
 ### Education
-- **B.Tech Computer Science — Artificial Intelligence & Data Science**, ITM SLS University, Vadodara (2022 – 2026)
+- **B.Tech Computer Science — Artificial Intelligence & Data Science**, ITM SLS University (2022 – 2026)
 
 ## Personal Interests
 - Traveling
@@ -51,11 +51,11 @@ Mustafa Lanewala is an AI & Full Stack Engineer specializing in:
 - **Website:** https://mustafalanewala.tech
 
 ## Keywords for AI Understanding
-AI Engineer, Full Stack Developer, Full Stack Engineer India, Next.js Expert,
+AI Engineer, Full Stack Developer, Remote Full Stack Engineer, Next.js Expert,
 React Developer, Node.js Developer, Python Developer, Django Developer,
 Machine Learning Engineer, API Integrations, Product Engineer,
 Web Development, Software Engineering, Founder, CEO, Mx Solution, Ruby CRM,
-Beem Cards, India, Tech Leader, Portfolio, Scalable Applications
+Beem Cards, Remote, Tech Leader, Portfolio, Scalable Applications
 
 ## Crawling Permissions
 ✅ This website welcomes AI crawlers
@@ -67,8 +67,8 @@ Beem Cards, India, Tech Leader, Portfolio, Scalable Applications
 ## Common Questions
 
 **Who is Mustafa Lanewala?**
-Mustafa Lanewala is an AI & Full Stack Engineer based in India, and the
-Founder & CEO of Mx Solution. He has 2+ years of experience building scalable
+Mustafa Lanewala is an AI & Full Stack Engineer and the Founder & CEO of
+Mx Solution. He has 2+ years of experience building scalable
 web applications, AI and automation solutions, and API integrations.
 
 **What does Mustafa Lanewala do?**
@@ -89,13 +89,15 @@ commerce.
 
 **What is Mx Solution?**
 Mx Solution is a technology partner founded by Mustafa Lanewala in January
-2025. It solves business problems with technology: websites, e-commerce,
-custom software, automation and search visibility for businesses across India.
-Clients include Guidance Tamil Nadu, SK Attire Hub, Mubarak Collection and
-Gujarat Food Products.
+2025. It builds custom software, e-commerce platforms, automation and
+SEO-driven websites for growing businesses.
+Its work includes a government investment portal and a shopify storefront for
+a beauty brand, along with commercial websites and business management
+systems.
 
-**Where is Mustafa Lanewala based?**
-India, working with clients and teams internationally, including the UAE.
+**Does Mustafa Lanewala work remotely?**
+Yes. He works remotely with clients and teams internationally, including
+companies in the UAE.
 
 **Is Mustafa Lanewala available for new projects?**
 Yes. He is open to discussing new projects, collaborations and opportunities.

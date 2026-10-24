@@ -16,10 +16,10 @@ export const person = {
   jobTitle: "AI & Full Stack Engineer",
   headline: "AI & Full Stack Engineer | Founder & CEO of Mx Solution",
   yearsOfExperience: 2,
-  country: "India",
-  countryCode: "IN",
-  locale: "en-IN",
-  languages: ["English", "Hindi", "Gujarati"],
+  locale: "en",
+  languages: ["English"],
+  description:
+    "Mustafa Lanewala is an AI & Full Stack Engineer, Founder & CEO of Mx Solution and Product Engineer at Ruby CRM and Beem Cards.",
   summary:
     "Mustafa Lanewala is an AI & Full Stack Engineer with 2+ years of experience building scalable web applications, AI and automation solutions, and API integrations. He is the Founder & CEO of Mx Solution and a Product Engineer at Ruby CRM and Beem Cards.",
   interests: [
@@ -42,7 +42,7 @@ export const organization = {
   url: "https://www.mxsolution.in",
   foundingDate: "2025-01",
   description:
-    "Mx Solution is a technology partner that solves business problems with technology: websites, e-commerce, custom software, automation and search visibility for businesses across India.",
+    "Mx Solution is a technology partner that builds custom software, e-commerce platforms, automation and SEO-driven websites for growing businesses.",
 } as const
 
 export interface Role {
@@ -63,7 +63,7 @@ export const roles: Role[] = [
     startDate: "2025-01",
     period: "Jan 2025 – Present",
     description:
-      "Founded a technology studio that solves business problems with technology, from websites and e-commerce to custom software, automation and SEO. Shipped platforms for Guidance Tamil Nadu (Government of Tamil Nadu), SK Attire Hub, Mubarak Collection and Gujarat Food Products.",
+      "Founded and lead a technology studio that builds custom software, e-commerce platforms, automation and SEO-driven websites for growing businesses. Delivered a government investment portal and a shopify storefront for a beauty brand, along with commercial websites and business management systems.",
   },
   {
     title: "Product Engineer",
@@ -87,7 +87,6 @@ export const roles: Role[] = [
 
 export const education = {
   school: "ITM SLS University",
-  location: "Vadodara, Gujarat",
   degree: "B.Tech Computer Science",
   field: "Artificial Intelligence & Data Science",
   startDate: "2022",

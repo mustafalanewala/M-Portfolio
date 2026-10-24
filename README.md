@@ -8,7 +8,7 @@ Personal portfolio built with Next.js 16, React 19, TypeScript and Tailwind CSS 
 - **Styling**: Tailwind CSS v4, Figtree via `next/font`
 - **Motion**: Framer Motion, Lenis
 - **Icons**: Lucide React, React Feather
-- **SEO**: Next.js Metadata API, JSON-LD, next-sitemap, IndexNow
+- **SEO**: Next.js Metadata API (incl. sitemap), JSON-LD, IndexNow
 
 ## 📦 Getting Started
 
@@ -22,7 +22,7 @@ npm run dev
 ## 📝 Scripts
 
 - `npm run dev` - Start development server
-- `npm run build` - Build for production (also regenerates `public/sitemap.xml`)
+- `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
 - `npm run format` - Format code with Prettier
@@ -31,10 +31,10 @@ npm run dev
 ## 🏗️ Project Structure
 
 ```
-├── public/              # Icons, manifest, robots.txt, sitemap, llms.txt, ai.txt, sw.js
+├── public/              # Icons, manifest, robots.txt, llms.txt, ai.txt, sw.js
 ├── scripts/             # IndexNow ping
 └── src/
-    ├── app/             # Layout, page, global styles, Open Graph image
+    ├── app/             # Layout, page, global styles, sitemap, Open Graph image
     ├── components/      # Page sections
     ├── data/profile.ts  # All personal facts in one place
     └── lib/             # SEO graph, motion presets, theme
