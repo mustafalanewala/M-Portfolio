@@ -15,13 +15,13 @@ export const person = {
   familyName: "Lanewala",
   jobTitle: "AI & Full Stack Engineer",
   headline: "AI & Full Stack Engineer | Founder & CEO of Mx Solution",
-  yearsOfExperience: 3,
+  yearsOfExperience: 2,
   country: "India",
   countryCode: "IN",
   locale: "en-IN",
   languages: ["English", "Hindi", "Gujarati"],
   summary:
-    "Mustafa Lanewala is an AI & Full Stack Engineer with 3+ years of experience building scalable web applications, working on AI and automation, and designing microservices architecture. He is the Founder & CEO of Mx Solution and a Product Engineer at Ruby CRM.",
+    "Mustafa Lanewala is an AI & Full Stack Engineer with 2+ years of experience building scalable web applications, AI and automation solutions, and API integrations. He is the Founder & CEO of Mx Solution and a Product Engineer at Ruby CRM and Beem Cards.",
   interests: [
     "Traveling",
     "Photography",
@@ -42,7 +42,7 @@ export const organization = {
   url: "https://www.mxsolution.in",
   foundingDate: "2025-01",
   description:
-    "Mx Solution helps brands transform ideas into scalable digital systems designed for maximum performance and real business results.",
+    "Mx Solution is a technology partner that solves business problems with technology: websites, e-commerce, custom software, automation and search visibility for businesses across India.",
 } as const
 
 export interface Role {
@@ -63,7 +63,7 @@ export const roles: Role[] = [
     startDate: "2025-01",
     period: "Jan 2025 – Present",
     description:
-      "We help brands transform ideas into scalable digital systems designed for maximum performance and real business results.",
+      "Founded a technology studio that solves business problems with technology, from websites and e-commerce to custom software, automation and SEO. Shipped platforms for Guidance Tamil Nadu (Government of Tamil Nadu), SK Attire Hub, Mubarak Collection and Gujarat Food Products.",
   },
   {
     title: "Product Engineer",
@@ -72,26 +72,54 @@ export const roles: Role[] = [
     startDate: "2025-06",
     period: "Jun 2025 – Present",
     description:
-      "Building features and driving frontend development for the UAE's top AI-powered real estate CRM.",
+      "Delivered 50+ core features across frontend, backend services, integrations and platform improvements. Worked on lead management, property listings, portal syndication and WhatsApp integration, turning product requirements into production-ready features.",
   },
   {
     title: "Product Engineer",
-    company: "Cleverflow",
-    companyUrl: "https://cleverflow.com",
-    startDate: "2024-03",
-    endDate: "2025-05",
-    period: "Mar 2024 – May 2025",
+    company: "Beem Cards",
+    companyUrl: "https://beem.cards",
+    startDate: "2025-01",
+    period: "Jan 2025 – Present",
     description:
-      "Led product management for Artifacts platform. Developed CRM-integrated invoices and ad templates.",
+      "Leading full-stack development of Beem Cards, a scalable digital smart card platform for professional networking, built with Django, PostgreSQL, React, Next.js and TypeScript.",
   },
 ]
 
+export const education = {
+  school: "ITM SLS University",
+  location: "Vadodara, Gujarat",
+  degree: "B.Tech Computer Science",
+  field: "Artificial Intelligence & Data Science",
+  startDate: "2022",
+  endDate: "2026",
+  period: "2022 – 2026",
+} as const
+
 export const skills = {
-  Frontend: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "JavaScript"],
-  Backend: ["Node.js", "Python", "Django", "REST API", "Express.js"],
-  Database: ["PostgreSQL", "MongoDB", "Firebase", "Redis", "SQLite"],
-  Tools: ["Docker", "Git", "Figma", "AWS", "VS Code"],
-  "AI Tools": ["ChatGPT", "GitHub Copilot", "Claude Code", "Cursor", "Ollama"],
+  "Frontend & Mobile": [
+    "React.js",
+    "Next.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "React Native",
+  ],
+  "Backend & APIs": ["Node.js", "Express.js", "Python", "Django", "WebSockets"],
+  Databases: ["PostgreSQL", "Supabase", "Prisma", "MongoDB", "Redis"],
+  "Cloud & Dev Tools": ["AWS", "Firebase", "Docker", "Git & GitHub", "Postman"],
+  "AI Engineering": [
+    "Claude Code",
+    "Ollama",
+    "OpenRouter",
+    "MCP",
+    "Hugging Face",
+  ],
+  "Design & Growth": [
+    "Figma",
+    "UI/UX Design",
+    "Technical SEO",
+    "Shopify",
+    "Payment Gateways",
+  ],
 } as const
 
 /** Flat, de-duplicated skill list used for `knowsAbout` and keywords. */
@@ -103,7 +131,7 @@ export const expertise = [
   "Artificial Intelligence",
   "Machine Learning",
   "Full Stack Development",
-  "Microservices Architecture",
+  "API Integrations",
   "Product Management",
   "UI/UX Design",
   "Automation",

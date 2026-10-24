@@ -1,7 +1,6 @@
 import "./globals.css"
 import type { Metadata } from "next"
-import { Outfit, Syne } from "next/font/google"
-import { Toaster } from "react-hot-toast"
+import { Figtree } from "next/font/google"
 import { registerServiceWorker } from "@/lib/serviceWorker"
 import { THEME_INIT_SCRIPT } from "@/lib/theme"
 import { SITE_URL, person, socials } from "@/data/profile"
@@ -14,17 +13,9 @@ import { buildStructuredData, keywords } from "@/lib/seo"
  * next/font emits the @font-face locally with size-adjust metrics to stop the
  * swap from shifting layout.
  */
-const outfit = Outfit({
+const figtree = Figtree({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-outfit",
-  display: "swap",
-})
-
-const syne = Syne({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-syne",
+  variable: "--font-figtree",
   display: "swap",
 })
 
@@ -47,25 +38,18 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  // ?v= busts the sticky favicon cache in Safari and Chrome — bump it whenever the icon changes.
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      {
-        url: "/android-chrome-192x192.png",
-        sizes: "192x192",
-        type: "image/png",
-      },
-      {
-        url: "/android-chrome-512x512.png",
-        sizes: "512x512",
-        type: "image/png",
-      },
+      { url: "/favicon.ico?v=3", sizes: "32x32" },
+      { url: "/icon.svg?v=3", type: "image/svg+xml" },
     ],
-    shortcut: [{ url: "/favicon.ico" }],
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      {
+        url: "/apple-touch-icon.png?v=3",
+        sizes: "180x180",
+        type: "image/png",
+      },
     ],
   },
   manifest: "/manifest.json",
@@ -122,7 +106,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} ${syne.variable}`}
+      className={figtree.variable}
       suppressHydrationWarning
     >
       <head>
@@ -138,7 +122,6 @@ export default function RootLayout({
       </head>
       <body>
         {children}
-        <Toaster position="top-right" reverseOrder={false} />
         <script
           dangerouslySetInnerHTML={{
             __html: `

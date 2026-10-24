@@ -52,7 +52,7 @@ const Hero = () => {
         </motion.p>
 
         <h1
-          className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 sm:mb-6"
+          className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6"
           id="hero-heading"
         >
           <TextReveal text="Mustafa Lanewala" />

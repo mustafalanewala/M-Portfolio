@@ -27,8 +27,8 @@ const Skills = memo(function Skills() {
           Skills
         </motion.h2>
 
-        {/* 1 Column on mobile, 5 on desktop */}
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-6">
+        {/* 1 column on mobile, 2 on small screens, 3 (two rows of three) from tablet up */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
           {Object.entries(skills).map(([category, items], categoryIndex) => (
             <motion.div
               key={category}
@@ -39,10 +39,8 @@ const Skills = memo(function Skills() {
                 {category}
               </h3>
 
-              {/* Mobile: flex-wrap + gap-2 sits them side-by-side 
-                Desktop: md:flex-col keeps your original vertical list
-              */}
-              <ul className="flex flex-wrap md:flex-col gap-x-3 gap-y-1.5 md:gap-y-1.5">
+              {/* Mobile: items sit side-by-side; from sm up they stack as a vertical list */}
+              <ul className="flex flex-wrap sm:flex-col gap-x-3 gap-y-1.5">
                 {items.map((skill) => (
                   <li
                     key={skill}

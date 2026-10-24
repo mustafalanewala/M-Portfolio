@@ -33,8 +33,8 @@
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
 
-  --font-display: var(--font-syne), sans-serif;
-  --font-body: var(--font-outfit), sans-serif;
+  --font-display: var(--font-figtree), sans-serif;
+  --font-body: var(--font-figtree), sans-serif;
 }
 
 @layer base {
@@ -117,18 +117,9 @@
     color: hsl(var(--foreground));
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: var(--font-outfit), sans-serif;
+    font-family: var(--font-figtree), sans-serif;
     font-size: 18px;
     line-height: 1.6;
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: var(--font-syne), sans-serif;
   }
 
   code,

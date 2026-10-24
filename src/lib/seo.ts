@@ -1,6 +1,7 @@
 import {
   SITE_URL,
   allSkills,
+  education,
   expertise,
   organization,
   person,
@@ -23,34 +24,38 @@ export const ID = {
  * Keywords are assembled from the same skill list the page renders, so the
  * meta tag can never drift from what is actually on the page.
  */
-export const keywords: string[] = [
-  person.name,
-  `${person.name} portfolio`,
-  `${person.name} developer`,
-  person.jobTitle,
-  "AI Engineer",
-  "Full Stack Developer",
-  "Full Stack Engineer India",
-  "Founder Mx Solution",
-  "Mx Solution",
-  "Product Engineer",
-  "Freelance Next.js developer",
-  "Hire full stack developer India",
-  ...expertise,
-  ...allSkills,
-]
+export const keywords: string[] = Array.from(
+  new Set([
+    person.name,
+    `${person.name} portfolio`,
+    `${person.name} developer`,
+    person.jobTitle,
+    "AI Engineer",
+    "Full Stack Developer",
+    "Full Stack Engineer India",
+    "Founder Mx Solution",
+    "Mx Solution",
+    "Ruby CRM",
+    "Beem Cards",
+    "Product Engineer",
+    "Freelance Next.js developer",
+    "Hire full stack developer India",
+    ...expertise,
+    ...allSkills,
+  ])
+)
 
+// schema.org Role pattern: the EmployeeRole wraps the same `worksFor` property it stands in for.
 const employmentNodes = roles.map((role) => ({
   "@type": "EmployeeRole",
   roleName: role.title,
   startDate: role.startDate,
   ...(role.endDate ? { endDate: role.endDate } : {}),
   description: role.description,
-  worksFor: {
-    "@type": "Organization",
-    name: role.company,
-    url: role.companyUrl,
-  },
+  worksFor:
+    role.company === organization.name
+      ? { "@id": ID.organization }
+      : { "@type": "Organization", name: role.company, url: role.companyUrl },
 }))
 
 /**
@@ -66,6 +71,7 @@ export function buildStructuredData(lastModified: string) {
         "@type": "Person",
         "@id": ID.person,
         name: person.name,
+        alternateName: "mustafalanewala",
         givenName: person.givenName,
         familyName: person.familyName,
         url: SITE_URL,
@@ -79,9 +85,13 @@ export function buildStructuredData(lastModified: string) {
           socials.instagram,
           socials.x,
         ],
-        worksFor: { "@id": ID.organization },
-        founder: { "@id": ID.organization },
-        knowsAbout: [...expertise, ...allSkills],
+        worksFor: employmentNodes,
+        alumniOf: {
+          "@type": "CollegeOrUniversity",
+          name: education.school,
+          address: education.location,
+        },
+        knowsAbout: Array.from(new Set([...expertise, ...allSkills])),
         knowsLanguage: person.languages.map((name) => ({
           "@type": "Language",
           name,
@@ -92,7 +102,6 @@ export function buildStructuredData(lastModified: string) {
           occupationalCategory: "15-1252.00 Software Developers",
           skills: allSkills.join(", "),
         },
-        memberOf: employmentNodes,
         nationality: { "@type": "Country", name: person.country },
         address: {
           "@type": "PostalAddress",
@@ -162,12 +171,18 @@ export function buildStructuredData(lastModified: string) {
           {
             "@type": "ListItem",
             position: 4,
+            name: "Education",
+            item: `${SITE_URL}/#education`,
+          },
+          {
+            "@type": "ListItem",
+            position: 5,
             name: "Skills",
             item: `${SITE_URL}/#skills`,
           },
           {
             "@type": "ListItem",
-            position: 5,
+            position: 6,
             name: "Contact",
             item: `${SITE_URL}/#contact`,
           },

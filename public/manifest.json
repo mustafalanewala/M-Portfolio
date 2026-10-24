@@ -1,7 +1,7 @@
 {
   "name": "Mustafa Lanewala - AI & Full Stack Engineer",
   "short_name": "M. Lanewala",
-  "description": "Official portfolio of Mustafa Lanewala - AI & Full Stack Engineer with 3+ years of experience. Founder & CEO of Mx Solution.",
+  "description": "Official portfolio of Mustafa Lanewala - AI & Full Stack Engineer with 2+ years of experience. Founder & CEO of Mx Solution.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -9,33 +9,28 @@
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "/favicon.ico",
-      "sizes": "16x16 32x32",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "/favicon-16x16.png",
-      "sizes": "16x16",
-      "type": "image/png",
+      "src": "/icon.svg?v=3",
+      "sizes": "any",
+      "type": "image/svg+xml",
       "purpose": "any"
     },
     {
-      "src": "/favicon-32x32.png",
-      "sizes": "32x32",
-      "type": "image/png",
-      "purpose": "any"
-    },
-    {
-      "src": "/android-chrome-192x192.png",
+      "src": "/icon-192.png?v=3",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/icon-512.png?v=3",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-512.png?v=3",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ],
   "categories": ["technology", "portfolio", "business"],

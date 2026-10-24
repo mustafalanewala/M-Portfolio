@@ -1,15 +1,6 @@
-const CACHE_NAME = "mustafa-portfolio-v1"
-const urlsToCache = [
-  "/",
-  "/manifest.json",
-  "/favicon.ico",
-  "/favicon-16x16.png",
-  "/favicon-32x32.png",
-  "/android-chrome-192x192.png",
-  "/android-chrome-512x512.png",
-  "/apple-touch-icon.png",
-  // Add other static assets as needed
-]
+// Bumping the name makes returning visitors drop the old cache (and old icons) on activate.
+const CACHE_NAME = "mustafa-portfolio-v2"
+const urlsToCache = ["/"]
 
 // Install event - cache resources
 self.addEventListener("install", (event) => {
@@ -37,20 +28,17 @@ self.addEventListener("activate", (event) => {
   self.clients.claim()
 })
 
-// Fetch event - serve from cache when offline
+// Fetch event - pages are network-first so a deploy is never hidden behind a cached copy
 self.addEventListener("fetch", (event) => {
+  if (event.request.mode === "navigate") {
+    event.respondWith(fetch(event.request).catch(() => caches.match("/")))
+    return
+  }
+
   event.respondWith(
-    caches
-      .match(event.request)
-      .then((response) => {
-        // Return cached version or fetch from network
-        return response || fetch(event.request)
-      })
-      .catch(() => {
-        // Return offline fallback for navigation requests
-        if (event.request.mode === "navigate") {
-          return caches.match("/")
-        }
-      })
+    caches.match(event.request).then((response) => {
+      // Return cached version or fetch from network
+      return response || fetch(event.request)
+    })
   )
 })

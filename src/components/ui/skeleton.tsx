@@ -78,12 +78,12 @@ export const SkillsSkeleton = () => (
       <Skeleton className="h-5 w-5" />
       <Skeleton className="h-6 w-16" />
     </div>
-    <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-      {[1, 2, 3, 4, 5].map((i) => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {[1, 2, 3, 4, 5, 6].map((i) => (
         <div key={i} className="rounded-xl border p-5">
           <Skeleton className="h-4 w-16 mb-3" />
           <div className="space-y-2">
-            {[1, 2, 3, 4].map((j) => (
+            {[1, 2, 3, 4, 5].map((j) => (
               <Skeleton key={j} className="h-3 w-20" />
             ))}
           </div>

@@ -23,9 +23,10 @@ const About = memo(function About() {
         <div className="space-y-4 text-muted-foreground leading-relaxed text-base sm:text-lg">
           <motion.p {...revealItem}>
             I&rsquo;m <span className="text-foreground">Mustafa Lanewala</span>,
-            an AI &amp; Full Stack Engineer with 3+ years of experience building
+            an AI &amp; Full Stack Engineer with 2+ years of experience building
             scalable web applications, working on AI and automation, and
-            designing microservices architecture.
+            integrating third-party APIs. I founded Mx Solution and currently
+            build products at Ruby CRM and Beem Cards.
           </motion.p>
 
           <motion.p {...revealItem}>

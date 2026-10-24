@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation"
 import Hero from "@/components/Hero"
 import About from "@/components/About"
 import Experience from "@/components/Experience"
+import Education from "@/components/Education"
 // import Portfolio from "@/components/Portfolio"
 import Skills from "@/components/Skills"
 import Contact from "@/components/Contact"
@@ -37,6 +38,8 @@ export default function Home() {
         <Suspense fallback={<ExperienceSkeleton />}>
           <Experience />
         </Suspense>
+        <SectionDivider />
+        <Education />
         {/* <Portfolio /> */}
         <SectionDivider />
         <Suspense fallback={<SkillsSkeleton />}>

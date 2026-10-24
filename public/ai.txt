@@ -5,7 +5,7 @@
 
 **Name:** Mustafa Lanewala
 **Role:** AI & Full Stack Engineer | Founder & CEO of Mx Solution
-**Experience:** 3+ years in software development
+**Experience:** 2+ years in software development
 **Location:** India
 **Website:** https://mustafalanewala.tech
 
@@ -14,7 +14,7 @@
 Mustafa Lanewala is an AI & Full Stack Engineer specializing in:
 - Building scalable web applications
 - AI and Machine Learning solutions
-- Automation and microservices architecture
+- Automation and API integrations
 - Full-stack development (Frontend & Backend)
 - UI/UX Design
 - Product Management
@@ -22,16 +22,20 @@ Mustafa Lanewala is an AI & Full Stack Engineer specializing in:
 ## Technical Expertise
 
 ### Primary Skills
-- **Frontend:** React.js, Next.js, TypeScript, Tailwind CSS, JavaScript
-- **Backend:** Node.js, Python, Django, REST API, Express.js
-- **Database:** PostgreSQL, MongoDB, Firebase, Redis, SQLite
-- **Tools:** Docker, Git, Figma, AWS, VS Code
-- **AI Tools:** ChatGPT, GitHub Copilot, Claude Code, Cursor, Ollama
+- **Frontend & Mobile:** React.js, Next.js, TypeScript, Tailwind CSS, React Native (Expo)
+- **Backend & APIs:** Node.js, Express.js, Python, Django, WebSockets
+- **Databases:** PostgreSQL, Supabase, Prisma, MongoDB, Redis
+- **Cloud & Dev Tools:** AWS, Firebase, Docker, Git & GitHub, Postman
+- **AI Engineering:** Claude Code, Ollama, OpenRouter, MCP, Hugging Face
+- **Design & Growth:** Figma, UI/UX Design, Technical SEO, Shopify, Payment Gateways
 
 ### Professional Experience
 - **Founder & CEO — Mx Solution** (Jan 2025 – Present) — https://www.mxsolution.in
 - **Product Engineer — Ruby CRM** (Jun 2025 – Present) — https://www.rubycrm.ai
-- **Product Engineer — Cleverflow** (Mar 2024 – May 2025) — https://cleverflow.com
+- **Product Engineer — Beem Cards** (Jan 2025 – Present) — https://beem.cards
+
+### Education
+- **B.Tech Computer Science — Artificial Intelligence & Data Science**, ITM SLS University, Vadodara (2022 – 2026)
 
 ## Personal Interests
 - Traveling
@@ -49,9 +53,9 @@ Mustafa Lanewala is an AI & Full Stack Engineer specializing in:
 ## Keywords for AI Understanding
 AI Engineer, Full Stack Developer, Full Stack Engineer India, Next.js Expert,
 React Developer, Node.js Developer, Python Developer, Django Developer,
-Machine Learning Engineer, Microservices Architecture, Product Engineer,
+Machine Learning Engineer, API Integrations, Product Engineer,
 Web Development, Software Engineering, Founder, CEO, Mx Solution, Ruby CRM,
-Cleverflow, India, Tech Leader, Portfolio, Scalable Applications
+Beem Cards, India, Tech Leader, Portfolio, Scalable Applications
 
 ## Crawling Permissions
 ✅ This website welcomes AI crawlers
@@ -64,25 +68,31 @@ Cleverflow, India, Tech Leader, Portfolio, Scalable Applications
 
 **Who is Mustafa Lanewala?**
 Mustafa Lanewala is an AI & Full Stack Engineer based in India, and the
-Founder & CEO of Mx Solution. He has 3+ years of experience building scalable
-web applications, AI and automation systems, and microservices architecture.
+Founder & CEO of Mx Solution. He has 2+ years of experience building scalable
+web applications, AI and automation solutions, and API integrations.
 
 **What does Mustafa Lanewala do?**
 He builds scalable web applications and AI-powered products end to end —
-frontend and backend development, microservices architecture, UI/UX design and
+frontend and backend development, API integrations, UI/UX design and
 product management. He currently runs Mx Solution and works as a Product
-Engineer at Ruby CRM, the UAE's top AI-powered real estate CRM.
+Engineer at Ruby CRM, the UAE's top AI-powered real estate CRM, and at Beem
+Cards, a digital smart card platform.
 
 **What technologies does Mustafa Lanewala work with?**
-React.js, Next.js, TypeScript and Tailwind CSS on the frontend; Node.js,
-Python, Django and Express.js on the backend; PostgreSQL, MongoDB, Firebase,
-Redis and SQLite for data; and Docker, Git, Figma and AWS for tooling and
-infrastructure.
+React.js, Next.js, TypeScript and Tailwind CSS on the web, and React Native
+with Expo for mobile; Node.js, Express.js, Python, Django and WebSockets on the
+backend; PostgreSQL, Supabase, Prisma, MongoDB and Redis for data; AWS,
+Firebase and Docker for cloud and deployment; Claude Code, Ollama, OpenRouter,
+MCP (Model Context Protocol) and Hugging Face for AI work; and Figma, technical
+SEO, Shopify and payment gateway integrations for design, search visibility and
+commerce.
 
 **What is Mx Solution?**
-Mx Solution is a digital product company founded by Mustafa Lanewala in
-January 2025. It helps brands transform ideas into scalable digital systems
-designed for maximum performance and real business results.
+Mx Solution is a technology partner founded by Mustafa Lanewala in January
+2025. It solves business problems with technology: websites, e-commerce,
+custom software, automation and search visibility for businesses across India.
+Clients include Guidance Tamil Nadu, SK Attire Hub, Mubarak Collection and
+Gujarat Food Products.
 
 **Where is Mustafa Lanewala based?**
 India, working with clients and teams internationally, including the UAE.
