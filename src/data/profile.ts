@@ -32,7 +32,7 @@ export const person = {
 
 export const socials = {
   github: "https://github.com/mustafalanewala",
-  linkedin: "https://linkedin.com/in/mustafalanewala",
+  linkedin: "https://linkedin.com/in/mustafa-lanewala",
   instagram: "https://www.instagram.com/mustafa.lanewala",
   x: "https://x.com/mustafa_l53",
 } as const
